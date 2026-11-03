@@ -30,7 +30,8 @@
    "repo": "RandallSPQR/stpt-gate-artifacts",
    "model": "qwen3.5-27b",
    "mp_commit": "cf8a3769cb43aec2a698ab1fcb71817933bf4c2d",
-   "pipe_commit": "37031bcd0d33b6dbd2c6f6573127714367c306fe"
+   "pipe_commit": "37031bcd0d33b6dbd2c6f6573127714367c306fe",
+   "ended": "terminated 2026-11-03T07:33:36.784480+00:00: strict results uploaded; throughput phases skipped (v1.3.0 profile-flag bug), re-run under v1.3.1"
   },
   "nl0kjoxxbj7lck": {
    "name": "mp-s0-llama-3.1-8b-it-20261103T0606Zc",
