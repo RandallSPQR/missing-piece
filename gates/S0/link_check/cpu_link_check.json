@@ -51,5 +51,10 @@
    "serving_pins": true
   }
  },
- "pass": true
+ "pass": true,
+ "installed_tag_check": {
+  "tag_vs_v1.2.0_identical": true,
+  "tag_vs_proposal_identical": true,
+  "tag_commit": "37031bcd0d33b6dbd2c6f6573127714367c306fe"
+ }
 }

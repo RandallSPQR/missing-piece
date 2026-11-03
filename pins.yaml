@@ -1,16 +1,14 @@
 # Missing Piece pins. Every run manifest copies this block through mp.manifest.header(); a run refuses to start when the
 # installed pipeline is not the pinned commit (mp.manifest.check_environment). Changing a pin is a new version of the
 # pin and a logged entry in the coordination record's AMENDMENTS.md (a deviation if any study outcome exists).
-pipeline:                      # the shared five-model pipeline that StPT's Step 0 built and tagged; LOCKED; no serving is built here
+pipeline:                      # the shared five-model pipeline; no serving is built here. D41: MP on v1.3.0, StPT stays on v1.2.0
   name: sae-ethos-pipeline
   repo: https://github.com/RandallSPQR/SAE-Ethos-Calibration
-  tag: v1.2.0
-  commit: 5ca15f56a71f35d5818d0392f7f3b4acb2d85d1b
-  tag_form: lightweight         # the GitHub tag points at the commit itself (coordination PIPELINE.md)
+  tag: v1.3.0
+  commit: 37031bcd0d33b6dbd2c6f6573127714367c306fe   # tagged by the owner 2026-11-03; parent 5ca15f56 (v1.2.0); tree = proposals/pipeline-v1.3.0 patch
+  tag_form: lightweight
   lineup_file: pipeline/lineup/lineup.yaml
-  next: "v1.3.0 (D41, 2026-11-03): Missing Piece adopts it once applied and tagged by someone with write access (patch:
-    proposals/pipeline-v1.3.0/); re-pin tag + commit here then; S0-GPU validates the throughput modes before any other run.
-    StPT stays on v1.2.0."
+  previous: {tag: v1.2.0, commit: 5ca15f56a71f35d5818d0392f7f3b4acb2d85d1b}   # MP's pin until 2026-11-03; v1.3.0-strict serves identically (gates/S0/link_check/)
 coordination:                  # the shared coordination record (StPT + Missing Piece)
   repo: https://github.com/RandallSPQR/StPT-MP-Coordination
   commit: 4f9e26b26a3693faabef1c1f0d0c4d7fd1170495   # MP entries D32-D44, P7-P14, A30-A33 over main 4ac488d (StPT D31, A29); branch claude/festive-ritchie-e5hga4, fast-forwardable onto main; re-pin to main's commit after the merge
@@ -27,8 +25,8 @@ models:                        # D1, D8: all five from the pinned lineup; Qwen p
   - qwen3.5-9b
   - qwen3.5-27b
 serving:                       # owner 2026-11-03 (cost reduction, engineering only); mp/serving.py
-  mode: strict                 # the only mode pipeline v1.2.0 supports
-  adopted: {pipeline: "v1.3.0 (D41; not yet tagged)", modes_opt_in: [throughput, throughput_invariant], amends: "D1, D9 (Missing Piece only)"}
+  mode: strict                 # default until a throughput mode passes S0-GPU for a model
+  adopted: {pipeline: "v1.3.0 (D41; tagged 37031bcd)", modes_opt_in: [throughput, throughput_invariant], amends: "D1, D9 (Missing Piece only)"}
   validated_modes: {}          # model -> modes that passed S0-GPU validation; empty until it runs
 grading:                       # owner 2026-11-03; Paper 1's frozen graders, verified at RandallSPQR/edsl_wwil 35ffd5dc
   route: openrouter

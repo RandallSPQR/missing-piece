@@ -12,7 +12,7 @@ called and nothing was paid for.
 
 | what | value | how checked |
 |---|---|---|
-| pipeline | sae-ethos-pipeline **v1.2.0** | `git rev-parse v1.2.0^{commit}` in a clone of SAE-Ethos-Calibration gives `5ca15f56a71f35d5818d0392f7f3b4acb2d85d1b`; the tag is lightweight (coordination `PIPELINE.md`) |
+| pipeline | sae-ethos-pipeline **v1.2.0** at this report; **re-pinned to v1.3.0** (`37031bcd`, D41) on 2026-11-03, after the CPU checks were re-run on the tagged install and passed | `git rev-parse v1.2.0^{commit}` in a clone of SAE-Ethos-Calibration gives `5ca15f56a71f35d5818d0392f7f3b4acb2d85d1b`; the tag is lightweight (coordination `PIPELINE.md`) |
 | installed commit | `5ca15f56a71f35d5818d0392f7f3b4acb2d85d1b` | `pip install "sae-ethos-pipeline @ git+…@5ca15f56…"`; `lineup.manifest.check_pin` passes for all five models (`mp.manifest.check_environment`; read from pip's `direct_url.json`) |
 | lineup file | sha256 `74327b48de5c741f…` | identity block per model, recorded in `s0_results.json` |
 | coordination record | `9c155beb9054a9b639d41d0b92d1dfce11f81ac1` at the S0 run (D1–D30, A1–A27); now pinned to `4f9e26b26a36` (MP's entries D32–D44 and A30–A33, renumbered twice to keep main's numbers; branch `claude/festive-ritchie-e5hga4`) | `pins.yaml` |

@@ -15,7 +15,7 @@ wait for the owner's approval of GPU spend.
 
 | what | where | tag | commit |
 |---|---|---|---|
-| Shared five-model pipeline (LOCKED; built and tagged by StPT's Step 0; no serving is built here) | RandallSPQR/SAE-Ethos-Calibration | `v1.2.0` | `5ca15f56a71f35d5818d0392f7f3b4acb2d85d1b` |
+| Shared five-model pipeline (no serving is built here; D41: Missing Piece on v1.3.0, StPT on v1.2.0) | RandallSPQR/SAE-Ethos-Calibration | `v1.3.0` | `37031bcd0d33b6dbd2c6f6573127714367c306fe` |
 | Shared coordination record | [RandallSPQR/StPT-MP-Coordination](https://github.com/RandallSPQR/StPT-MP-Coordination) | none | `4f9e26b26a36` (MP entries D32–D44, P7–P14, A30–A33 on branch `claude/festive-ritchie-e5hga4`, merged with main `4ac488d`) |
 | Evidence schema | coordination `schema/evidence_schema_v1.0.json` | 1.0 | copy in `gates/S1/schema/` |
 
@@ -80,8 +80,8 @@ Analysis validation on synthetic data: **12/12 checks pass** (`analysis/VALIDATI
   (`mp/runner.py`).
 - **Serving modes:** `mp/serving.py` checks the mode. Prefix caching and batching need pipeline v1.3.0 (proposed,
   `proposals/pipeline-v1.3.0/`) and S0-GPU validation (`gates/S0/S0_GPU_PLAN.md`).
-- **Pipeline (D41):** StPT stays on v1.2.0. Missing Piece adopts v1.3.0 once it is tagged, with throughput modes
-  opt-in, validated by S0-GPU first. The CPU link check passes: v1.3.0-strict serves exactly as v1.2.0
+- **Pipeline (D41):** StPT stays on v1.2.0. Missing Piece is pinned to v1.3.0 (tagged `37031bcd`), with throughput
+  modes opt-in, validated by S0-GPU first. The CPU link check passes: v1.3.0-strict serves exactly as v1.2.0
   (`gates/S0/link_check/`).
 - **Probes:** P13 adds the speaker at the final round.
 - **Grading:** Paper 1's graders via OpenRouter (Sonnet 4.5 primary, Gemini 2.5 Flash gate grader on the same items),
