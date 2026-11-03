@@ -13,7 +13,7 @@ pipeline:                      # the shared five-model pipeline that StPT's Step
     StPT stays on v1.2.0."
 coordination:                  # the shared coordination record (StPT + Missing Piece)
   repo: https://github.com/RandallSPQR/StPT-MP-Coordination
-  commit: 751ae738f64b63feb181e66dc0de53bf8421e08d   # MP entries D31-D39, P7-P14, A29-A30 (MP's first entry, filed as A28, renumbered A29 on merging main 25b6d23); branch claude/festive-ritchie-e5hga4 until merged, then re-pinned to the main commit
+  commit: f29c4c289ba5cf5130655e7f0f110bd7c78f2166   # MP entries D31-D42, P7-P14 (P12-P14 accepted), A29-A31 over main 25b6d23; branch claude/festive-ritchie-e5hga4 until merged, then re-pinned to the main commit
   base_main_commit: 25b6d2326830a2dd6ef356148aeca49d8a35fe07   # main as merged 2026-11-03 (D1-D30, A1-A28 incl. StPT S9); first read at 9c155be
   evidence_schema: "1.0"      # schema/evidence_schema_v1.0.json
   protocol_spec_version: "0.0"
