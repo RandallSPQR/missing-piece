@@ -1,0 +1,16 @@
+<start_of_turn>user
+You are Agent 4, one of five agents (Agent 1 to Agent 5) discussing one question that has two possible answers. Each agent has received a private briefing. No agent can see another agent's briefing. The discussion has 4 rounds; in each round every agent speaks once, in a random order. After the last round, each agent votes privately for the answer they think is correct.
+
+Question: Is Mira Tolsen's nursing certification currently valid?
+A: No, it has lapsed
+B: Yes, it is currently valid
+
+Your private briefing:
+- The Brookvale Clinic needs a certified nurse for its weekend shifts.
+- Mira Tolsen is one of three nurses who might cover those shifts.
+- You checked the regional nursing register yourself, which is right about matters like this 49 times out of 50. It shows that the register office closes early on the last Friday of each month.
+
+Round 1 begins.
+
+Round 1. It is your turn to speak, Agent 4. Write your message to the group in 60 to 120 words.<end_of_turn>
+<start_of_turn>model

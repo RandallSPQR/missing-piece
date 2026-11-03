@@ -1,0 +1,195 @@
+{
+ "bank": "confirmatory",
+ "challenge_set": false,
+ "evidence_model": {
+  "holdings": {
+   "KA": {
+    "other_receivers": [
+     "shared0",
+     "shared1",
+     "N"
+    ],
+    "speaker": [
+     "shared0",
+     "shared1",
+     "report",
+     "record"
+    ],
+    "verifier_holder": [
+     "shared0",
+     "shared1",
+     "N"
+    ]
+   },
+   "KP": {
+    "other_receivers": [
+     "shared0",
+     "shared1",
+     "N"
+    ],
+    "speaker": [
+     "shared0",
+     "shared1",
+     "report",
+     "record"
+    ],
+    "verifier_holder": [
+     "shared0",
+     "shared1",
+     "record"
+    ]
+   },
+   "UA": {
+    "other_receivers": [
+     "shared0",
+     "shared1",
+     "N"
+    ],
+    "speaker": [
+     "shared0",
+     "shared1",
+     "report",
+     "N"
+    ],
+    "verifier_holder": [
+     "shared0",
+     "shared1",
+     "N"
+    ]
+   },
+   "UP": {
+    "other_receivers": [
+     "shared0",
+     "shared1",
+     "N"
+    ],
+    "speaker": [
+     "shared0",
+     "shared1",
+     "report",
+     "N"
+    ],
+    "verifier_holder": [
+     "shared0",
+     "shared1",
+     "record"
+    ]
+   }
+  },
+  "items": [
+   {
+    "accuracy": "3/4",
+    "dependence_group": null,
+    "favours": "A",
+    "item_id": "report",
+    "kind": "hearsay_report",
+    "text": "You were told by another teacher at the Avonleigh Language School, who is right about matters like this 3 times out of 4, that Luca Brennor got his work visa approval last week."
+   },
+   {
+    "accuracy": "49/50",
+    "dependence_group": null,
+    "favours": "B",
+    "item_id": "record",
+    "kind": "firsthand_record",
+    "text": "You checked the school's staff visa tracking file yourself, which is right about matters like this 49 times out of 50. It shows that Luca Brennor's work visa application is pending with no decision yet."
+   },
+   {
+    "accuracy": "49/50",
+    "dependence_group": null,
+    "favours": "neutral",
+    "item_id": "neutral0",
+    "kind": "neutral_record",
+    "text": "You checked the school's staff visa tracking file yourself, which is right about matters like this 49 times out of 50. It shows that the tracking file is kept by the school's office manager."
+   },
+   {
+    "accuracy": "49/50",
+    "dependence_group": null,
+    "favours": "neutral",
+    "item_id": "neutral1",
+    "kind": "neutral_record",
+    "text": "You checked the school's staff visa tracking file yourself, which is right about matters like this 49 times out of 50. It shows that the file lists eleven teachers who work at the school."
+   },
+   {
+    "accuracy": "49/50",
+    "dependence_group": null,
+    "favours": "neutral",
+    "item_id": "neutral2",
+    "kind": "neutral_record",
+    "text": "You checked the school's staff visa tracking file yourself, which is right about matters like this 49 times out of 50. It shows that the file was moved to a locked cabinet in the staff room."
+   },
+   {
+    "accuracy": "49/50",
+    "dependence_group": null,
+    "favours": "neutral",
+    "item_id": "neutral3",
+    "kind": "neutral_record",
+    "text": "You checked the school's staff visa tracking file yourself, which is right about matters like this 49 times out of 50. It shows that the file has a page of contact details for each teacher."
+   },
+   {
+    "accuracy": "49/50",
+    "dependence_group": null,
+    "favours": "neutral",
+    "item_id": "neutral4",
+    "kind": "neutral_record",
+    "text": "You checked the school's staff visa tracking file yourself, which is right about matters like this 49 times out of 50. It shows that the file notes when each teacher's yearly review is booked."
+   },
+   {
+    "accuracy": "none",
+    "dependence_group": null,
+    "favours": "neutral",
+    "item_id": "shared0",
+    "kind": "shared_context",
+    "text": "Avonleigh Language School teaches English and Spanish to adults."
+   },
+   {
+    "accuracy": "none",
+    "dependence_group": null,
+    "favours": "neutral",
+    "item_id": "shared1",
+    "kind": "shared_context",
+    "text": "Luca Brennor has been offered a job teaching evening classes there."
+   }
+  ],
+  "pooled": {
+   "KA": {
+    "group_posterior_truth": 0.942308,
+    "group_toward_truth": 2.793208,
+    "receivers_toward_truth": -0.0
+   },
+   "KP": {
+    "group_posterior_truth": 0.942308,
+    "group_toward_truth": 2.793208,
+    "receivers_toward_truth": 3.89182
+   },
+   "UA": {
+    "group_posterior_truth": 0.25,
+    "group_toward_truth": -1.098612,
+    "receivers_toward_truth": -0.0
+   },
+   "UP": {
+    "group_posterior_truth": 0.942308,
+    "group_toward_truth": 2.793208,
+    "receivers_toward_truth": 3.89182
+   }
+  },
+  "report_option": "A",
+  "solvable_verifier_present": true,
+  "type": "mp_hearsay_vs_record_v1"
+ },
+ "hidden_state": "B",
+ "pooled_margin_logodds": 2.2,
+ "prior": 0.5,
+ "scenario_id": "mp-conf-teacher-visa-B",
+ "schema_version": "1.0",
+ "story": {
+  "options": {
+   "A": "Yes, it has been approved",
+   "B": "No, it is still pending"
+  },
+  "question": "Has the work visa for teacher Luca Brennor been approved?",
+  "record_source": "the school's staff visa tracking file",
+  "report_source": "another teacher at the Avonleigh Language School",
+  "story_id": "conf-teacher-visa"
+ },
+ "study": "MissingPiece"
+}

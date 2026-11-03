@@ -1,0 +1,215 @@
+{
+ "bank": "development",
+ "challenge_set": true,
+ "evidence_model": {
+  "holdings": {
+   "KA": {
+    "other_receivers": [
+     "shared0",
+     "shared1",
+     "weak_shared",
+     "N"
+    ],
+    "speaker": [
+     "shared0",
+     "shared1",
+     "weak_shared",
+     "report",
+     "record"
+    ],
+    "verifier_holder": [
+     "shared0",
+     "shared1",
+     "weak_shared",
+     "N"
+    ]
+   },
+   "KP": {
+    "other_receivers": [
+     "shared0",
+     "shared1",
+     "weak_shared",
+     "N"
+    ],
+    "speaker": [
+     "shared0",
+     "shared1",
+     "weak_shared",
+     "report",
+     "record"
+    ],
+    "verifier_holder": [
+     "shared0",
+     "shared1",
+     "weak_shared",
+     "record"
+    ]
+   },
+   "UA": {
+    "other_receivers": [
+     "shared0",
+     "shared1",
+     "weak_shared",
+     "N"
+    ],
+    "speaker": [
+     "shared0",
+     "shared1",
+     "weak_shared",
+     "report",
+     "N"
+    ],
+    "verifier_holder": [
+     "shared0",
+     "shared1",
+     "weak_shared",
+     "N"
+    ]
+   },
+   "UP": {
+    "other_receivers": [
+     "shared0",
+     "shared1",
+     "weak_shared",
+     "N"
+    ],
+    "speaker": [
+     "shared0",
+     "shared1",
+     "weak_shared",
+     "report",
+     "N"
+    ],
+    "verifier_holder": [
+     "shared0",
+     "shared1",
+     "weak_shared",
+     "record"
+    ]
+   }
+  },
+  "items": [
+   {
+    "accuracy": "3/4",
+    "dependence_group": null,
+    "favours": "A",
+    "item_id": "report",
+    "kind": "hearsay_report",
+    "text": "You were told by a neighbouring farmer, who is right about matters like this 3 times out of 4, that Glenmoor Farm got its irrigation permit last week."
+   },
+   {
+    "accuracy": "49/50",
+    "dependence_group": null,
+    "favours": "B",
+    "item_id": "record",
+    "kind": "firsthand_record",
+    "text": "You checked the river board's permit register yourself, which is right about matters like this 49 times out of 50. It shows that Glenmoor Farm's application to draw river water this summer was refused."
+   },
+   {
+    "accuracy": "49/50",
+    "dependence_group": null,
+    "favours": "neutral",
+    "item_id": "neutral0",
+    "kind": "neutral_record",
+    "text": "You checked the river board's permit register yourself, which is right about matters like this 49 times out of 50. It shows that the river board meets in the old mill house every second Thursday."
+   },
+   {
+    "accuracy": "49/50",
+    "dependence_group": null,
+    "favours": "neutral",
+    "item_id": "neutral1",
+    "kind": "neutral_record",
+    "text": "You checked the river board's permit register yourself, which is right about matters like this 49 times out of 50. It shows that the register lists permits by the name of the river section."
+   },
+   {
+    "accuracy": "49/50",
+    "dependence_group": null,
+    "favours": "neutral",
+    "item_id": "neutral2",
+    "kind": "neutral_record",
+    "text": "You checked the river board's permit register yourself, which is right about matters like this 49 times out of 50. It shows that the river board publishes the register on its notice board each month."
+   },
+   {
+    "accuracy": "49/50",
+    "dependence_group": null,
+    "favours": "neutral",
+    "item_id": "neutral3",
+    "kind": "neutral_record",
+    "text": "You checked the river board's permit register yourself, which is right about matters like this 49 times out of 50. It shows that the register uses litres per day as its standard unit."
+   },
+   {
+    "accuracy": "49/50",
+    "dependence_group": null,
+    "favours": "neutral",
+    "item_id": "neutral4",
+    "kind": "neutral_record",
+    "text": "You checked the river board's permit register yourself, which is right about matters like this 49 times out of 50. It shows that the river board was set up to look after three local rivers."
+   },
+   {
+    "accuracy": "none",
+    "dependence_group": null,
+    "favours": "neutral",
+    "item_id": "shared0",
+    "kind": "shared_context",
+    "text": "Glenmoor Farm grows vegetables in fields next to the river."
+   },
+   {
+    "accuracy": "none",
+    "dependence_group": null,
+    "favours": "neutral",
+    "item_id": "shared1",
+    "kind": "shared_context",
+    "text": "The farm wants to water its crops during the dry summer months."
+   },
+   {
+    "accuracy": "3/5",
+    "dependence_group": null,
+    "favours": "A",
+    "item_id": "weak_shared",
+    "kind": "shared_weak_report",
+    "text": "Everyone in the group has heard from a neighbour, who is right about matters like this 3 times out of 5, that Glenmoor Farm got its irrigation permit last week."
+   }
+  ],
+  "pooled": {
+   "KA": {
+    "group_posterior_truth": 0.915888,
+    "group_toward_truth": 2.387743,
+    "receivers_toward_truth": -0.405465
+   },
+   "KP": {
+    "group_posterior_truth": 0.915888,
+    "group_toward_truth": 2.387743,
+    "receivers_toward_truth": 3.486355
+   },
+   "UA": {
+    "group_posterior_truth": 0.181818,
+    "group_toward_truth": -1.504077,
+    "receivers_toward_truth": -0.405465
+   },
+   "UP": {
+    "group_posterior_truth": 0.915888,
+    "group_toward_truth": 2.387743,
+    "receivers_toward_truth": 3.486355
+   }
+  },
+  "report_option": "A",
+  "solvable_verifier_present": true,
+  "type": "mp_hearsay_vs_record_v1"
+ },
+ "hidden_state": "B",
+ "pooled_margin_logodds": 2.2,
+ "prior": 0.5,
+ "scenario_id": "mp-dev-farm-irrigation-permit-B-challenge",
+ "schema_version": "1.0",
+ "story": {
+  "options": {
+   "A": "Yes, the permit was granted",
+   "B": "No, the permit was refused"
+  },
+  "question": "Has Glenmoor Farm been granted a permit to draw river water for irrigation?",
+  "record_source": "the river board's permit register",
+  "report_source": "a neighbouring farmer",
+  "story_id": "dev-farm-irrigation-permit"
+ },
+ "study": "MissingPiece"
+}

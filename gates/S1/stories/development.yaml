@@ -1,0 +1,265 @@
+# Missing Piece development story bank (gate S1). Written before any model call.
+- story_id: dev-clinic-nurse-cert
+  question: Is Mira Tolsen's nursing certification currently valid?
+  options:
+    A: Yes, it is currently valid
+    B: No, it has lapsed
+  report_source: a receptionist at the Brookvale Clinic
+  claim:
+    A: Mira Tolsen's certification was renewed last month
+    B: Mira Tolsen's certification ran out in the summer
+  record_source: the regional nursing register
+  fact:
+    A: Mira Tolsen's certification is current and runs until next autumn
+    B: Mira Tolsen's certification expired in July and has not been renewed
+  neutral:
+  - the register lists about six hundred nurses in the region
+  - the register office closes early on the last Friday of each month
+  - the register switched to a new search page in the spring
+  - the register prints its letters to nurses on pale blue paper
+  - the register's help desk answers phone calls on weekday mornings
+  shared:
+  - The Brookvale Clinic needs a certified nurse for its weekend shifts.
+  - Mira Tolsen is one of three nurses who might cover those shifts.
+- story_id: dev-warehouse-fire-cert
+  question: Does the Halden Road warehouse hold a valid fire-safety certificate?
+  options:
+    A: Yes, its certificate is valid
+    B: No, its certificate has expired
+  report_source: a forklift driver who works at the warehouse
+  claim:
+    A: the warehouse passed its fire-safety inspection in May
+    B: the warehouse's fire-safety certificate ran out last winter
+  record_source: the town fire service's certificate list
+  fact:
+    A: the Halden Road warehouse has a valid certificate until next June
+    B: the Halden Road warehouse certificate expired in February and was not renewed
+  neutral:
+  - the fire service sorts its list by street name and number
+  - the list was moved to a new filing system two years ago
+  - the fire service has three inspectors covering the whole town
+  - the list includes shops, schools, offices and warehouses across the town
+  - the fire service prints a fresh copy of the list each month
+  shared:
+  - The Halden Road warehouse stores paper goods for local shops.
+  - A new tenant wants to rent space in the warehouse next week.
+- story_id: dev-ferry-timetable
+  question: At what time will the first ferry to Corran Isle leave next Monday?
+  options:
+    A: At 7:15
+    B: At 8:00
+  report_source: a regular passenger on the Corran Isle ferry
+  claim:
+    A: the first ferry will leave at 7:15 from next Monday
+    B: the first ferry will leave at 8:00 from next Monday
+  record_source: the ferry company's published timetable
+  fact:
+    A: the first ferry next Monday is timetabled to leave at 7:15
+    B: the first ferry next Monday is timetabled to leave at 8:00
+  neutral:
+  - the ferry company runs four crossings to Corran Isle each day
+  - the timetable is printed in large type for easier reading
+  - the ferry ticket office opens fifteen minutes before each crossing
+  - the timetable lists a small extra charge for carrying bicycles
+  - the ferry company changed its logo to a blue wave last year
+  shared:
+  - The ferry to Corran Isle carries foot passengers and a few cars.
+  - Several workers on the island plan their week around the first ferry.
+- story_id: dev-library-atlas-loan
+  question: Will the Elmstead Library lend its rare atlas to Vane College?
+  options:
+    A: Yes, the loan is approved
+    B: No, the loan was refused
+  report_source: a volunteer at the Elmstead Library
+  claim:
+    A: the library board agreed to lend the atlas
+    B: the library board turned down the atlas loan
+  record_source: the library's loan decision log
+  fact:
+    A: the board approved lending the rare atlas to Vane College
+    B: the board refused to lend the rare atlas to Vane College
+  neutral:
+  - the log is kept in a grey binder in the main office
+  - the board meets on the second Tuesday of every month
+  - the log records decisions in date order with the oldest first
+  - the log has a separate entry for each request it receives
+  - the log was typed up from handwritten notes last year
+  shared:
+  - Vane College is planning a map exhibition for next season.
+  - The college asked to borrow the Elmstead Library's rare atlas.
+- story_id: dev-bakery-van-inspection
+  question: Did the Pell Street Bakery's delivery van pass its safety inspection?
+  options:
+    A: Yes, the van passed
+    B: No, the van failed
+  report_source: a baker who works the early shift
+  claim:
+    A: the delivery van passed its inspection without any problems
+    B: the delivery van failed its inspection because of the brakes
+  record_source: the vehicle testing centre's inspection results
+  fact:
+    A: the bakery's delivery van passed all checks at its inspection on Tuesday
+    B: the bakery's delivery van failed its inspection on Tuesday due to worn brakes
+  neutral:
+  - the testing centre carried out forty van and car inspections that day
+  - the results are printed on a single page for each vehicle
+  - the testing centre closes for lunch between twelve and one each day
+  - the results list each vehicle by its registration number and colour
+  - the testing centre moved to a larger site on the ring road
+  shared:
+  - The Pell Street Bakery uses one van for its morning deliveries.
+  - The van was booked for its yearly inspection this week.
+- story_id: dev-school-bus-route
+  question: Will the Ashby Primary school bus still stop on Fenwick Lane next term?
+  options:
+    A: Yes, it will still stop there
+    B: No, the Fenwick Lane stop is dropped
+  report_source: a parent who waits at the Fenwick Lane stop
+  claim:
+    A: the bus will keep its stop on Fenwick Lane
+    B: the bus will skip Fenwick Lane from next term
+  record_source: the council's route plan for next term
+  fact:
+    A: the bus route for next term still includes the Fenwick Lane stop
+    B: the bus route for next term no longer stops on Fenwick Lane
+  neutral:
+  - the route plan was drawn up by the council's transport team
+  - the route plan uses green lines for morning trips and blue for afternoon
+  - the council posted the route plan on its notice board in June
+  - the route plan lists the driver's name for each bus
+  - the route plan was printed on both sides of one sheet
+  shared:
+  - Ashby Primary has one bus that collects pupils from nearby villages.
+  - The council reviews all school bus routes before each new term.
+- story_id: dev-museum-painting-loan
+  question: Will the Orrin Museum lend its harbour painting to the Kestrel Gallery?
+  options:
+    A: Yes, the painting will be lent
+    B: No, the painting stays at the museum
+  report_source: a guard at the Orrin Museum
+  claim:
+    A: the museum has agreed to send the harbour painting
+    B: the museum has decided to keep the harbour painting
+  record_source: the museum's loans register
+  fact:
+    A: the harbour painting is approved for loan to the Kestrel Gallery
+    B: the loan of the harbour painting to the Kestrel Gallery was declined
+  neutral:
+  - the loans register is kept by the museum's head of collections
+  - the register gives each artwork in the museum a five-digit number
+  - the register was moved from paper to a computer system in 2019
+  - the museum holds about two thousand paintings in its stores
+  - the register records the frame size of each painting it lists
+  shared:
+  - The Kestrel Gallery is planning a show of seaside paintings.
+  - The Orrin Museum owns a large painting of a harbour at dusk.
+- story_id: dev-bike-dock-move
+  question: Is the bike-share dock outside Tamsin Square station moving to Lark Street?
+  options:
+    A: Yes, it is moving to Lark Street
+    B: No, it stays at the station
+  report_source: a cyclist who uses the dock every day
+  claim:
+    A: the dock will be moved to Lark Street next month
+    B: the dock will stay outside the station after all
+  record_source: the city cycling office's work schedule
+  fact:
+    A: the Tamsin Square dock is scheduled to move to Lark Street in May
+    B: the Tamsin Square dock is staying at the station with no move planned
+  neutral:
+  - the work schedule lists repainting of cycle lanes in the northern districts
+  - the cycling office has twelve staff working on bike-share docks across the city
+  - the work schedule is updated every Friday afternoon by the office manager
+  - the cycling office added forty new bikes to the scheme in March
+  - the work schedule marks each finished job with a small grey tick
+  shared:
+  - Tamsin Square station has a bike-share dock with twenty spaces.
+  - The city cycling office reviews dock locations every spring.
+- story_id: dev-concert-hall-licence
+  question: Is the Wren Hill community hall licensed for an audience of 300?
+  options:
+    A: Yes, it is licensed for 300
+    B: No, its limit is 200
+  report_source: a member of the hall's booking committee
+  claim:
+    A: the hall's licence was raised to 300 people this year
+    B: the hall's licence still caps the audience at 200 people
+  record_source: the district licensing office's records
+  fact:
+    A: the Wren Hill hall is licensed for audiences of up to 300 people
+    B: the Wren Hill hall is licensed for audiences of no more than 200 people
+  neutral:
+  - the licensing office stores its records in a locked room on the ground floor
+  - the records list each licence holder's address and phone number in full
+  - the licensing office charges a small fee for printed copies of any record
+  - the licensing office took on two new clerks earlier in the spring
+  - the licensing office sends its letters by post to every licence holder
+  shared:
+  - The Wren Hill community hall hosts a folk concert next month.
+  - The organisers have not yet decided how many tickets to sell.
+- story_id: dev-farm-irrigation-permit
+  question: Has Glenmoor Farm been granted a permit to draw river water for irrigation?
+  options:
+    A: Yes, the permit was granted
+    B: No, the permit was refused
+  report_source: a neighbouring farmer
+  claim:
+    A: Glenmoor Farm got its irrigation permit last week
+    B: Glenmoor Farm was turned down for its irrigation permit
+  record_source: the river board's permit register
+  fact:
+    A: Glenmoor Farm holds a granted permit to draw river water this summer
+    B: Glenmoor Farm's application to draw river water this summer was refused
+  neutral:
+  - the river board meets in the old mill house every second Thursday
+  - the register lists permits by the name of the river section
+  - the river board publishes the register on its notice board each month
+  - the register uses litres per day as its standard unit
+  - the river board was set up to look after three local rivers
+  shared:
+  - Glenmoor Farm grows vegetables in fields next to the river.
+  - The farm wants to water its crops during the dry summer months.
+- story_id: dev-guesthouse-group-booking
+  question: Is the Lindqvist group's booking at the Sorrel Guesthouse confirmed?
+  options:
+    A: Yes, the booking is confirmed
+    B: No, the booking was cancelled
+  report_source: a cleaner at the Sorrel Guesthouse
+  claim:
+    A: the group's booking for six rooms is all set
+    B: the group's booking for six rooms was called off
+  record_source: the guesthouse booking book
+  fact:
+    A: the Lindqvist group's booking for six rooms is confirmed and paid
+    B: the Lindqvist group's booking for six rooms was cancelled last Friday
+  neutral:
+  - the booking book has a page for each week of the year
+  - the booking book uses red ink for weekend dates
+  - the booking book notes which guests asked for an early breakfast
+  - the booking book is kept on a shelf behind the front desk
+  - the booking book lists a phone number for every guest
+  shared:
+  - The Lindqvist group plans a walking holiday near the guesthouse.
+  - The group asked for six rooms for the first week of May.
+- story_id: dev-software-release-date
+  question: Will Brightfold Software release version 3 of its app on 14 June?
+  options:
+    A: Yes, it ships on 14 June
+    B: No, it is delayed to July
+  report_source: a tester at Brightfold Software
+  claim:
+    A: version 3 is on track to ship on 14 June
+    B: version 3 has been pushed back to July
+  record_source: the firm's internal release plan
+  fact:
+    A: the release plan sets version 3 to ship on 14 June
+    B: the release plan moves version 3 to a new date in July
+  neutral:
+  - the release plan is kept in a shared folder for all staff
+  - the release plan is written in plain text with numbered sections
+  - the release plan uses a different colour for each team
+  - the release plan lists the name of each team's lead
+  - the firm holds a short planning meeting every Monday morning
+  shared:
+  - Brightfold Software is a small firm that makes a budgeting app.
+  - Version 3 adds a new screen for tracking monthly bills.

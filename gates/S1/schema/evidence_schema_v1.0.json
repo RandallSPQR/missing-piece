@@ -1,0 +1,32 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "stpt-mp/evidence-schema/1.0",
+ "title": "StPT / Missing Piece scenario evidence schema v1.0",
+ "description": "One scenario: hidden state, prior, story, evidence model with designed likelihood ratios (stated source accuracy a gives LR = a/(1-a) toward the favoured option), dependence (one item_id = one item however many hold it; a dependence group counts once), and the pooled-evidence margin. Written at StPT gate S2 (reference implementation: StPT stpt/evidence.py). Missing Piece adopts it at its S1; its study-specific fields (speaker/receiver briefings, hearsay report, verifier) go under evidence_model and story without changing these required fields.",
+ "type": "object",
+ "required": ["schema_version", "scenario_id", "study", "bank", "story", "hidden_state", "prior", "evidence_model", "pooled_margin_logodds", "challenge_set"],
+ "properties": {
+  "schema_version": {"const": "1.0"},
+  "scenario_id": {"type": "string"},
+  "study": {"enum": ["StPT", "MissingPiece"]},
+  "bank": {"enum": ["development", "confirmatory"]},
+  "story": {"type": "object", "required": ["question", "options"],
+            "properties": {"question": {"type": "string"},
+                           "options": {"type": "object", "required": ["A", "B"], "additionalProperties": false,
+                                       "properties": {"A": {"type": "string"}, "B": {"type": "string"}}}}},
+  "hidden_state": {"enum": ["A", "B"]},
+  "prior": {"const": 0.5},
+  "evidence_model": {"type": "object", "required": ["type"],
+                     "properties": {"type": {"type": "string"},
+                                    "accuracy_mix": {"type": "array", "items": {"type": "string", "pattern": "^[0-9]+/[0-9]+$"}},
+                                    "accuracy_weights": {"type": "array", "items": {"type": "number", "minimum": 0}},
+                                    "informed_fraction": {"type": "number", "exclusiveMinimum": 0, "maximum": 1},
+                                    "shared": {"type": "array"},
+                                    "items": {"type": "array", "items": {"type": "object", "required": ["item_id", "favours", "accuracy"],
+                                              "properties": {"item_id": {"type": "string"}, "favours": {"enum": ["A", "B", "neutral"]},
+                                                             "accuracy": {"type": "string"}, "dependence_group": {"type": ["string", "null"]},
+                                                             "kind": {"type": "string"}}}}}},
+  "pooled_margin_logodds": {"type": "number", "exclusiveMinimum": 0},
+  "challenge_set": {"type": "boolean"}
+ }
+}

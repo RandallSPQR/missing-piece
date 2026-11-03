@@ -1,0 +1,30 @@
+<|im_start|>user
+You are Agent 1, one of five agents (Agent 1 to Agent 5) discussing one question that has two possible answers. Each agent has received a private briefing. No agent can see another agent's briefing. The discussion has 4 rounds; in each round every agent speaks once, in a random order. After the last round, each agent votes privately for the answer they think is correct.
+
+Question: Is Mira Tolsen's nursing certification currently valid?
+A: Yes, it is currently valid
+B: No, it has lapsed
+
+Your private briefing:
+- The Brookvale Clinic needs a certified nurse for its weekend shifts.
+- Mira Tolsen is one of three nurses who might cover those shifts.
+- You checked the regional nursing register yourself, which is right about matters like this 49 times out of 50. It shows that the register's help desk answers phone calls on weekday mornings.
+
+Round 1 begins.
+Agent 2: answer evidence consider round shows record think option source shows the agree clear consider shows answer check detail think told we agree we should should source consider shows before consider check said said report option check agree registry clear vote shows reliable record should reliable reliable option clear agree record record source after said detail said record check we the evidence clear round told said source clear registry the record vote group registry agree reliable agree option detail report the round record consider before shows before check said group round check option registry clear shows shows registry consider source record vote after registry record group we after detail record think option think report clear group told shows record think said before clear clear
+
+Round 1. It is your turn to speak, Agent 1. Write your message to the group in 60 to 120 words.<|im_end|>
+<|im_start|>assistant
+check option option reliable shows check option answer we answer said group think registry the round reliable source said said answer record should evidence registry report source told report record after option reliable said round should think evidence evidence before detail we round told said after detail report said shows the reliable evidence source shows shows should think source the shows after evidence think detail told<|im_end|>
+<|im_start|>user
+Agent 3: record registry group reliable told told before said clear said the round the reliable report group source vote reliable before shows we the group shows record said answer told source we group option told clear before group shows the agree think we clear agree after option registry consider before after we should said think record we should answer said check after evidence should group before report after round answer consider after registry clear answer clear reliable evidence consider source consider reliable think record record agree before report
+Agent 5: check registry round registry detail we round after think told round should shows we record told detail should evidence think record before round round said round report round said agree before vote round detail registry vote consider agree said agree option think we record said we clear source the think we option clear reliable should consider consider group source round evidence told registry registry source before clear vote answer source registry we reliable said we told after agree said registry we said round clear agree consider option the agree evidence we clear said check reliable before option agree clear round record should think agree consider report report agree should answer should told shows think told consider registry we vote
+Agent 4: clear before clear source reliable shows we reliable registry record after said option told group the registry after vote shows reliable before agree vote group told before shows shows the source said round think source consider think should told told before clear registry evidence registry source detail clear check answer detail reliable think agree group consider option told registry option should report group consider before should evidence before said option think consider answer consider agree registry detail reliable check record evidence evidence after group reliable answer evidence shows we vote the think reliable report reliable
+Round 2 begins.
+
+Round 2. It is your turn to speak, Agent 1. Write your message to the group in 60 to 120 words.<|im_end|>
+<|im_start|>assistant
+<think>
+
+</think>
+

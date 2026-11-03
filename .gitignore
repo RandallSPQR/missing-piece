@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.venv/
+*.egg-info/
+gates/S6/results_run.log
+.pytest_cache/

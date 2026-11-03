@@ -1,0 +1,195 @@
+{
+ "bank": "confirmatory",
+ "challenge_set": false,
+ "evidence_model": {
+  "holdings": {
+   "KA": {
+    "other_receivers": [
+     "shared0",
+     "shared1",
+     "N"
+    ],
+    "speaker": [
+     "shared0",
+     "shared1",
+     "report",
+     "record"
+    ],
+    "verifier_holder": [
+     "shared0",
+     "shared1",
+     "N"
+    ]
+   },
+   "KP": {
+    "other_receivers": [
+     "shared0",
+     "shared1",
+     "N"
+    ],
+    "speaker": [
+     "shared0",
+     "shared1",
+     "report",
+     "record"
+    ],
+    "verifier_holder": [
+     "shared0",
+     "shared1",
+     "record"
+    ]
+   },
+   "UA": {
+    "other_receivers": [
+     "shared0",
+     "shared1",
+     "N"
+    ],
+    "speaker": [
+     "shared0",
+     "shared1",
+     "report",
+     "N"
+    ],
+    "verifier_holder": [
+     "shared0",
+     "shared1",
+     "N"
+    ]
+   },
+   "UP": {
+    "other_receivers": [
+     "shared0",
+     "shared1",
+     "N"
+    ],
+    "speaker": [
+     "shared0",
+     "shared1",
+     "report",
+     "N"
+    ],
+    "verifier_holder": [
+     "shared0",
+     "shared1",
+     "record"
+    ]
+   }
+  },
+  "items": [
+   {
+    "accuracy": "3/4",
+    "dependence_group": null,
+    "favours": "A",
+    "item_id": "report",
+    "kind": "hearsay_report",
+    "text": "You were told by a member who plays at the club on Sundays, who is right about matters like this 3 times out of 4, that the new surface on Court 2 was finished last week."
+   },
+   {
+    "accuracy": "49/50",
+    "dependence_group": null,
+    "favours": "B",
+    "item_id": "record",
+    "kind": "firsthand_record",
+    "text": "You checked the club's maintenance logbook yourself, which is right about matters like this 49 times out of 50. It shows that the resurfacing of Court 2 is unfinished and will resume next month."
+   },
+   {
+    "accuracy": "49/50",
+    "dependence_group": null,
+    "favours": "neutral",
+    "item_id": "neutral0",
+    "kind": "neutral_record",
+    "text": "You checked the club's maintenance logbook yourself, which is right about matters like this 49 times out of 50. It shows that the logbook has a red cover and numbered pages throughout."
+   },
+   {
+    "accuracy": "49/50",
+    "dependence_group": null,
+    "favours": "neutral",
+    "item_id": "neutral1",
+    "kind": "neutral_record",
+    "text": "You checked the club's maintenance logbook yourself, which is right about matters like this 49 times out of 50. It shows that the logbook is kept on a shelf behind the reception desk."
+   },
+   {
+    "accuracy": "49/50",
+    "dependence_group": null,
+    "favours": "neutral",
+    "item_id": "neutral2",
+    "kind": "neutral_record",
+    "text": "You checked the club's maintenance logbook yourself, which is right about matters like this 49 times out of 50. It shows that the logbook uses one line per entry with the date first."
+   },
+   {
+    "accuracy": "49/50",
+    "dependence_group": null,
+    "favours": "neutral",
+    "item_id": "neutral3",
+    "kind": "neutral_record",
+    "text": "You checked the club's maintenance logbook yourself, which is right about matters like this 49 times out of 50. It shows that the logbook was started when the club opened its new clubhouse."
+   },
+   {
+    "accuracy": "49/50",
+    "dependence_group": null,
+    "favours": "neutral",
+    "item_id": "neutral4",
+    "kind": "neutral_record",
+    "text": "You checked the club's maintenance logbook yourself, which is right about matters like this 49 times out of 50. It shows that the club's groundskeeper writes every entry in the logbook by hand."
+   },
+   {
+    "accuracy": "none",
+    "dependence_group": null,
+    "favours": "neutral",
+    "item_id": "shared0",
+    "kind": "shared_context",
+    "text": "The Oakhill Tennis Club has four outdoor courts."
+   },
+   {
+    "accuracy": "none",
+    "dependence_group": null,
+    "favours": "neutral",
+    "item_id": "shared1",
+    "kind": "shared_context",
+    "text": "The club is planning a members' tournament for later in the year."
+   }
+  ],
+  "pooled": {
+   "KA": {
+    "group_posterior_truth": 0.942308,
+    "group_toward_truth": 2.793208,
+    "receivers_toward_truth": -0.0
+   },
+   "KP": {
+    "group_posterior_truth": 0.942308,
+    "group_toward_truth": 2.793208,
+    "receivers_toward_truth": 3.89182
+   },
+   "UA": {
+    "group_posterior_truth": 0.25,
+    "group_toward_truth": -1.098612,
+    "receivers_toward_truth": -0.0
+   },
+   "UP": {
+    "group_posterior_truth": 0.942308,
+    "group_toward_truth": 2.793208,
+    "receivers_toward_truth": 3.89182
+   }
+  },
+  "report_option": "A",
+  "solvable_verifier_present": true,
+  "type": "mp_hearsay_vs_record_v1"
+ },
+ "hidden_state": "B",
+ "pooled_margin_logodds": 2.2,
+ "prior": 0.5,
+ "scenario_id": "mp-conf-tennis-resurfacing-B",
+ "schema_version": "1.0",
+ "story": {
+  "options": {
+   "A": "Yes, the resurfacing is finished",
+   "B": "No, the work is not finished"
+  },
+  "question": "Has the Oakhill Tennis Club finished resurfacing Court 2?",
+  "record_source": "the club's maintenance logbook",
+  "report_source": "a member who plays at the club on Sundays",
+  "story_id": "conf-tennis-resurfacing"
+ },
+ "study": "MissingPiece"
+}

@@ -1,0 +1,195 @@
+{
+ "bank": "confirmatory",
+ "challenge_set": false,
+ "evidence_model": {
+  "holdings": {
+   "KA": {
+    "other_receivers": [
+     "shared0",
+     "shared1",
+     "N"
+    ],
+    "speaker": [
+     "shared0",
+     "shared1",
+     "report",
+     "record"
+    ],
+    "verifier_holder": [
+     "shared0",
+     "shared1",
+     "N"
+    ]
+   },
+   "KP": {
+    "other_receivers": [
+     "shared0",
+     "shared1",
+     "N"
+    ],
+    "speaker": [
+     "shared0",
+     "shared1",
+     "report",
+     "record"
+    ],
+    "verifier_holder": [
+     "shared0",
+     "shared1",
+     "record"
+    ]
+   },
+   "UA": {
+    "other_receivers": [
+     "shared0",
+     "shared1",
+     "N"
+    ],
+    "speaker": [
+     "shared0",
+     "shared1",
+     "report",
+     "N"
+    ],
+    "verifier_holder": [
+     "shared0",
+     "shared1",
+     "N"
+    ]
+   },
+   "UP": {
+    "other_receivers": [
+     "shared0",
+     "shared1",
+     "N"
+    ],
+    "speaker": [
+     "shared0",
+     "shared1",
+     "report",
+     "N"
+    ],
+    "verifier_holder": [
+     "shared0",
+     "shared1",
+     "record"
+    ]
+   }
+  },
+  "items": [
+   {
+    "accuracy": "3/4",
+    "dependence_group": null,
+    "favours": "B",
+    "item_id": "report",
+    "kind": "hearsay_report",
+    "text": "You were told by another teacher at the Avonleigh Language School, who is right about matters like this 3 times out of 4, that the board has not yet verified Luca Brennor's certificate."
+   },
+   {
+    "accuracy": "49/50",
+    "dependence_group": null,
+    "favours": "A",
+    "item_id": "record",
+    "kind": "firsthand_record",
+    "text": "You checked the Westmere Teaching Board's online verification list yourself, which is right about matters like this 49 times out of 50. It shows that Luca Brennor's teaching certificate was verified by the board on the fifth."
+   },
+   {
+    "accuracy": "49/50",
+    "dependence_group": null,
+    "favours": "neutral",
+    "item_id": "neutral0",
+    "kind": "neutral_record",
+    "text": "You checked the Westmere Teaching Board's online verification list yourself, which is right about matters like this 49 times out of 50. It shows that the verification list is updated by the board's office each Monday."
+   },
+   {
+    "accuracy": "49/50",
+    "dependence_group": null,
+    "favours": "neutral",
+    "item_id": "neutral1",
+    "kind": "neutral_record",
+    "text": "You checked the Westmere Teaching Board's online verification list yourself, which is right about matters like this 49 times out of 50. It shows that the list has a search box at the top of the page."
+   },
+   {
+    "accuracy": "49/50",
+    "dependence_group": null,
+    "favours": "neutral",
+    "item_id": "neutral2",
+    "kind": "neutral_record",
+    "text": "You checked the Westmere Teaching Board's online verification list yourself, which is right about matters like this 49 times out of 50. It shows that the board's office moved to a larger building last spring."
+   },
+   {
+    "accuracy": "49/50",
+    "dependence_group": null,
+    "favours": "neutral",
+    "item_id": "neutral3",
+    "kind": "neutral_record",
+    "text": "You checked the Westmere Teaching Board's online verification list yourself, which is right about matters like this 49 times out of 50. It shows that the list shows the board's postal address in the page footer."
+   },
+   {
+    "accuracy": "49/50",
+    "dependence_group": null,
+    "favours": "neutral",
+    "item_id": "neutral4",
+    "kind": "neutral_record",
+    "text": "You checked the Westmere Teaching Board's online verification list yourself, which is right about matters like this 49 times out of 50. It shows that the list can be sorted by surname or by town name."
+   },
+   {
+    "accuracy": "none",
+    "dependence_group": null,
+    "favours": "neutral",
+    "item_id": "shared0",
+    "kind": "shared_context",
+    "text": "Avonleigh Language School teaches English and Spanish to adults."
+   },
+   {
+    "accuracy": "none",
+    "dependence_group": null,
+    "favours": "neutral",
+    "item_id": "shared1",
+    "kind": "shared_context",
+    "text": "Luca Brennor has been offered a job teaching evening classes there."
+   }
+  ],
+  "pooled": {
+   "KA": {
+    "group_posterior_truth": 0.942308,
+    "group_toward_truth": 2.793208,
+    "receivers_toward_truth": 0.0
+   },
+   "KP": {
+    "group_posterior_truth": 0.942308,
+    "group_toward_truth": 2.793208,
+    "receivers_toward_truth": 3.89182
+   },
+   "UA": {
+    "group_posterior_truth": 0.25,
+    "group_toward_truth": -1.098612,
+    "receivers_toward_truth": 0.0
+   },
+   "UP": {
+    "group_posterior_truth": 0.942308,
+    "group_toward_truth": 2.793208,
+    "receivers_toward_truth": 3.89182
+   }
+  },
+  "report_option": "B",
+  "solvable_verifier_present": true,
+  "type": "mp_hearsay_vs_record_v1"
+ },
+ "hidden_state": "A",
+ "pooled_margin_logodds": 2.2,
+ "prior": 0.5,
+ "scenario_id": "mp-conf-teacher-certificate-A",
+ "schema_version": "1.0",
+ "story": {
+  "options": {
+   "A": "Yes, the board verified it",
+   "B": "No, the board has not verified it"
+  },
+  "question": "Has the Westmere Teaching Board verified Luca Brennor's teaching certificate?",
+  "record_source": "the Westmere Teaching Board's online verification list",
+  "report_source": "another teacher at the Avonleigh Language School",
+  "story_id": "conf-teacher-certificate"
+ },
+ "study": "MissingPiece"
+}

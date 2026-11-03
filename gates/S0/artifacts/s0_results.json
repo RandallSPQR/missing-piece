@@ -1,0 +1,151 @@
+{
+ "models": {
+  "gemma-2-9b-it": {
+   "chat_template_hash_pinned": "ecd6ae513fe103f0",
+   "chat_template_hash_used": "ecd6ae513fe103f0",
+   "contexts_agree": 55,
+   "contexts_checked": 55,
+   "family": "gemma2",
+   "lineup_sha256": "74327b48de5c741f42199b8428d896c8ef5dec4743d9d13c2a8e0d5e0a6fa192",
+   "max_user_turns": 6,
+   "pass": true,
+   "pipeline_commit": "5ca15f56a71f35d5818d0392f7f3b4acb2d85d1b",
+   "pipeline_how": "direct_url.json",
+   "pipeline_tag_requested": "5ca15f56a71f35d5818d0392f7f3b4acb2d85d1b",
+   "serializer_sha256": "d88d5aac87fbfd0b841f5d7d1a93f02080532669586e9af79fc865fe3d9eed5d",
+   "shapes": {
+    "exit_u6": 5,
+    "message_u1": 5,
+    "message_u2": 5,
+    "message_u3": 5,
+    "message_u4": 5,
+    "probe_u2": 5,
+    "probe_u3": 5,
+    "probe_u4": 5,
+    "probe_u5": 5,
+    "vote_u5": 10
+   }
+  },
+  "gemma-3-27b-it": {
+   "chat_template_hash_pinned": "7de1c58e208eda46",
+   "chat_template_hash_used": "7de1c58e208eda46",
+   "contexts_agree": 55,
+   "contexts_checked": 55,
+   "family": "gemma3",
+   "lineup_sha256": "74327b48de5c741f42199b8428d896c8ef5dec4743d9d13c2a8e0d5e0a6fa192",
+   "max_user_turns": 6,
+   "pass": true,
+   "pipeline_commit": "5ca15f56a71f35d5818d0392f7f3b4acb2d85d1b",
+   "pipeline_how": "direct_url.json",
+   "pipeline_tag_requested": "5ca15f56a71f35d5818d0392f7f3b4acb2d85d1b",
+   "serializer_sha256": "aa6be3136e0ae843d9ef258eacc36f4b4cd75d2bd54df5ae2663a1d08dbe4038",
+   "shapes": {
+    "exit_u6": 5,
+    "message_u1": 5,
+    "message_u2": 5,
+    "message_u3": 5,
+    "message_u4": 5,
+    "probe_u2": 5,
+    "probe_u3": 5,
+    "probe_u4": 5,
+    "probe_u5": 5,
+    "vote_u5": 10
+   }
+  },
+  "llama-3.1-8b-it": {
+   "chat_template_hash_pinned": "e10ca381b1ccc5cf",
+   "chat_template_hash_used": "e10ca381b1ccc5cf",
+   "contexts_agree": 56,
+   "contexts_checked": 56,
+   "family": "llama3",
+   "lineup_sha256": "74327b48de5c741f42199b8428d896c8ef5dec4743d9d13c2a8e0d5e0a6fa192",
+   "max_user_turns": 6,
+   "pass": true,
+   "pipeline_commit": "5ca15f56a71f35d5818d0392f7f3b4acb2d85d1b",
+   "pipeline_how": "direct_url.json",
+   "pipeline_tag_requested": "5ca15f56a71f35d5818d0392f7f3b4acb2d85d1b",
+   "serializer_sha256": "135d450d2ae7109349853a36feb11293a632fdbc52e2e7e48828ec9add6552aa",
+   "shapes": {
+    "exit_u6": 5,
+    "message_u1": 5,
+    "message_u2": 5,
+    "message_u3": 5,
+    "message_u4": 5,
+    "probe_u2": 5,
+    "probe_u3": 5,
+    "probe_u4": 5,
+    "probe_u5": 5,
+    "vote_u5": 11
+   }
+  },
+  "qwen3.5-27b": {
+   "chat_template_hash_pinned": "a4aee8afcf2e0711",
+   "chat_template_hash_used": "a4aee8afcf2e0711",
+   "contexts_agree": 55,
+   "contexts_checked": 55,
+   "family": "qwen3_5",
+   "lineup_sha256": "74327b48de5c741f42199b8428d896c8ef5dec4743d9d13c2a8e0d5e0a6fa192",
+   "max_user_turns": 6,
+   "pass": true,
+   "pipeline_commit": "5ca15f56a71f35d5818d0392f7f3b4acb2d85d1b",
+   "pipeline_how": "direct_url.json",
+   "pipeline_tag_requested": "5ca15f56a71f35d5818d0392f7f3b4acb2d85d1b",
+   "serializer_sha256": "66308bff273483fee4b575a0a35ca5d81f180bac0cf8b81e4c32994015114fda",
+   "shapes": {
+    "exit_u6": 5,
+    "message_u1": 5,
+    "message_u2": 5,
+    "message_u3": 5,
+    "message_u4": 5,
+    "probe_u2": 5,
+    "probe_u3": 5,
+    "probe_u4": 5,
+    "probe_u5": 5,
+    "vote_u5": 10
+   }
+  },
+  "qwen3.5-9b": {
+   "chat_template_hash_pinned": "a4aee8afcf2e0711",
+   "chat_template_hash_used": "a4aee8afcf2e0711",
+   "contexts_agree": 55,
+   "contexts_checked": 55,
+   "family": "qwen3_5",
+   "lineup_sha256": "74327b48de5c741f42199b8428d896c8ef5dec4743d9d13c2a8e0d5e0a6fa192",
+   "max_user_turns": 6,
+   "pass": true,
+   "pipeline_commit": "5ca15f56a71f35d5818d0392f7f3b4acb2d85d1b",
+   "pipeline_how": "direct_url.json",
+   "pipeline_tag_requested": "5ca15f56a71f35d5818d0392f7f3b4acb2d85d1b",
+   "serializer_sha256": "66308bff273483fee4b575a0a35ca5d81f180bac0cf8b81e4c32994015114fda",
+   "shapes": {
+    "exit_u6": 5,
+    "message_u1": 5,
+    "message_u2": 5,
+    "message_u3": 5,
+    "message_u4": 5,
+    "probe_u2": 5,
+    "probe_u3": 5,
+    "probe_u4": 5,
+    "probe_u5": 5,
+    "vote_u5": 10
+   }
+  }
+ },
+ "pass": true,
+ "pins": {
+  "coordination": {
+   "commit": "9c155beb9054a9b639d41d0b92d1dfce11f81ac1",
+   "evidence_schema": "1.0",
+   "protocol_spec_version": "0.0",
+   "repo": "https://github.com/RandallSPQR/StPT-MP-Coordination"
+  },
+  "pipeline": {
+   "commit": "5ca15f56a71f35d5818d0392f7f3b4acb2d85d1b",
+   "lineup_file": "pipeline/lineup/lineup.yaml",
+   "name": "sae-ethos-pipeline",
+   "repo": "https://github.com/RandallSPQR/SAE-Ethos-Calibration",
+   "tag": "v1.2.0",
+   "tag_form": "lightweight"
+  }
+ }
+}

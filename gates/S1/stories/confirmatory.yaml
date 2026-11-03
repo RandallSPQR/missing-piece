@@ -1,0 +1,573 @@
+# Missing Piece confirmatory story bank (gate S1). Written before any model call; never selected on group outcomes.
+- story_id: conf-cargo-customs
+  question: Has the cargo ship Marlow Bay cleared customs at Port Ellery?
+  options:
+    A: Yes, it has cleared customs
+    B: No, it is still held
+  report_source: a dock worker at Port Ellery
+  claim:
+    A: the Marlow Bay was cleared by customs on Monday
+    B: the Marlow Bay is still being held by customs
+  record_source: the Port Ellery customs clearance log
+  fact:
+    A: the Marlow Bay received full customs clearance on Monday morning
+    B: the Marlow Bay is on hold and has not been cleared
+  neutral:
+  - the customs office switched to a new log format in June
+  - the log records about forty ship arrivals in a typical week
+  - the customs office is staffed by six officers on weekdays
+  - the log entries are signed with each officer's initials in pen
+  - the harbour master reviews the log every Friday afternoon
+  shared:
+  - The Marlow Bay arrived at Port Ellery last week carrying furniture.
+  - Port Ellery is a small port with two cargo berths.
+- story_id: conf-lab-freezer
+  question: Is freezer F3 in the Delling Biology Lab currently calibrated?
+  options:
+    A: Yes, it is calibrated
+    B: No, its calibration has expired
+  report_source: a student who works in the lab
+  claim:
+    A: freezer F3 was calibrated by a technician last month
+    B: freezer F3 missed its calibration check this year
+  record_source: the lab's equipment calibration register
+  fact:
+    A: freezer F3 was calibrated on the tenth and passed every check
+    B: freezer F3's calibration expired in August and was not redone
+  neutral:
+  - the register lists twenty-two pieces of equipment in the lab
+  - the register moved from paper sheets to a spreadsheet in spring
+  - the lab manager signs off the register at each month's end
+  - the register uses blue ink for entries made by technicians
+  - the register records each item's serial number and room number
+  shared:
+  - The Delling Biology Lab stores student samples in freezer F3.
+  - A new term of practical classes begins next week.
+- story_id: conf-tennis-resurfacing
+  question: Has the Oakhill Tennis Club finished resurfacing Court 2?
+  options:
+    A: Yes, the resurfacing is finished
+    B: No, the work is not finished
+  report_source: a member who plays at the club on Sundays
+  claim:
+    A: the new surface on Court 2 was finished last week
+    B: the workers still have half of Court 2 to do
+  record_source: the club's maintenance logbook
+  fact:
+    A: the resurfacing of Court 2 was completed and signed off on Friday
+    B: the resurfacing of Court 2 is unfinished and will resume next month
+  neutral:
+  - the logbook has a red cover and numbered pages throughout
+  - the logbook is kept on a shelf behind the reception desk
+  - the logbook uses one line per entry with the date first
+  - the logbook was started when the club opened its new clubhouse
+  - the club's groundskeeper writes every entry in the logbook by hand
+  shared:
+  - The Oakhill Tennis Club has four outdoor courts.
+  - The club is planning a members' tournament for later in the year.
+- story_id: conf-train-platform
+  question: Which platform will the 9:15 train to Wexmoor leave from tomorrow?
+  options:
+    A: It will leave from Platform 3
+    B: It will leave from Platform 6
+  report_source: a ticket seller at Brannock station
+  claim:
+    A: the 9:15 to Wexmoor stays on Platform 3 tomorrow
+    B: the 9:15 to Wexmoor moves to Platform 6 tomorrow
+  record_source: the station's platform allocation sheet for tomorrow
+  fact:
+    A: the 9:15 train to Wexmoor is assigned to Platform 3 tomorrow
+    B: the 9:15 train to Wexmoor is reassigned to Platform 6 tomorrow
+  neutral:
+  - the allocation sheet is printed each evening at seven o'clock
+  - the sheet lists sixty-two departures across the whole of tomorrow
+  - the station manager approved the sheet before leaving for the night
+  - the sheet is pinned up in the staff room near the lockers
+  - the sheet uses a smaller font than last month's version did
+  shared:
+  - Brannock station has six platforms and a single footbridge.
+  - The 9:15 train to Wexmoor runs every weekday morning.
+- story_id: conf-lease-renewal
+  question: Has the lease on Flat 4B at Linden Court been renewed?
+  options:
+    A: Yes, it has been renewed
+    B: No, it ends this month
+  report_source: a neighbour on the same floor
+  claim:
+    A: the tenant of Flat 4B signed a new lease last week
+    B: the tenant of Flat 4B is moving out this month
+  record_source: the letting office's lease file for Linden Court
+  fact:
+    A: a new two-year lease for Flat 4B was signed on the third
+    B: the lease for Flat 4B ends this month and was not renewed
+  neutral:
+  - the letting office keeps a separate file for each of forty flats
+  - the lease file was moved into a fireproof cabinet last winter
+  - the letting office is open from nine until four on weekdays
+  - the building's lift was serviced by an outside firm in April
+  - the letting office changed its phone number at the start of the year
+  shared:
+  - Linden Court is a block of forty flats near the river.
+  - Flat 4B is a two-bedroom flat on the fourth floor.
+- story_id: conf-vineyard-harvest
+  question: Will the Tressel Hill vineyard start its harvest this week or next week?
+  options:
+    A: It starts this week
+    B: It starts next week
+  report_source: a picker who worked there last season
+  claim:
+    A: the grapes at Tressel Hill are ready to pick now
+    B: the grapes at Tressel Hill need another week to ripen
+  record_source: the vineyard's harvest planning board
+  fact:
+    A: picking at Tressel Hill is scheduled to begin on Thursday this week
+    B: picking at Tressel Hill is scheduled to begin on Wednesday next week
+  neutral:
+  - the planning board hangs on the wall of the tasting room
+  - the board lists the first names of the twelve seasonal pickers
+  - the board notes that new pruning shears were ordered for winter
+  - the board is wiped clean and rewritten every Monday morning
+  - the vineyard's tractor is due for an oil change soon
+  shared:
+  - The Tressel Hill vineyard grows white grapes on twelve acres.
+  - The owners hire extra pickers for the harvest each year.
+- story_id: conf-footbridge-inspection
+  question: Did the Tarn Lane footbridge pass its weight-limit inspection?
+  options:
+    A: Yes, it passed
+    B: No, it failed
+  report_source: a jogger who crosses the bridge every day
+  claim:
+    A: the inspectors said the Tarn Lane footbridge was fine
+    B: the inspectors found the Tarn Lane footbridge too weak
+  record_source: the council's bridge inspection report
+  fact:
+    A: the Tarn Lane footbridge passed its weight-limit test without any problems
+    B: the Tarn Lane footbridge failed its weight-limit test this month
+  neutral:
+  - the inspection report runs to eight pages with two diagrams
+  - the report was filed by an inspector named Ola Brandt
+  - the report lists the inspection date and the weather that day
+  - the report was emailed to the council's roads team on Tuesday
+  - the report uses the council's new cover page and logo
+  shared:
+  - The Tarn Lane footbridge crosses a small stream at the edge of town.
+  - The council inspects each of its footbridges every three years.
+- story_id: conf-choir-venue
+  question: Where will the Marlow Community Choir rehearse this Thursday?
+  options:
+    A: In the town library hall
+    B: In the school music room
+  report_source: a tenor who sings in the choir
+  claim:
+    A: Thursday's rehearsal will be held in the library hall
+    B: Thursday's rehearsal has moved to the school music room
+  record_source: the choir's rehearsal booking calendar
+  fact:
+    A: the library hall is booked for the choir this Thursday evening
+    B: the school music room is booked for the choir this Thursday evening
+  neutral:
+  - the calendar was set up by the choir's secretary in January
+  - the choir's summer break starts in the last week of July
+  - the calendar is shared online with all thirty choir members
+  - the calendar marks members' birthdays with a small yellow star
+  - the piano tuner is due to visit early in the spring
+  shared:
+  - The Marlow Community Choir rehearses every Thursday at seven.
+  - The choir is learning songs for a winter concert.
+- story_id: conf-park-permit
+  question: Has the Bramble Park summer picnic been given an event permit?
+  options:
+    A: Yes, the city granted it
+    B: No, the city refused it
+  report_source: a volunteer on the picnic committee
+  claim:
+    A: the city approved the permit for the picnic
+    B: the city turned down the permit for the picnic
+  record_source: the city's park event permit register
+  fact:
+    A: a permit for the Bramble Park picnic was granted on Monday
+    B: the permit application for the Bramble Park picnic was refused
+  neutral:
+  - the register lists about two hundred park events each year
+  - the permit register is updated by the parks office every Friday
+  - the register records the contact phone number for each applicant
+  - the parks office added a column for event start times
+  - the register was moved to a new database in the spring
+  shared:
+  - The Bramble Park picnic is planned for a Sunday in August.
+  - The organisers sent in their permit application in May.
+- story_id: conf-exam-room
+  question: Which room will the second-year statistics exam be held in?
+  options:
+    A: In the Heron Building hall
+    B: In the Moss Lecture Theatre
+  report_source: a classmate on the statistics course
+  claim:
+    A: the statistics exam will be in the Heron Building hall
+    B: the statistics exam has moved to the Moss Lecture Theatre
+  record_source: the university's exam room allocation list
+  fact:
+    A: the second-year statistics exam is allocated to the Heron Building hall
+    B: the second-year statistics exam is allocated to the Moss Lecture Theatre
+  neutral:
+  - the allocation list was published on the exams office website on Monday
+  - the list covers one hundred and ten exams across three weeks
+  - the exams office sorts the allocation list by course code
+  - the list gives a contact email for students with timetable clashes
+  - the allocation list was checked by two members of exams staff
+  shared:
+  - The second-year statistics exam is on the morning of the fourteenth.
+  - About ninety students are taking the statistics exam.
+- story_id: conf-airport-gate
+  question: Which gate will flight NR 214 board from at Calder Regional Airport today?
+  options:
+    A: It boards from Gate 2
+    B: It boards from Gate 5
+  report_source: a passenger waiting in the airport café
+  claim:
+    A: flight NR 214 will still board from Gate 2
+    B: flight NR 214 has been moved to Gate 5
+  record_source: the airport's gate assignment system
+  fact:
+    A: flight NR 214 is assigned to Gate 2 for boarding today
+    B: flight NR 214 was moved to Gate 5 for boarding today
+  neutral:
+  - the gate system is restarted for updates every night at two
+  - the system lists eighteen departures from the airport today
+  - the airport has seven gates spread across a single terminal
+  - the gate system was installed by the airport four years ago
+  - the system records each gate's cleaning time in the morning
+  shared:
+  - Flight NR 214 is a short evening flight to Port Selwyn.
+  - Boarding for the flight begins forty minutes before departure.
+- story_id: conf-dental-hours
+  question: Is the Greywell Dental Practice open on Saturday mornings this month?
+  options:
+    A: Yes, it is open
+    B: No, it is closed
+  report_source: a patient who was there last week
+  claim:
+    A: the practice is still seeing patients on Saturday mornings
+    B: the practice has stopped opening on Saturday mornings
+  record_source: the practice's published opening-hours notice
+  fact:
+    A: the practice is open from nine until noon on Saturdays this month
+    B: the practice is closed on all Saturdays for the whole of this month
+  neutral:
+  - the notice was printed on blue paper and posted in the waiting room
+  - the notice gives the practice's address and its main phone number
+  - the notice was signed by the practice manager, a woman named Rhona Teller
+  - the entrance to the practice car park is on Mill Street
+  - the notice reminds patients to bring their appointment card with them
+  shared:
+  - The Greywell Dental Practice has three dentists and two receptionists.
+  - The practice is on the ground floor of a converted shop.
+- story_id: conf-author-signing
+  question: On which date will Mara Quill sign books at the Thistle Bookshop?
+  options:
+    A: On Saturday the twelfth
+    B: On Saturday the nineteenth
+  report_source: a regular customer at the bookshop
+  claim:
+    A: Mara Quill is coming to sign books on the twelfth
+    B: Mara Quill is coming to sign books on the nineteenth
+  record_source: the bookshop's events diary
+  fact:
+    A: Mara Quill's book signing is booked for Saturday the twelfth
+    B: Mara Quill's book signing is booked for Saturday the nineteenth
+  neutral:
+  - the events diary is kept in a drawer under the till
+  - a poetry reading group meets in the shop on Tuesday evenings
+  - the diary was started by the shop owner six years ago
+  - the shop window display is changed at the start of every month
+  - the diary is written in green ink by the shop manager
+  shared:
+  - Mara Quill has just published her third novel about sailing.
+  - The Thistle Bookshop holds author events on Saturday afternoons.
+- story_id: conf-pool-water
+  question: Did the Larchmont swimming pool pass its latest water-quality test?
+  options:
+    A: Yes, it passed the test
+    B: No, it failed the test
+  report_source: a lifeguard who opens the pool most mornings
+  claim:
+    A: the pool's water test came back clean this week
+    B: the pool's water test showed a problem this week
+  record_source: the leisure centre's water-testing log
+  fact:
+    A: the latest water sample from the main pool passed every test
+    B: the latest water sample from the main pool failed the test
+  neutral:
+  - the testing log is kept in the plant room beside the boiler
+  - the log records the name of each staff member who took samples
+  - the leisure centre has a main pool and a smaller training pool
+  - the log was moved into a new binder in January
+  - the log lists the supplier who delivers the test kits each month
+  shared:
+  - Staff at the Larchmont pool take water samples twice a week.
+  - A school swimming gala is planned at the pool next Friday.
+- story_id: conf-carpark-permit
+  question: Is Jonah Vell's staff car-park permit valid for next month?
+  options:
+    A: Yes, it is valid
+    B: No, it will have expired
+  report_source: a coworker who parks on the same level
+  claim:
+    A: Jonah Vell's permit was renewed for another year
+    B: Jonah Vell's permit runs out this month
+  record_source: the car park's permit database
+  fact:
+    A: Jonah Vell's permit was renewed and is valid for the next twelve months
+    B: Jonah Vell's permit expires on the last day of this month
+  neutral:
+  - the permit database holds records for about three hundred staff members
+  - the database stores each permit holder's car colour and registration number
+  - the database was upgraded by the facilities team over the summer break
+  - the car park has four levels and two lifts near the stairs
+  - the database sends a summary email to the facilities office each week
+  shared:
+  - Jonah Vell works in the accounts office at Farrow Mills.
+  - Staff need a permit to park in the building's car park.
+- story_id: conf-guest-conductor
+  question: Has guest conductor Ilse Marren signed a contract with the Selby Valley Orchestra?
+  options:
+    A: Yes, the contract is signed
+    B: No, nothing has been signed
+  report_source: a violinist in the orchestra
+  claim:
+    A: Ilse Marren signed her contract with the orchestra last week
+    B: Ilse Marren decided not to sign with the orchestra
+  record_source: the orchestra's contracts folder
+  fact:
+    A: a guest conductor contract signed by Ilse Marren is in the folder
+    B: Ilse Marren declined the guest conductor contract and never signed it
+  neutral:
+  - the contracts folder is stored in the orchestra's office filing cabinet
+  - the folder has a printed index sheet stapled inside the front cover
+  - the folder was put into date order by the office manager in spring
+  - the folder is labelled with the orchestra's name in black marker
+  - the folder has a list of contacts for the orchestra's printers
+  shared:
+  - The Selby Valley Orchestra invites one guest conductor every season.
+  - Ilse Marren has conducted several small orchestras abroad.
+- story_id: conf-orchard-frost-claim
+  question: Will Hollins Orchard's frost insurance claim be paid?
+  options:
+    A: Yes, it will be paid
+    B: No, it was rejected
+  report_source: a farmer from the next valley
+  claim:
+    A: the insurer has agreed to pay Hollins Orchard's frost claim
+    B: the insurer has turned down Hollins Orchard's frost claim
+  record_source: the insurer's claims decision letter to the orchard
+  fact:
+    A: the frost claim from Hollins Orchard was approved for full payment
+    B: the frost claim from Hollins Orchard was rejected and will not be paid
+  neutral:
+  - the letter was sent by post and arrived on a Tuesday
+  - the letter gives a reference number and the name of the claims officer
+  - the letter has two pages with the insurer's address at the top
+  - the letter lists the office hours of the insurer's claims team
+  - the letter is addressed to the orchard's owner, a man named Abel Hollins
+  shared:
+  - A late spring frost damaged apple blossom across the valley this year.
+  - Hollins Orchard sent its frost claim to the insurer in May.
+- story_id: conf-paper-delivery
+  question: Has Penhale Print's paper order been delivered?
+  options:
+    A: Yes, it has been delivered
+    B: No, it has not arrived
+  report_source: a driver who works for the paper supplier
+  claim:
+    A: the paper for Penhale Print was dropped off yesterday
+    B: the paper for Penhale Print is still at the depot
+  record_source: the printing firm's goods-in register
+  fact:
+    A: the paper order arrived yesterday and was signed for at the loading bay
+    B: the paper order has not arrived and nothing has been signed for
+  neutral:
+  - the goods-in register is kept on a clipboard beside the loading bay door
+  - the register lists the names of the four staff who sign for goods
+  - a new register book was started at the beginning of this year
+  - the register asks for a time and a signature for every entry
+  - the register notes that the loading bay light was repaired in March
+  shared:
+  - Penhale Print ordered a large batch of paper for a wedding invitation job.
+  - The firm keeps a small stock of paper for urgent jobs.
+- story_id: conf-climbing-ropes
+  question: Did the safety ropes at the Crag Loft climbing gym pass inspection?
+  options:
+    A: Yes, they passed inspection
+    B: No, they failed inspection
+  report_source: an instructor who teaches beginner classes there
+  claim:
+    A: the ropes at Crag Loft all passed inspection this week
+    B: the ropes at Crag Loft all failed inspection this week
+  record_source: the gym's equipment inspection sheet
+  fact:
+    A: every safety rope in the gym passed this month's inspection
+    B: the gym's safety ropes failed this month's inspection and were withdrawn
+  neutral:
+  - the inspection sheet is pinned to the board by the front desk
+  - the sheet lists the gym's opening hours at the bottom
+  - the sheet was printed on the gym's new office printer
+  - the lockers in the changing rooms were repainted last month
+  - the sheet gives the inspector's company name and phone number
+  shared:
+  - Crag Loft is a small indoor climbing gym with twenty routes.
+  - The gym has its ropes inspected once a month.
+- story_id: conf-archive-digitisation
+  question: When is the deadline for digitising the Dunmere town archive's maps?
+  options:
+    A: The end of June
+    B: The end of September
+  report_source: a volunteer who scans maps at the archive
+  claim:
+    A: the maps must all be scanned by the end of June
+    B: the archive now has until the end of September
+  record_source: the archive's digitisation project plan
+  fact:
+    A: the deadline for digitising the maps is the thirtieth of June
+    B: the deadline for digitising the maps is the thirtieth of September
+  neutral:
+  - the project plan was written by the archive's senior map keeper
+  - the plan lists the file format to be used for each scan
+  - the plan was printed and filed in the archive's main office
+  - the plan names a local printer who will bind the paper copies
+  - the plan includes a short history of the archive building
+  shared:
+  - The Dunmere town archive holds about six hundred old maps.
+  - The archive is scanning the maps so people can view them online.
+- story_id: conf-pitch-drainage
+  question: Has the drainage repair on the Ferncastle football pitch been completed?
+  options:
+    A: Yes, the repair is complete
+    B: No, the repair is unfinished
+  report_source: a parent whose child plays for the junior team
+  claim:
+    A: the drainage work on the pitch finished last week
+    B: the drainage work on the pitch is still going on
+  record_source: the sports ground's works log
+  fact:
+    A: the pitch drainage repair was completed and checked on Thursday
+    B: the pitch drainage repair is only half done and continues next week
+  neutral:
+  - the works log is kept in the groundsman's shed beside the pitch
+  - the works log has a page for each week of the season
+  - the log lists the phone number of the club's grass supplier
+  - the groundsman writes up the log at the end of each day
+  - the works log is written in blue ink in a ruled notebook
+  shared:
+  - The Ferncastle football pitch is used by three junior teams.
+  - Heavy rain flooded parts of the pitch earlier this year.
+- story_id: conf-photo-competition
+  question: What is the entry deadline for the Larkford photography competition?
+  options:
+    A: The fifteenth of May
+    B: The fifteenth of June
+  report_source: a member of the local camera club
+  claim:
+    A: entries for the Larkford competition close in mid-May
+    B: entries for the Larkford competition close in mid-June
+  record_source: the competition's official rules page
+  fact:
+    A: the closing date for all entries is the fifteenth of May
+    B: the closing date for all entries is the fifteenth of June
+  neutral:
+  - each entrant may send up to three photographs to the competition
+  - the rules page lists the names of the three judges
+  - photographs must be sent in as large high-quality files
+  - the rules page gives an email address for questions about entries
+  - the winning photographs will be shown in the town library
+  shared:
+  - The Larkford photography competition runs every year for local amateurs.
+  - This year's theme is rivers and bridges.
+- story_id: conf-kitchen-hygiene
+  question: Did the Copper Pan restaurant keep its top kitchen hygiene rating this year?
+  options:
+    A: Yes, it kept the top rating
+    B: No, its rating was lowered
+  report_source: a waiter who works at the Copper Pan
+  claim:
+    A: the inspector gave the kitchen top marks again this year
+    B: the inspector marked the kitchen down this year
+  record_source: the council's food hygiene rating register
+  fact:
+    A: the Copper Pan kept its top hygiene rating at this year's inspection
+    B: the Copper Pan's hygiene rating was lowered at this year's inspection
+  neutral:
+  - the register lists more than two hundred food businesses in the town
+  - the register shows the name of the inspector for each visit
+  - the register is updated online by the council every second Monday
+  - the register gives the opening date of each business it lists
+  - the register added a search box for street names last year
+  shared:
+  - The Copper Pan is a small family restaurant on Bell Street.
+  - The council inspects restaurant kitchens about once a year.
+- story_id: conf-teacher-certificate
+  question: Has the Westmere Teaching Board verified Luca Brennor's teaching certificate?
+  options:
+    A: Yes, the board verified it
+    B: No, the board has not verified it
+  report_source: another teacher at the Avonleigh Language School
+  claim:
+    A: the board verified Luca Brennor's certificate last week
+    B: the board has not yet verified Luca Brennor's certificate
+  record_source: the Westmere Teaching Board's online verification list
+  fact:
+    A: Luca Brennor's teaching certificate was verified by the board on the fifth
+    B: Luca Brennor's teaching certificate is still unverified with no decision yet
+  neutral:
+  - the verification list is updated by the board's office each Monday
+  - the list has a search box at the top of the page
+  - the board's office moved to a larger building last spring
+  - the list shows the board's postal address in the page footer
+  - the list can be sorted by surname or by town name
+  shared:
+  - Avonleigh Language School teaches English and Spanish to adults.
+  - Luca Brennor has been offered a job teaching evening classes there.
+- story_id: conf-marina-mooring
+  question: Is the mooring licence for the boat Sea Lark valid this season?
+  options:
+    A: Yes, it is valid
+    B: No, it has expired
+  report_source: a sailor who keeps a boat on the next pontoon
+  claim:
+    A: the Sea Lark's mooring licence was renewed for this season
+    B: the Sea Lark's mooring licence ran out last season
+  record_source: the Gullhaven Marina licence register
+  fact:
+    A: the Sea Lark holds a mooring licence that is valid this season
+    B: the Sea Lark's mooring licence expired last season and was not renewed
+  neutral:
+  - the register is kept in the harbour office beside the fuel dock
+  - the register lists one hundred and forty berths across six pontoons
+  - the marina office updates the register on the first of each month
+  - the register records the length of each boat in metres
+  - the register gives the harbour master's phone number on its first page
+  shared:
+  - The Sea Lark is a small sailing boat owned by Nell Garrow.
+  - Gullhaven Marina is on a quiet stretch of coast.
+- story_id: conf-fete-marquee
+  question: Has the fete committee booked a marquee from Morley Marquee Hire?
+  options:
+    A: Yes, a marquee is booked
+    B: No, no marquee is booked
+  report_source: a member of the fete committee
+  claim:
+    A: the marquee for the fete has been booked and paid for
+    B: nobody has booked a marquee for the fete yet
+  record_source: Morley Marquee Hire's booking calendar
+  fact:
+    A: a large marquee is booked for the Oakby Green fete on Saturday
+    B: no marquee is booked for the Oakby Green fete on that Saturday
+  neutral:
+  - the booking calendar shows the company has five marquees for hire
+  - the calendar marks the company's office as closed on Sundays
+  - the calendar is kept up to date by the owner, Tess Morley
+  - the company's delivery van is booked in for its yearly service
+  - the calendar lists the company's phone number at the top of each page
+  shared:
+  - The Oakby Green village fete is held on a Saturday in July.
+  - The fete usually has a cake stall and a dog show.

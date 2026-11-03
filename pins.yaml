@@ -1,0 +1,24 @@
+# Missing Piece pins. Every run manifest copies this block through mp.manifest.header(); a run refuses to start when the
+# installed pipeline is not the pinned commit (mp.manifest.check_environment). Changing a pin is a new version of the
+# pin and a logged entry in the coordination record's AMENDMENTS.md (a deviation if any study outcome exists).
+pipeline:                      # the shared five-model pipeline that StPT's Step 0 built and tagged; LOCKED; no serving is built here
+  name: sae-ethos-pipeline
+  repo: https://github.com/RandallSPQR/SAE-Ethos-Calibration
+  tag: v1.2.0
+  commit: 5ca15f56a71f35d5818d0392f7f3b4acb2d85d1b
+  tag_form: lightweight         # the GitHub tag points at the commit itself (coordination PIPELINE.md)
+  lineup_file: pipeline/lineup/lineup.yaml
+coordination:                  # the shared coordination record (StPT + Missing Piece)
+  repo: https://github.com/RandallSPQR/StPT-MP-Coordination
+  commit: 9c155beb9054a9b639d41d0b92d1dfce11f81ac1   # read 2026-11-03 (D1-D30, A1-A27); re-pinned when the MP entries land
+  evidence_schema: "1.0"      # schema/evidence_schema_v1.0.json
+  protocol_spec_version: "0.0"
+brief:
+  url: https://claude.ai/artifact/8KE5pFnmDEdJYGyHTjDcG7
+  revision: 2                  # document rev 34, read 2026-11-03
+models:                        # D1, D8: all five from the pinned lineup; Qwen pair pencilled
+  - llama-3.1-8b-it
+  - gemma-2-9b-it
+  - gemma-3-27b-it
+  - qwen3.5-9b
+  - qwen3.5-27b

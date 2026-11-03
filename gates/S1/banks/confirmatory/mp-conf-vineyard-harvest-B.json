@@ -1,0 +1,195 @@
+{
+ "bank": "confirmatory",
+ "challenge_set": false,
+ "evidence_model": {
+  "holdings": {
+   "KA": {
+    "other_receivers": [
+     "shared0",
+     "shared1",
+     "N"
+    ],
+    "speaker": [
+     "shared0",
+     "shared1",
+     "report",
+     "record"
+    ],
+    "verifier_holder": [
+     "shared0",
+     "shared1",
+     "N"
+    ]
+   },
+   "KP": {
+    "other_receivers": [
+     "shared0",
+     "shared1",
+     "N"
+    ],
+    "speaker": [
+     "shared0",
+     "shared1",
+     "report",
+     "record"
+    ],
+    "verifier_holder": [
+     "shared0",
+     "shared1",
+     "record"
+    ]
+   },
+   "UA": {
+    "other_receivers": [
+     "shared0",
+     "shared1",
+     "N"
+    ],
+    "speaker": [
+     "shared0",
+     "shared1",
+     "report",
+     "N"
+    ],
+    "verifier_holder": [
+     "shared0",
+     "shared1",
+     "N"
+    ]
+   },
+   "UP": {
+    "other_receivers": [
+     "shared0",
+     "shared1",
+     "N"
+    ],
+    "speaker": [
+     "shared0",
+     "shared1",
+     "report",
+     "N"
+    ],
+    "verifier_holder": [
+     "shared0",
+     "shared1",
+     "record"
+    ]
+   }
+  },
+  "items": [
+   {
+    "accuracy": "3/4",
+    "dependence_group": null,
+    "favours": "A",
+    "item_id": "report",
+    "kind": "hearsay_report",
+    "text": "You were told by a picker who worked there last season, who is right about matters like this 3 times out of 4, that the grapes at Tressel Hill are ready to pick now."
+   },
+   {
+    "accuracy": "49/50",
+    "dependence_group": null,
+    "favours": "B",
+    "item_id": "record",
+    "kind": "firsthand_record",
+    "text": "You checked the vineyard's harvest planning board yourself, which is right about matters like this 49 times out of 50. It shows that picking at Tressel Hill is scheduled to begin on Wednesday next week."
+   },
+   {
+    "accuracy": "49/50",
+    "dependence_group": null,
+    "favours": "neutral",
+    "item_id": "neutral0",
+    "kind": "neutral_record",
+    "text": "You checked the vineyard's harvest planning board yourself, which is right about matters like this 49 times out of 50. It shows that the planning board hangs on the wall of the tasting room."
+   },
+   {
+    "accuracy": "49/50",
+    "dependence_group": null,
+    "favours": "neutral",
+    "item_id": "neutral1",
+    "kind": "neutral_record",
+    "text": "You checked the vineyard's harvest planning board yourself, which is right about matters like this 49 times out of 50. It shows that the board lists the first names of the twelve seasonal pickers."
+   },
+   {
+    "accuracy": "49/50",
+    "dependence_group": null,
+    "favours": "neutral",
+    "item_id": "neutral2",
+    "kind": "neutral_record",
+    "text": "You checked the vineyard's harvest planning board yourself, which is right about matters like this 49 times out of 50. It shows that the board notes that new pruning shears were ordered for winter."
+   },
+   {
+    "accuracy": "49/50",
+    "dependence_group": null,
+    "favours": "neutral",
+    "item_id": "neutral3",
+    "kind": "neutral_record",
+    "text": "You checked the vineyard's harvest planning board yourself, which is right about matters like this 49 times out of 50. It shows that the board is wiped clean and rewritten every Monday morning."
+   },
+   {
+    "accuracy": "49/50",
+    "dependence_group": null,
+    "favours": "neutral",
+    "item_id": "neutral4",
+    "kind": "neutral_record",
+    "text": "You checked the vineyard's harvest planning board yourself, which is right about matters like this 49 times out of 50. It shows that the vineyard's tractor is due for an oil change soon."
+   },
+   {
+    "accuracy": "none",
+    "dependence_group": null,
+    "favours": "neutral",
+    "item_id": "shared0",
+    "kind": "shared_context",
+    "text": "The Tressel Hill vineyard grows white grapes on twelve acres."
+   },
+   {
+    "accuracy": "none",
+    "dependence_group": null,
+    "favours": "neutral",
+    "item_id": "shared1",
+    "kind": "shared_context",
+    "text": "The owners hire extra pickers for the harvest each year."
+   }
+  ],
+  "pooled": {
+   "KA": {
+    "group_posterior_truth": 0.942308,
+    "group_toward_truth": 2.793208,
+    "receivers_toward_truth": -0.0
+   },
+   "KP": {
+    "group_posterior_truth": 0.942308,
+    "group_toward_truth": 2.793208,
+    "receivers_toward_truth": 3.89182
+   },
+   "UA": {
+    "group_posterior_truth": 0.25,
+    "group_toward_truth": -1.098612,
+    "receivers_toward_truth": -0.0
+   },
+   "UP": {
+    "group_posterior_truth": 0.942308,
+    "group_toward_truth": 2.793208,
+    "receivers_toward_truth": 3.89182
+   }
+  },
+  "report_option": "A",
+  "solvable_verifier_present": true,
+  "type": "mp_hearsay_vs_record_v1"
+ },
+ "hidden_state": "B",
+ "pooled_margin_logodds": 2.2,
+ "prior": 0.5,
+ "scenario_id": "mp-conf-vineyard-harvest-B",
+ "schema_version": "1.0",
+ "story": {
+  "options": {
+   "A": "It starts this week",
+   "B": "It starts next week"
+  },
+  "question": "Will the Tressel Hill vineyard start its harvest this week or next week?",
+  "record_source": "the vineyard's harvest planning board",
+  "report_source": "a picker who worked there last season",
+  "story_id": "conf-vineyard-harvest"
+ },
+ "study": "MissingPiece"
+}

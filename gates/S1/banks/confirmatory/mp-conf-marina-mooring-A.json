@@ -1,0 +1,195 @@
+{
+ "bank": "confirmatory",
+ "challenge_set": false,
+ "evidence_model": {
+  "holdings": {
+   "KA": {
+    "other_receivers": [
+     "shared0",
+     "shared1",
+     "N"
+    ],
+    "speaker": [
+     "shared0",
+     "shared1",
+     "report",
+     "record"
+    ],
+    "verifier_holder": [
+     "shared0",
+     "shared1",
+     "N"
+    ]
+   },
+   "KP": {
+    "other_receivers": [
+     "shared0",
+     "shared1",
+     "N"
+    ],
+    "speaker": [
+     "shared0",
+     "shared1",
+     "report",
+     "record"
+    ],
+    "verifier_holder": [
+     "shared0",
+     "shared1",
+     "record"
+    ]
+   },
+   "UA": {
+    "other_receivers": [
+     "shared0",
+     "shared1",
+     "N"
+    ],
+    "speaker": [
+     "shared0",
+     "shared1",
+     "report",
+     "N"
+    ],
+    "verifier_holder": [
+     "shared0",
+     "shared1",
+     "N"
+    ]
+   },
+   "UP": {
+    "other_receivers": [
+     "shared0",
+     "shared1",
+     "N"
+    ],
+    "speaker": [
+     "shared0",
+     "shared1",
+     "report",
+     "N"
+    ],
+    "verifier_holder": [
+     "shared0",
+     "shared1",
+     "record"
+    ]
+   }
+  },
+  "items": [
+   {
+    "accuracy": "3/4",
+    "dependence_group": null,
+    "favours": "B",
+    "item_id": "report",
+    "kind": "hearsay_report",
+    "text": "You were told by a sailor who keeps a boat on the next pontoon, who is right about matters like this 3 times out of 4, that the Sea Lark's mooring licence ran out last season."
+   },
+   {
+    "accuracy": "49/50",
+    "dependence_group": null,
+    "favours": "A",
+    "item_id": "record",
+    "kind": "firsthand_record",
+    "text": "You checked the Gullhaven Marina licence register yourself, which is right about matters like this 49 times out of 50. It shows that the Sea Lark holds a mooring licence that is valid this season."
+   },
+   {
+    "accuracy": "49/50",
+    "dependence_group": null,
+    "favours": "neutral",
+    "item_id": "neutral0",
+    "kind": "neutral_record",
+    "text": "You checked the Gullhaven Marina licence register yourself, which is right about matters like this 49 times out of 50. It shows that the register is kept in the harbour office beside the fuel dock."
+   },
+   {
+    "accuracy": "49/50",
+    "dependence_group": null,
+    "favours": "neutral",
+    "item_id": "neutral1",
+    "kind": "neutral_record",
+    "text": "You checked the Gullhaven Marina licence register yourself, which is right about matters like this 49 times out of 50. It shows that the register lists one hundred and forty berths across six pontoons."
+   },
+   {
+    "accuracy": "49/50",
+    "dependence_group": null,
+    "favours": "neutral",
+    "item_id": "neutral2",
+    "kind": "neutral_record",
+    "text": "You checked the Gullhaven Marina licence register yourself, which is right about matters like this 49 times out of 50. It shows that the marina office updates the register on the first of each month."
+   },
+   {
+    "accuracy": "49/50",
+    "dependence_group": null,
+    "favours": "neutral",
+    "item_id": "neutral3",
+    "kind": "neutral_record",
+    "text": "You checked the Gullhaven Marina licence register yourself, which is right about matters like this 49 times out of 50. It shows that the register records the length of each boat in metres."
+   },
+   {
+    "accuracy": "49/50",
+    "dependence_group": null,
+    "favours": "neutral",
+    "item_id": "neutral4",
+    "kind": "neutral_record",
+    "text": "You checked the Gullhaven Marina licence register yourself, which is right about matters like this 49 times out of 50. It shows that the register gives the harbour master's phone number on its first page."
+   },
+   {
+    "accuracy": "none",
+    "dependence_group": null,
+    "favours": "neutral",
+    "item_id": "shared0",
+    "kind": "shared_context",
+    "text": "The Sea Lark is a small sailing boat owned by Nell Garrow."
+   },
+   {
+    "accuracy": "none",
+    "dependence_group": null,
+    "favours": "neutral",
+    "item_id": "shared1",
+    "kind": "shared_context",
+    "text": "Gullhaven Marina is on a quiet stretch of coast."
+   }
+  ],
+  "pooled": {
+   "KA": {
+    "group_posterior_truth": 0.942308,
+    "group_toward_truth": 2.793208,
+    "receivers_toward_truth": 0.0
+   },
+   "KP": {
+    "group_posterior_truth": 0.942308,
+    "group_toward_truth": 2.793208,
+    "receivers_toward_truth": 3.89182
+   },
+   "UA": {
+    "group_posterior_truth": 0.25,
+    "group_toward_truth": -1.098612,
+    "receivers_toward_truth": 0.0
+   },
+   "UP": {
+    "group_posterior_truth": 0.942308,
+    "group_toward_truth": 2.793208,
+    "receivers_toward_truth": 3.89182
+   }
+  },
+  "report_option": "B",
+  "solvable_verifier_present": true,
+  "type": "mp_hearsay_vs_record_v1"
+ },
+ "hidden_state": "A",
+ "pooled_margin_logodds": 2.2,
+ "prior": 0.5,
+ "scenario_id": "mp-conf-marina-mooring-A",
+ "schema_version": "1.0",
+ "story": {
+  "options": {
+   "A": "Yes, it is valid",
+   "B": "No, it has expired"
+  },
+  "question": "Is the mooring licence for the boat Sea Lark valid this season?",
+  "record_source": "the Gullhaven Marina licence register",
+  "report_source": "a sailor who keeps a boat on the next pontoon",
+  "story_id": "conf-marina-mooring"
+ },
+ "study": "MissingPiece"
+}

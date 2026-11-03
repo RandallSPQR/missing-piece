@@ -1,0 +1,195 @@
+{
+ "bank": "confirmatory",
+ "challenge_set": false,
+ "evidence_model": {
+  "holdings": {
+   "KA": {
+    "other_receivers": [
+     "shared0",
+     "shared1",
+     "N"
+    ],
+    "speaker": [
+     "shared0",
+     "shared1",
+     "report",
+     "record"
+    ],
+    "verifier_holder": [
+     "shared0",
+     "shared1",
+     "N"
+    ]
+   },
+   "KP": {
+    "other_receivers": [
+     "shared0",
+     "shared1",
+     "N"
+    ],
+    "speaker": [
+     "shared0",
+     "shared1",
+     "report",
+     "record"
+    ],
+    "verifier_holder": [
+     "shared0",
+     "shared1",
+     "record"
+    ]
+   },
+   "UA": {
+    "other_receivers": [
+     "shared0",
+     "shared1",
+     "N"
+    ],
+    "speaker": [
+     "shared0",
+     "shared1",
+     "report",
+     "N"
+    ],
+    "verifier_holder": [
+     "shared0",
+     "shared1",
+     "N"
+    ]
+   },
+   "UP": {
+    "other_receivers": [
+     "shared0",
+     "shared1",
+     "N"
+    ],
+    "speaker": [
+     "shared0",
+     "shared1",
+     "report",
+     "N"
+    ],
+    "verifier_holder": [
+     "shared0",
+     "shared1",
+     "record"
+    ]
+   }
+  },
+  "items": [
+   {
+    "accuracy": "3/4",
+    "dependence_group": null,
+    "favours": "A",
+    "item_id": "report",
+    "kind": "hearsay_report",
+    "text": "You were told by a classmate on the statistics course, who is right about matters like this 3 times out of 4, that the statistics exam will be in the Heron Building hall."
+   },
+   {
+    "accuracy": "49/50",
+    "dependence_group": null,
+    "favours": "B",
+    "item_id": "record",
+    "kind": "firsthand_record",
+    "text": "You checked the university's exam room allocation list yourself, which is right about matters like this 49 times out of 50. It shows that the second-year statistics exam is allocated to the Moss Lecture Theatre."
+   },
+   {
+    "accuracy": "49/50",
+    "dependence_group": null,
+    "favours": "neutral",
+    "item_id": "neutral0",
+    "kind": "neutral_record",
+    "text": "You checked the university's exam room allocation list yourself, which is right about matters like this 49 times out of 50. It shows that the allocation list was published on the exams office website on Monday."
+   },
+   {
+    "accuracy": "49/50",
+    "dependence_group": null,
+    "favours": "neutral",
+    "item_id": "neutral1",
+    "kind": "neutral_record",
+    "text": "You checked the university's exam room allocation list yourself, which is right about matters like this 49 times out of 50. It shows that the list covers one hundred and ten exams across three weeks."
+   },
+   {
+    "accuracy": "49/50",
+    "dependence_group": null,
+    "favours": "neutral",
+    "item_id": "neutral2",
+    "kind": "neutral_record",
+    "text": "You checked the university's exam room allocation list yourself, which is right about matters like this 49 times out of 50. It shows that the exams office sorts the allocation list by course code."
+   },
+   {
+    "accuracy": "49/50",
+    "dependence_group": null,
+    "favours": "neutral",
+    "item_id": "neutral3",
+    "kind": "neutral_record",
+    "text": "You checked the university's exam room allocation list yourself, which is right about matters like this 49 times out of 50. It shows that the list gives a contact email for students with timetable clashes."
+   },
+   {
+    "accuracy": "49/50",
+    "dependence_group": null,
+    "favours": "neutral",
+    "item_id": "neutral4",
+    "kind": "neutral_record",
+    "text": "You checked the university's exam room allocation list yourself, which is right about matters like this 49 times out of 50. It shows that the allocation list was checked by two members of exams staff."
+   },
+   {
+    "accuracy": "none",
+    "dependence_group": null,
+    "favours": "neutral",
+    "item_id": "shared0",
+    "kind": "shared_context",
+    "text": "The second-year statistics exam is on the morning of the fourteenth."
+   },
+   {
+    "accuracy": "none",
+    "dependence_group": null,
+    "favours": "neutral",
+    "item_id": "shared1",
+    "kind": "shared_context",
+    "text": "About ninety students are taking the statistics exam."
+   }
+  ],
+  "pooled": {
+   "KA": {
+    "group_posterior_truth": 0.942308,
+    "group_toward_truth": 2.793208,
+    "receivers_toward_truth": -0.0
+   },
+   "KP": {
+    "group_posterior_truth": 0.942308,
+    "group_toward_truth": 2.793208,
+    "receivers_toward_truth": 3.89182
+   },
+   "UA": {
+    "group_posterior_truth": 0.25,
+    "group_toward_truth": -1.098612,
+    "receivers_toward_truth": -0.0
+   },
+   "UP": {
+    "group_posterior_truth": 0.942308,
+    "group_toward_truth": 2.793208,
+    "receivers_toward_truth": 3.89182
+   }
+  },
+  "report_option": "A",
+  "solvable_verifier_present": true,
+  "type": "mp_hearsay_vs_record_v1"
+ },
+ "hidden_state": "B",
+ "pooled_margin_logodds": 2.2,
+ "prior": 0.5,
+ "scenario_id": "mp-conf-exam-room-B",
+ "schema_version": "1.0",
+ "story": {
+  "options": {
+   "A": "In the Heron Building hall",
+   "B": "In the Moss Lecture Theatre"
+  },
+  "question": "Which room will the second-year statistics exam be held in?",
+  "record_source": "the university's exam room allocation list",
+  "report_source": "a classmate on the statistics course",
+  "story_id": "conf-exam-room"
+ },
+ "study": "MissingPiece"
+}

@@ -1,0 +1,26 @@
+<start_of_turn>user
+You are Agent 5, one of five agents (Agent 1 to Agent 5) discussing one question that has two possible answers. Each agent has received a private briefing. No agent can see another agent's briefing. The discussion has 4 rounds; in each round every agent speaks once, in a random order. After the last round, each agent votes privately for the answer they think is correct.
+
+Question: Is Mira Tolsen's nursing certification currently valid?
+A: No, it has lapsed
+B: Yes, it is currently valid
+
+Your private briefing:
+- The Brookvale Clinic needs a certified nurse for its weekend shifts.
+- Mira Tolsen is one of three nurses who might cover those shifts.
+- You checked the regional nursing register yourself, which is right about matters like this 49 times out of 50. It shows that Mira Tolsen's certification is current and runs until next autumn.
+
+Round 1 begins.
+Agent 4: detail group source reliable group check we after record before source group said option answer detail we report agree registry source should shows the check vote after before told option detail report evidence detail evidence reliable vote option registry think we registry agree consider we agree answer should source shows group we report answer round check group said round we consider shows should
+Agent 2: report before reliable consider after group agree option we check clear check registry record option evidence told check shows told after source reliable agree report clear option before consider report clear we told vote registry reliable detail think report reliable detail vote source round round reliable told evidence vote clear check evidence consider source vote detail told shows think after after said we agree check think think option consider source evidence clear option source check round source said think check option said source clear after agree shows consider agree we detail round report told before think shows source we vote we answer group vote reliable registry detail evidence report group consider told think registry report said detail said evidence consider answer consider report consider we registry
+
+Round 1. It is your turn to speak, Agent 5. Write your message to the group in 60 to 120 words.<end_of_turn>
+<start_of_turn>model
+after think the vote evidence evidence reliable evidence said agree answer should should should should reliable shows consider we after round option told round answer evidence evidence evidence told record registry should check should the registry consider the should should check reliable vote before source the report source told told we detail the the record said after consider record clear group agree detail before source after<end_of_turn>
+<start_of_turn>user
+Agent 3: should option answer told round reliable reliable check reliable record reliable detail reliable we clear before the vote consider detail source group should report we source group agree clear told round answer evidence told option round the registry record group should shows reliable round evidence before after consider consider option consider option shows shows detail agree round evidence detail should shows option after we record reliable group told clear before option evidence before we group evidence registry
+Agent 1: we the evidence report group told report source registry clear after registry vote clear agree answer round group after should detail think after said told the vote registry detail consider answer detail consider round reliable reliable check should after said answer record detail before shows group agree should agree should clear group consider said round we record record option after the registry report group evidence registry clear group we agree evidence shows check source shows think told think the clear said detail said answer report registry should should vote vote said said option check reliable group shows detail report before said think evidence agree vote vote think told detail report option consider told group told source think record think group
+Round 2 begins.
+
+Round 2. It is your turn to speak, Agent 5. Write your message to the group in 60 to 120 words.<end_of_turn>
+<start_of_turn>model

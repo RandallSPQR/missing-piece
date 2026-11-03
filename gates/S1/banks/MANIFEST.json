@@ -1,0 +1,619 @@
+{
+ "banks": {
+  "confirmatory": {
+   "n_specs": 52,
+   "n_stories": 26,
+   "specs": {
+    "mp-conf-airport-gate-A": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/confirmatory/mp-conf-airport-gate-A.json",
+     "sha256": "92aabcfc07fd743af6a24dc3ee32826b3b8109d09143871d4e3536e7b155b2a0",
+     "story_id": "conf-airport-gate",
+     "truth": "A"
+    },
+    "mp-conf-airport-gate-B": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/confirmatory/mp-conf-airport-gate-B.json",
+     "sha256": "c549e639c870dfe518472a968c0f639daebc779dc69b7c395293e19f29b97448",
+     "story_id": "conf-airport-gate",
+     "truth": "B"
+    },
+    "mp-conf-archive-digitisation-A": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/confirmatory/mp-conf-archive-digitisation-A.json",
+     "sha256": "5586ee5cac4c93b81fc0105ba1f4c311f46a765a8b4335c0b9b34d06464016fa",
+     "story_id": "conf-archive-digitisation",
+     "truth": "A"
+    },
+    "mp-conf-archive-digitisation-B": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/confirmatory/mp-conf-archive-digitisation-B.json",
+     "sha256": "1ad0c7cf3995de99ba49f5adbe90eaac291ee57f0931d45ccd1ef5cf14b884d0",
+     "story_id": "conf-archive-digitisation",
+     "truth": "B"
+    },
+    "mp-conf-author-signing-A": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/confirmatory/mp-conf-author-signing-A.json",
+     "sha256": "0e9dcdb8a2a5114d05c0ebda9ae4fb729a5319524df11f9b9d122551528c2327",
+     "story_id": "conf-author-signing",
+     "truth": "A"
+    },
+    "mp-conf-author-signing-B": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/confirmatory/mp-conf-author-signing-B.json",
+     "sha256": "e501861d84c91a678b2373cecebd1d9ebed2d9757ed6e0a360be1cdf313c7ee3",
+     "story_id": "conf-author-signing",
+     "truth": "B"
+    },
+    "mp-conf-cargo-customs-A": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/confirmatory/mp-conf-cargo-customs-A.json",
+     "sha256": "b471ce8fe7c522c561aeb8f117b9aa879f5786eb559ed73738dad2207c87b1d3",
+     "story_id": "conf-cargo-customs",
+     "truth": "A"
+    },
+    "mp-conf-cargo-customs-B": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/confirmatory/mp-conf-cargo-customs-B.json",
+     "sha256": "fe9d15e935e12c68ac5f5183df752d3e7c44d7516edce1b672f6b6065767f5f9",
+     "story_id": "conf-cargo-customs",
+     "truth": "B"
+    },
+    "mp-conf-carpark-permit-A": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/confirmatory/mp-conf-carpark-permit-A.json",
+     "sha256": "ec5d64943a338bda8353dd6f3bd82e619b63a186a88f9eda5bd7044e2b23b19b",
+     "story_id": "conf-carpark-permit",
+     "truth": "A"
+    },
+    "mp-conf-carpark-permit-B": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/confirmatory/mp-conf-carpark-permit-B.json",
+     "sha256": "5216b0b3b216dd968d086db0c27546c93edcea5edda0023e15af94e796e44bbc",
+     "story_id": "conf-carpark-permit",
+     "truth": "B"
+    },
+    "mp-conf-choir-venue-A": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/confirmatory/mp-conf-choir-venue-A.json",
+     "sha256": "3bd4585fe386d49de89768f1a909793333e1e3dae832d3cc3f01ae92a56a5399",
+     "story_id": "conf-choir-venue",
+     "truth": "A"
+    },
+    "mp-conf-choir-venue-B": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/confirmatory/mp-conf-choir-venue-B.json",
+     "sha256": "5983e547c9a26cbc551a1536d34f7947df365959ba6d6643406a4621d44508a2",
+     "story_id": "conf-choir-venue",
+     "truth": "B"
+    },
+    "mp-conf-climbing-ropes-A": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/confirmatory/mp-conf-climbing-ropes-A.json",
+     "sha256": "bfdd7f980fae94fa6501761a0ba4e9da7f28015bddd7f511dbe2eecc25ecc0cd",
+     "story_id": "conf-climbing-ropes",
+     "truth": "A"
+    },
+    "mp-conf-climbing-ropes-B": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/confirmatory/mp-conf-climbing-ropes-B.json",
+     "sha256": "7615fbfecda542c6454ec43f8287ada35c4816287b9b62b4fd7cdacc6cda5d98",
+     "story_id": "conf-climbing-ropes",
+     "truth": "B"
+    },
+    "mp-conf-dental-hours-A": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/confirmatory/mp-conf-dental-hours-A.json",
+     "sha256": "1d660fcd4c08022bf1718dda50eb193c24efe0e78457d96a01714b6255dad6d9",
+     "story_id": "conf-dental-hours",
+     "truth": "A"
+    },
+    "mp-conf-dental-hours-B": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/confirmatory/mp-conf-dental-hours-B.json",
+     "sha256": "5b0d3e1c8968b11ff7092d8f22a959cbacb53c963ccb9a9d7f5874439114045d",
+     "story_id": "conf-dental-hours",
+     "truth": "B"
+    },
+    "mp-conf-exam-room-A": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/confirmatory/mp-conf-exam-room-A.json",
+     "sha256": "5686f532353b01cbac0ea96ac6b008f085408ac9b2d691129eb6ef6d28a94d70",
+     "story_id": "conf-exam-room",
+     "truth": "A"
+    },
+    "mp-conf-exam-room-B": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/confirmatory/mp-conf-exam-room-B.json",
+     "sha256": "850b7fc06f0ee82f436ca3be5c3670198b60097be1fdd03126339f46caaa7c12",
+     "story_id": "conf-exam-room",
+     "truth": "B"
+    },
+    "mp-conf-fete-marquee-A": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/confirmatory/mp-conf-fete-marquee-A.json",
+     "sha256": "c43217c703b4dc35d9c48d90e87044767402aef35d675431352f5adb5d18bddb",
+     "story_id": "conf-fete-marquee",
+     "truth": "A"
+    },
+    "mp-conf-fete-marquee-B": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/confirmatory/mp-conf-fete-marquee-B.json",
+     "sha256": "3c69b36131eb0c3076d3969aea5b5983b4efe16f1dc8ed4136bdc94ab1771fb4",
+     "story_id": "conf-fete-marquee",
+     "truth": "B"
+    },
+    "mp-conf-footbridge-inspection-A": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/confirmatory/mp-conf-footbridge-inspection-A.json",
+     "sha256": "c67bdee0eca835aad6fa45f6970b61df4bd5758a892fb71ed3271ddb58d97d37",
+     "story_id": "conf-footbridge-inspection",
+     "truth": "A"
+    },
+    "mp-conf-footbridge-inspection-B": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/confirmatory/mp-conf-footbridge-inspection-B.json",
+     "sha256": "5ed6153d40dfdcdc88918a080c48bc7c967e23735a1715b39b30ccb2e92070c8",
+     "story_id": "conf-footbridge-inspection",
+     "truth": "B"
+    },
+    "mp-conf-guest-conductor-A": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/confirmatory/mp-conf-guest-conductor-A.json",
+     "sha256": "a443967c4a0cdebe90c390e589d22d2fc4a2519fbba5d0be528331608bade413",
+     "story_id": "conf-guest-conductor",
+     "truth": "A"
+    },
+    "mp-conf-guest-conductor-B": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/confirmatory/mp-conf-guest-conductor-B.json",
+     "sha256": "c109a82afc252696b53861fddda1dbfc457ae685c78171e64c64f827f8a445a2",
+     "story_id": "conf-guest-conductor",
+     "truth": "B"
+    },
+    "mp-conf-kitchen-hygiene-A": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/confirmatory/mp-conf-kitchen-hygiene-A.json",
+     "sha256": "d0f76bb27469c4bfb0d72b582df7be6cbd213f38fc467fe2aa16231446ae6706",
+     "story_id": "conf-kitchen-hygiene",
+     "truth": "A"
+    },
+    "mp-conf-kitchen-hygiene-B": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/confirmatory/mp-conf-kitchen-hygiene-B.json",
+     "sha256": "502be45ffdf6c82855d2069a114ddf14263ba3a69e87d8ab25fa68af227e869c",
+     "story_id": "conf-kitchen-hygiene",
+     "truth": "B"
+    },
+    "mp-conf-lab-freezer-A": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/confirmatory/mp-conf-lab-freezer-A.json",
+     "sha256": "c16753c53907a086b6ab6826fb4ceb9e850d223ae150fde2c2eac24a0d6673d8",
+     "story_id": "conf-lab-freezer",
+     "truth": "A"
+    },
+    "mp-conf-lab-freezer-B": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/confirmatory/mp-conf-lab-freezer-B.json",
+     "sha256": "f1393a47377a2014d5b5f19ba0539e918845030e7893d311ed503af2b436f718",
+     "story_id": "conf-lab-freezer",
+     "truth": "B"
+    },
+    "mp-conf-lease-renewal-A": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/confirmatory/mp-conf-lease-renewal-A.json",
+     "sha256": "e7c857cbaa081f5057c3f0c76b00c557f22c9ee5d13b78f5124169c6138fe6db",
+     "story_id": "conf-lease-renewal",
+     "truth": "A"
+    },
+    "mp-conf-lease-renewal-B": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/confirmatory/mp-conf-lease-renewal-B.json",
+     "sha256": "3795e3787e3e0439b6a8da2ed26e337a28a7fe39c264523cb2c9905c35b4236e",
+     "story_id": "conf-lease-renewal",
+     "truth": "B"
+    },
+    "mp-conf-marina-mooring-A": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/confirmatory/mp-conf-marina-mooring-A.json",
+     "sha256": "6a0c150a820f6069ba9391685593e2c6f75116572689a37cdadcd46106796778",
+     "story_id": "conf-marina-mooring",
+     "truth": "A"
+    },
+    "mp-conf-marina-mooring-B": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/confirmatory/mp-conf-marina-mooring-B.json",
+     "sha256": "e995a7e73e1f4b090435ee6ef452b2fc3ffd5bb7409819079c49e73644b54eba",
+     "story_id": "conf-marina-mooring",
+     "truth": "B"
+    },
+    "mp-conf-orchard-frost-claim-A": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/confirmatory/mp-conf-orchard-frost-claim-A.json",
+     "sha256": "e7a52aa6fa3352f4467352437615c7d36de8e919bb89c2e17dfebe6d1051c463",
+     "story_id": "conf-orchard-frost-claim",
+     "truth": "A"
+    },
+    "mp-conf-orchard-frost-claim-B": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/confirmatory/mp-conf-orchard-frost-claim-B.json",
+     "sha256": "1813c317ec9e527b2d7f75072c8d4c4ea922ba1e5a8a580fa0fb7b3c0cbd30e9",
+     "story_id": "conf-orchard-frost-claim",
+     "truth": "B"
+    },
+    "mp-conf-paper-delivery-A": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/confirmatory/mp-conf-paper-delivery-A.json",
+     "sha256": "a549b1ac44cb6593027a67cafa6316d2351f24f4a3d0db90b76347357aca81e0",
+     "story_id": "conf-paper-delivery",
+     "truth": "A"
+    },
+    "mp-conf-paper-delivery-B": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/confirmatory/mp-conf-paper-delivery-B.json",
+     "sha256": "b3635bd8c5c8b23da773b40ff6c15ded3374e0a4ce05e57583fef0d954335272",
+     "story_id": "conf-paper-delivery",
+     "truth": "B"
+    },
+    "mp-conf-park-permit-A": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/confirmatory/mp-conf-park-permit-A.json",
+     "sha256": "8004cd1a8d034fce3ffeb80ebb0c4e0d9022b7099b5e581b89fc2786a81338f0",
+     "story_id": "conf-park-permit",
+     "truth": "A"
+    },
+    "mp-conf-park-permit-B": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/confirmatory/mp-conf-park-permit-B.json",
+     "sha256": "e59ff216a0dfbde226f78006ac4d3ccd1115c0f8394c14d80147f3461b8fccff",
+     "story_id": "conf-park-permit",
+     "truth": "B"
+    },
+    "mp-conf-photo-competition-A": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/confirmatory/mp-conf-photo-competition-A.json",
+     "sha256": "603b721f04ef1fc42bb3425991926ad00ff68dc450a4f60bdffe0d9f62d55dba",
+     "story_id": "conf-photo-competition",
+     "truth": "A"
+    },
+    "mp-conf-photo-competition-B": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/confirmatory/mp-conf-photo-competition-B.json",
+     "sha256": "fae2f4a1c25f1585fc887542209f2a662ac623ddac3821cda03d23bf9d89f63f",
+     "story_id": "conf-photo-competition",
+     "truth": "B"
+    },
+    "mp-conf-pitch-drainage-A": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/confirmatory/mp-conf-pitch-drainage-A.json",
+     "sha256": "a3abc8a52f83be1fd3a13daabb7e79f4c850b53ad80f5c7d508ca6f52f8f69cd",
+     "story_id": "conf-pitch-drainage",
+     "truth": "A"
+    },
+    "mp-conf-pitch-drainage-B": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/confirmatory/mp-conf-pitch-drainage-B.json",
+     "sha256": "6f753d4838600ff924fe82547e1a11035ac56a72651a80d2f4f58fe51bce770f",
+     "story_id": "conf-pitch-drainage",
+     "truth": "B"
+    },
+    "mp-conf-pool-water-A": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/confirmatory/mp-conf-pool-water-A.json",
+     "sha256": "6d06a7f79c5919fa43e4aacff27b39c8c3995730e4aea637758c8aa5146b8652",
+     "story_id": "conf-pool-water",
+     "truth": "A"
+    },
+    "mp-conf-pool-water-B": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/confirmatory/mp-conf-pool-water-B.json",
+     "sha256": "f8a4f8298568b741d22cafd126a132ad4ffff0e0d6365ea9d42b00a71b286bb5",
+     "story_id": "conf-pool-water",
+     "truth": "B"
+    },
+    "mp-conf-teacher-certificate-A": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/confirmatory/mp-conf-teacher-certificate-A.json",
+     "sha256": "39fac76470c11786fcb0058a9efc0913d7baf8d1a8d8f9a3cadf5105ac6bf19b",
+     "story_id": "conf-teacher-certificate",
+     "truth": "A"
+    },
+    "mp-conf-teacher-certificate-B": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/confirmatory/mp-conf-teacher-certificate-B.json",
+     "sha256": "a1e6726c5a43a7c8ad282cf0410ea428b42db4ac68e4be50986f40fe1e0f1ffc",
+     "story_id": "conf-teacher-certificate",
+     "truth": "B"
+    },
+    "mp-conf-tennis-resurfacing-A": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/confirmatory/mp-conf-tennis-resurfacing-A.json",
+     "sha256": "bcfd0440bfbdc15e0a63c7bb42c2533f09d0f4d0bfcf242a4cdb209bfcda6d41",
+     "story_id": "conf-tennis-resurfacing",
+     "truth": "A"
+    },
+    "mp-conf-tennis-resurfacing-B": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/confirmatory/mp-conf-tennis-resurfacing-B.json",
+     "sha256": "57c2a4ad1f0c0552207b26003c597d702772e8b22310754d337601c79f8662f5",
+     "story_id": "conf-tennis-resurfacing",
+     "truth": "B"
+    },
+    "mp-conf-train-platform-A": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/confirmatory/mp-conf-train-platform-A.json",
+     "sha256": "36f771bc0c8f0a66e40c90214a334ec00e9ffe76760bba980fc0492181003834",
+     "story_id": "conf-train-platform",
+     "truth": "A"
+    },
+    "mp-conf-train-platform-B": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/confirmatory/mp-conf-train-platform-B.json",
+     "sha256": "b596be8d52b18d83094712781d450cf3a7d7dc023ca5ecf4661e9dbace3bee7e",
+     "story_id": "conf-train-platform",
+     "truth": "B"
+    },
+    "mp-conf-vineyard-harvest-A": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/confirmatory/mp-conf-vineyard-harvest-A.json",
+     "sha256": "92dbcac42a6d361a266cb0389ba36cf99130ae1a8421be216e1d04bade16050a",
+     "story_id": "conf-vineyard-harvest",
+     "truth": "A"
+    },
+    "mp-conf-vineyard-harvest-B": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/confirmatory/mp-conf-vineyard-harvest-B.json",
+     "sha256": "b97bf4b864e956f2692846edf46f95026f27ab7ef52b2986d2724334a35a0d3e",
+     "story_id": "conf-vineyard-harvest",
+     "truth": "B"
+    }
+   }
+  },
+  "development": {
+   "n_specs": 32,
+   "n_stories": 12,
+   "specs": {
+    "mp-dev-bakery-van-inspection-A": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/development/mp-dev-bakery-van-inspection-A.json",
+     "sha256": "26d16efc492bb15c028a481d3af8a99453610114e348ef88e5ac2f1587445358",
+     "story_id": "dev-bakery-van-inspection",
+     "truth": "A"
+    },
+    "mp-dev-bakery-van-inspection-B": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/development/mp-dev-bakery-van-inspection-B.json",
+     "sha256": "c7d45f8f219c6fff6882fa6b22ac5b7ef5c14bea124c64e0153ee9b2db86d663",
+     "story_id": "dev-bakery-van-inspection",
+     "truth": "B"
+    },
+    "mp-dev-bike-dock-move-A": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/development/mp-dev-bike-dock-move-A.json",
+     "sha256": "e9bb2945f8269cdabf914450b1563130857bcff302ef4c58abff6c11a556ef80",
+     "story_id": "dev-bike-dock-move",
+     "truth": "A"
+    },
+    "mp-dev-bike-dock-move-B": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/development/mp-dev-bike-dock-move-B.json",
+     "sha256": "975a48fc700a3526c743b33c2c3a6e08989952aa8778d8c68af6e0118629d759",
+     "story_id": "dev-bike-dock-move",
+     "truth": "B"
+    },
+    "mp-dev-clinic-nurse-cert-A": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/development/mp-dev-clinic-nurse-cert-A.json",
+     "sha256": "fa8722e3027fcb8a0f8b9ce784b7215401a9f8a97e3a5ffba001855dd0da945b",
+     "story_id": "dev-clinic-nurse-cert",
+     "truth": "A"
+    },
+    "mp-dev-clinic-nurse-cert-A-challenge": {
+     "challenge_set": true,
+     "file": "gates/S1/banks/development/mp-dev-clinic-nurse-cert-A-challenge.json",
+     "sha256": "92541a1e6bf601da78d8c61b2c8c84be8e2b8c34a32997137bd526952cb09c78",
+     "story_id": "dev-clinic-nurse-cert",
+     "truth": "A"
+    },
+    "mp-dev-clinic-nurse-cert-B": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/development/mp-dev-clinic-nurse-cert-B.json",
+     "sha256": "f96f61a86528f0afa98c64ab4e1b8ad9ddcef63c291f5a5d1fa6aae4e644314c",
+     "story_id": "dev-clinic-nurse-cert",
+     "truth": "B"
+    },
+    "mp-dev-clinic-nurse-cert-B-challenge": {
+     "challenge_set": true,
+     "file": "gates/S1/banks/development/mp-dev-clinic-nurse-cert-B-challenge.json",
+     "sha256": "d76b11855842d7ffbb7beb425e244b3d1ea99bdf675060bb8d28bb7311b26fa1",
+     "story_id": "dev-clinic-nurse-cert",
+     "truth": "B"
+    },
+    "mp-dev-concert-hall-licence-A": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/development/mp-dev-concert-hall-licence-A.json",
+     "sha256": "6e9c8980653fbe3f50a002f068ffb9d62aa2d993f007db44d0626f298e328a68",
+     "story_id": "dev-concert-hall-licence",
+     "truth": "A"
+    },
+    "mp-dev-concert-hall-licence-B": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/development/mp-dev-concert-hall-licence-B.json",
+     "sha256": "6545cd991e45b4eaf5d5e76fd31dacc50ece0476548d5229bf0f6ffd131d9fae",
+     "story_id": "dev-concert-hall-licence",
+     "truth": "B"
+    },
+    "mp-dev-farm-irrigation-permit-A": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/development/mp-dev-farm-irrigation-permit-A.json",
+     "sha256": "106bc8526aaa6f7066b892422445188635a9a0e9eeb3575d7c6a15079c09a5fb",
+     "story_id": "dev-farm-irrigation-permit",
+     "truth": "A"
+    },
+    "mp-dev-farm-irrigation-permit-A-challenge": {
+     "challenge_set": true,
+     "file": "gates/S1/banks/development/mp-dev-farm-irrigation-permit-A-challenge.json",
+     "sha256": "df9fe6b952c2265b2d44ed4d5b2e1d82eeeb51ee94b6d7fe5a963aece110b9a5",
+     "story_id": "dev-farm-irrigation-permit",
+     "truth": "A"
+    },
+    "mp-dev-farm-irrigation-permit-B": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/development/mp-dev-farm-irrigation-permit-B.json",
+     "sha256": "a823093096a31e8f12054725c2e1b84197ca5d4f8ef19c94cbda1cd8b1570e70",
+     "story_id": "dev-farm-irrigation-permit",
+     "truth": "B"
+    },
+    "mp-dev-farm-irrigation-permit-B-challenge": {
+     "challenge_set": true,
+     "file": "gates/S1/banks/development/mp-dev-farm-irrigation-permit-B-challenge.json",
+     "sha256": "3a5de7c643044af6992801fc20aaf6f442f081ee83dea7d395aa561b6ff4f3eb",
+     "story_id": "dev-farm-irrigation-permit",
+     "truth": "B"
+    },
+    "mp-dev-ferry-timetable-A": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/development/mp-dev-ferry-timetable-A.json",
+     "sha256": "909085cde449b454865156e3024feb1c69cf3c8b075bec7b9bd186e5695ee9cc",
+     "story_id": "dev-ferry-timetable",
+     "truth": "A"
+    },
+    "mp-dev-ferry-timetable-A-challenge": {
+     "challenge_set": true,
+     "file": "gates/S1/banks/development/mp-dev-ferry-timetable-A-challenge.json",
+     "sha256": "17d3835fa5cb0da63d86f3ad8e6c158cfe7a2a516acbcf28f5b7359b1e0c9a18",
+     "story_id": "dev-ferry-timetable",
+     "truth": "A"
+    },
+    "mp-dev-ferry-timetable-B": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/development/mp-dev-ferry-timetable-B.json",
+     "sha256": "9f0d4344959ffad0160d19a041ee8d4a98cf475cac5469d22ff3090f2fc32933",
+     "story_id": "dev-ferry-timetable",
+     "truth": "B"
+    },
+    "mp-dev-ferry-timetable-B-challenge": {
+     "challenge_set": true,
+     "file": "gates/S1/banks/development/mp-dev-ferry-timetable-B-challenge.json",
+     "sha256": "270395d25042f0cd6443276da659455df8d4bb8e6a9ee41638c928bdaa5eed43",
+     "story_id": "dev-ferry-timetable",
+     "truth": "B"
+    },
+    "mp-dev-guesthouse-group-booking-A": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/development/mp-dev-guesthouse-group-booking-A.json",
+     "sha256": "ce9466e37d9d8fa942bd260428434b772c7d5b34406b1e2e384c8f3822f2de18",
+     "story_id": "dev-guesthouse-group-booking",
+     "truth": "A"
+    },
+    "mp-dev-guesthouse-group-booking-B": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/development/mp-dev-guesthouse-group-booking-B.json",
+     "sha256": "e9fb61afc5337b603234ed7d29c5c720a21c76b9444be72e53ce0878538b0752",
+     "story_id": "dev-guesthouse-group-booking",
+     "truth": "B"
+    },
+    "mp-dev-library-atlas-loan-A": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/development/mp-dev-library-atlas-loan-A.json",
+     "sha256": "dbc78bcb3dc7870e91b5474fefa12a39617fe7317d8edc9dde22d978fcc163ce",
+     "story_id": "dev-library-atlas-loan",
+     "truth": "A"
+    },
+    "mp-dev-library-atlas-loan-B": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/development/mp-dev-library-atlas-loan-B.json",
+     "sha256": "335492e8a6ede5751369e0fcae21dbb6c7f2bb812372bc07d8a4f644d395720c",
+     "story_id": "dev-library-atlas-loan",
+     "truth": "B"
+    },
+    "mp-dev-museum-painting-loan-A": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/development/mp-dev-museum-painting-loan-A.json",
+     "sha256": "4723887f8d737a61db581e8229c0769d1476652cabbdc4510eed29c2ce1d6ec8",
+     "story_id": "dev-museum-painting-loan",
+     "truth": "A"
+    },
+    "mp-dev-museum-painting-loan-A-challenge": {
+     "challenge_set": true,
+     "file": "gates/S1/banks/development/mp-dev-museum-painting-loan-A-challenge.json",
+     "sha256": "1323cf4275de2964796408b964eb5bf311f7780cd3e8d489644f218542c00c52",
+     "story_id": "dev-museum-painting-loan",
+     "truth": "A"
+    },
+    "mp-dev-museum-painting-loan-B": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/development/mp-dev-museum-painting-loan-B.json",
+     "sha256": "14615cc90b7f966fc69776f78eaa356cd73ad32787aaee6a6d563d5c8601a759",
+     "story_id": "dev-museum-painting-loan",
+     "truth": "B"
+    },
+    "mp-dev-museum-painting-loan-B-challenge": {
+     "challenge_set": true,
+     "file": "gates/S1/banks/development/mp-dev-museum-painting-loan-B-challenge.json",
+     "sha256": "af51139e1b0502e2591f226c5d5ebe34309d2e2d9f812c7bbddd6345f675a121",
+     "story_id": "dev-museum-painting-loan",
+     "truth": "B"
+    },
+    "mp-dev-school-bus-route-A": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/development/mp-dev-school-bus-route-A.json",
+     "sha256": "3efed0f85d67684e93af3f4c0143c50c2555e3be4497bdde550ae061d3818af8",
+     "story_id": "dev-school-bus-route",
+     "truth": "A"
+    },
+    "mp-dev-school-bus-route-B": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/development/mp-dev-school-bus-route-B.json",
+     "sha256": "9f3b495a492d3b66ffa4cab897a3e5274f3db0752a1662ee167d60dc1c757160",
+     "story_id": "dev-school-bus-route",
+     "truth": "B"
+    },
+    "mp-dev-software-release-date-A": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/development/mp-dev-software-release-date-A.json",
+     "sha256": "362390fdfc216e20298e6a92b11ebacdb7cae1befe89b7bf47858d45130b59aa",
+     "story_id": "dev-software-release-date",
+     "truth": "A"
+    },
+    "mp-dev-software-release-date-B": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/development/mp-dev-software-release-date-B.json",
+     "sha256": "fac6718ef3af6a95230a93406cc44525938519c765298bb12e537db85a962be4",
+     "story_id": "dev-software-release-date",
+     "truth": "B"
+    },
+    "mp-dev-warehouse-fire-cert-A": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/development/mp-dev-warehouse-fire-cert-A.json",
+     "sha256": "48a852ff3e9a19c47d107fc418a66fff3b74b884a4663d13bfe1643c6aaf1b28",
+     "story_id": "dev-warehouse-fire-cert",
+     "truth": "A"
+    },
+    "mp-dev-warehouse-fire-cert-B": {
+     "challenge_set": false,
+     "file": "gates/S1/banks/development/mp-dev-warehouse-fire-cert-B.json",
+     "sha256": "d57bc6bbf240e60919d9917411378861da1109b57326f1b9c590314c327b2cca",
+     "story_id": "dev-warehouse-fire-cert",
+     "truth": "B"
+    }
+   }
+  }
+ },
+ "schema": {
+  "coordination_commit": "9c155beb9054a9b639d41d0b92d1dfce11f81ac1",
+  "file": "gates/S1/schema/evidence_schema_v1.0.json",
+  "sha256": "cd186ef99b4dfa129c618b37f7a88e9a07acac9af788b408502df2890619b51b"
+ },
+ "stories": {
+  "confirmatory": {
+   "file": "gates/S1/stories/confirmatory.yaml",
+   "sha256": "363bc32a10988f72a37dc2887066f851c846b654d57d5c6128af8ae7b2b24fba"
+  },
+  "development": {
+   "file": "gates/S1/stories/development.yaml",
+   "sha256": "aaa18c9bee83904f12f9203ede6c63e507f8d9f2291c8e57783211cc214c9468"
+  }
+ }
+}

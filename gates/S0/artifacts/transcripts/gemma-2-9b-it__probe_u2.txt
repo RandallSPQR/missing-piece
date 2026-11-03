@@ -1,0 +1,30 @@
+<start_of_turn>user
+You are Agent 1, one of five agents (Agent 1 to Agent 5) discussing one question that has two possible answers. Each agent has received a private briefing. No agent can see another agent's briefing. The discussion has 4 rounds; in each round every agent speaks once, in a random order. After the last round, each agent votes privately for the answer they think is correct.
+
+Question: Is Mira Tolsen's nursing certification currently valid?
+A: No, it has lapsed
+B: Yes, it is currently valid
+
+Your private briefing:
+- The Brookvale Clinic needs a certified nurse for its weekend shifts.
+- Mira Tolsen is one of three nurses who might cover those shifts.
+- You checked the regional nursing register yourself, which is right about matters like this 49 times out of 50. It shows that the register lists about six hundred nurses in the region.
+
+Round 1 begins.
+
+Round 1. It is your turn to speak, Agent 1. Write your message to the group in 60 to 120 words.<end_of_turn>
+<start_of_turn>model
+check reliable told report vote consider record agree round record option detail record told said record check before should clear clear told answer source consider vote we reliable told evidence source report told detail option said should we source record source record round shows after report record we consider source told after round option told answer round reliable agree evidence registry evidence round we detail told consider think after we clear record round clear source reliable agree clear registry should agree record evidence vote said we registry check<end_of_turn>
+<start_of_turn>user
+Agent 4: evidence registry round report said think detail record registry told option group record record clear told option report report round report check agree answer agree answer report round the registry after check evidence reliable consider agree report told group group registry said said vote round group option check shows told option think reliable vote report group consider consider detail clear report group round the before registry detail answer said shows before clear consider think registry answer think evidence consider shows consider before told before round round before told think told option evidence check group check evidence consider told report think round report round clear detail
+Agent 2: we answer round should reliable vote after record evidence option shows clear the consider source consider think record report told think record consider told we told should source after record answer option reliable said agree evidence group vote option think check evidence evidence should agree report answer record check report vote reliable report the registry we record think we answer group told vote clear group group registry record answer agree agree round after consider vote clear said answer check reliable told think we we we the the agree answer registry vote clear before consider we think think source agree think
+Agent 3: group the after agree told before evidence we evidence option registry reliable after check record answer report told reliable after before source source shows should vote group detail shows after the the answer we said agree vote the answer record source after the reliable round shows group answer source should source group the we detail said agree option option before should detail reliable should clear group think told check evidence check the we said detail reliable answer
+Agent 5: should after source the check registry shows check after think agree answer record group we told report option round evidence reliable told round report told after shows vote registry option think round record option check think after detail evidence we answer group record group the after source record we shows detail round said shows think report consider group agree shows after clear record detail should check source think evidence report evidence detail after answer think source clear think said answer detail vote the check clear consider round after clear the evidence shows source should told should detail consider evidence vote check check report detail said the round after answer said before think vote after should option said reliable registry report
+
+Private question (your answer will not be shared with anyone).
+Question: Is Mira Tolsen's nursing certification currently valid?
+A: No, it has lapsed
+B: Yes, it is currently valid
+
+Which answer do you currently think is correct? Reply with exactly one letter, A or B, and nothing else.<end_of_turn>
+<start_of_turn>model

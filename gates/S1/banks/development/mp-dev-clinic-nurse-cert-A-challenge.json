@@ -1,0 +1,215 @@
+{
+ "bank": "development",
+ "challenge_set": true,
+ "evidence_model": {
+  "holdings": {
+   "KA": {
+    "other_receivers": [
+     "shared0",
+     "shared1",
+     "weak_shared",
+     "N"
+    ],
+    "speaker": [
+     "shared0",
+     "shared1",
+     "weak_shared",
+     "report",
+     "record"
+    ],
+    "verifier_holder": [
+     "shared0",
+     "shared1",
+     "weak_shared",
+     "N"
+    ]
+   },
+   "KP": {
+    "other_receivers": [
+     "shared0",
+     "shared1",
+     "weak_shared",
+     "N"
+    ],
+    "speaker": [
+     "shared0",
+     "shared1",
+     "weak_shared",
+     "report",
+     "record"
+    ],
+    "verifier_holder": [
+     "shared0",
+     "shared1",
+     "weak_shared",
+     "record"
+    ]
+   },
+   "UA": {
+    "other_receivers": [
+     "shared0",
+     "shared1",
+     "weak_shared",
+     "N"
+    ],
+    "speaker": [
+     "shared0",
+     "shared1",
+     "weak_shared",
+     "report",
+     "N"
+    ],
+    "verifier_holder": [
+     "shared0",
+     "shared1",
+     "weak_shared",
+     "N"
+    ]
+   },
+   "UP": {
+    "other_receivers": [
+     "shared0",
+     "shared1",
+     "weak_shared",
+     "N"
+    ],
+    "speaker": [
+     "shared0",
+     "shared1",
+     "weak_shared",
+     "report",
+     "N"
+    ],
+    "verifier_holder": [
+     "shared0",
+     "shared1",
+     "weak_shared",
+     "record"
+    ]
+   }
+  },
+  "items": [
+   {
+    "accuracy": "3/4",
+    "dependence_group": null,
+    "favours": "B",
+    "item_id": "report",
+    "kind": "hearsay_report",
+    "text": "You were told by a receptionist at the Brookvale Clinic, who is right about matters like this 3 times out of 4, that Mira Tolsen's certification ran out in the summer."
+   },
+   {
+    "accuracy": "49/50",
+    "dependence_group": null,
+    "favours": "A",
+    "item_id": "record",
+    "kind": "firsthand_record",
+    "text": "You checked the regional nursing register yourself, which is right about matters like this 49 times out of 50. It shows that Mira Tolsen's certification is current and runs until next autumn."
+   },
+   {
+    "accuracy": "49/50",
+    "dependence_group": null,
+    "favours": "neutral",
+    "item_id": "neutral0",
+    "kind": "neutral_record",
+    "text": "You checked the regional nursing register yourself, which is right about matters like this 49 times out of 50. It shows that the register lists about six hundred nurses in the region."
+   },
+   {
+    "accuracy": "49/50",
+    "dependence_group": null,
+    "favours": "neutral",
+    "item_id": "neutral1",
+    "kind": "neutral_record",
+    "text": "You checked the regional nursing register yourself, which is right about matters like this 49 times out of 50. It shows that the register office closes early on the last Friday of each month."
+   },
+   {
+    "accuracy": "49/50",
+    "dependence_group": null,
+    "favours": "neutral",
+    "item_id": "neutral2",
+    "kind": "neutral_record",
+    "text": "You checked the regional nursing register yourself, which is right about matters like this 49 times out of 50. It shows that the register switched to a new search page in the spring."
+   },
+   {
+    "accuracy": "49/50",
+    "dependence_group": null,
+    "favours": "neutral",
+    "item_id": "neutral3",
+    "kind": "neutral_record",
+    "text": "You checked the regional nursing register yourself, which is right about matters like this 49 times out of 50. It shows that the register prints its letters to nurses on pale blue paper."
+   },
+   {
+    "accuracy": "49/50",
+    "dependence_group": null,
+    "favours": "neutral",
+    "item_id": "neutral4",
+    "kind": "neutral_record",
+    "text": "You checked the regional nursing register yourself, which is right about matters like this 49 times out of 50. It shows that the register's help desk answers phone calls on weekday mornings."
+   },
+   {
+    "accuracy": "none",
+    "dependence_group": null,
+    "favours": "neutral",
+    "item_id": "shared0",
+    "kind": "shared_context",
+    "text": "The Brookvale Clinic needs a certified nurse for its weekend shifts."
+   },
+   {
+    "accuracy": "none",
+    "dependence_group": null,
+    "favours": "neutral",
+    "item_id": "shared1",
+    "kind": "shared_context",
+    "text": "Mira Tolsen is one of three nurses who might cover those shifts."
+   },
+   {
+    "accuracy": "3/5",
+    "dependence_group": null,
+    "favours": "B",
+    "item_id": "weak_shared",
+    "kind": "shared_weak_report",
+    "text": "Everyone in the group has heard from a neighbour, who is right about matters like this 3 times out of 5, that Mira Tolsen's certification ran out in the summer."
+   }
+  ],
+  "pooled": {
+   "KA": {
+    "group_posterior_truth": 0.915888,
+    "group_toward_truth": 2.387743,
+    "receivers_toward_truth": -0.405465
+   },
+   "KP": {
+    "group_posterior_truth": 0.915888,
+    "group_toward_truth": 2.387743,
+    "receivers_toward_truth": 3.486355
+   },
+   "UA": {
+    "group_posterior_truth": 0.181818,
+    "group_toward_truth": -1.504077,
+    "receivers_toward_truth": -0.405465
+   },
+   "UP": {
+    "group_posterior_truth": 0.915888,
+    "group_toward_truth": 2.387743,
+    "receivers_toward_truth": 3.486355
+   }
+  },
+  "report_option": "B",
+  "solvable_verifier_present": true,
+  "type": "mp_hearsay_vs_record_v1"
+ },
+ "hidden_state": "A",
+ "pooled_margin_logodds": 2.2,
+ "prior": 0.5,
+ "scenario_id": "mp-dev-clinic-nurse-cert-A-challenge",
+ "schema_version": "1.0",
+ "story": {
+  "options": {
+   "A": "Yes, it is currently valid",
+   "B": "No, it has lapsed"
+  },
+  "question": "Is Mira Tolsen's nursing certification currently valid?",
+  "record_source": "the regional nursing register",
+  "report_source": "a receptionist at the Brookvale Clinic",
+  "story_id": "dev-clinic-nurse-cert"
+ },
+ "study": "MissingPiece"
+}

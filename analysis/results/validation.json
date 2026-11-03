@@ -1,0 +1,106 @@
+{
+ "n_sims": 400,
+ "checks": {
+  "sign_recovery_+0.10": {
+   "mean_estimate": 0.0987548076923077,
+   "sd": 0.025663968151468427,
+   "share_true_sign": 1.0,
+   "ci95_coverage": 0.9425,
+   "power_two_sided": 0.955,
+   "pass": true
+  },
+  "sign_recovery_-0.10": {
+   "mean_estimate": -0.09820673076923075,
+   "sd": 0.026682809684426514,
+   "share_true_sign": 1.0,
+   "ci95_coverage": 0.935,
+   "power_two_sided": 0.9525,
+   "pass": true
+  },
+  "null_behaviour": {
+   "type1_knowledge": 0.045,
+   "type1_interaction": 0.0525,
+   "ks_uniform_p": 0.39020006024204335,
+   "tost_declares_equivalence_at_0": 0.2025,
+   "pass": true
+  },
+  "null_rho1_heavy_slopes": {
+   "type1": 0.055,
+   "pass": true
+  },
+  "tost_false_equivalence_at_0.10": {
+   "rate": 0.0,
+   "pass": true
+  },
+  "tost_alpha_at_bound": {
+   "rate": 0.0525,
+   "pass": true
+  },
+  "interaction_recovery": {
+   "mean_estimate": 0.09880769230769232,
+   "pass": true
+  },
+  "paired_assignment": {
+   "non_holder_briefings_identical_across_cells": true,
+   "cells_share_plan": true,
+   "F_letter_balanced_within_starts": true,
+   "starts_checked": 8,
+   "refuses_incomplete_quad": true,
+   "refuses_quad_spanning_starts": true,
+   "pass": true
+  },
+  "branch_isolation": {
+   "games": 4,
+   "identical": 4,
+   "controls_detected": 4,
+   "pass": true
+  },
+  "blinded_permutation": {
+   "null_mean": -0.0008677884615384614,
+   "null_sd": 0.024252012851671063,
+   "observed": 0.02548076923076923,
+   "p_t": 0.3048337170155659,
+   "p_perm_story": 0.31025,
+   "p_perm_quad_diagnostic": 0.218,
+   "pass": true
+  },
+  "mixed_vs_paired": {
+   "rows": [
+    {
+     "route": "mixed_slope",
+     "estimate": 0.07836538461538489,
+     "paired": 0.07836538461538461
+    },
+    {
+     "route": "mixed_slope",
+     "estimate": 0.12692307692307686,
+     "paired": 0.12692307692307692
+    },
+    {
+     "route": "mixed_intercept",
+     "estimate": 0.08317307692307692,
+     "paired": 0.0831730769230769
+    },
+    {
+     "route": "paired_fallback",
+     "estimate": 0.1293269230769231,
+     "paired": 0.1293269230769231
+    },
+    {
+     "route": "mixed_slope",
+     "estimate": 0.09663461538461542,
+     "paired": 0.09663461538461537
+    }
+   ],
+   "pass": true
+  },
+  "engine_to_analysis": {
+   "games": 64,
+   "quads": 16,
+   "stories": 3,
+   "pass": true
+  }
+ },
+ "all_pass": true,
+ "seconds": 111.9
+}
