@@ -16,7 +16,7 @@ wait for the owner's approval of GPU spend.
 | what | where | tag | commit |
 |---|---|---|---|
 | Shared five-model pipeline (no serving is built here; D41: Missing Piece on v1.3.0, StPT on v1.2.0) | RandallSPQR/SAE-Ethos-Calibration | `v1.3.0` | `37031bcd0d33b6dbd2c6f6573127714367c306fe` |
-| Shared coordination record | [RandallSPQR/StPT-MP-Coordination](https://github.com/RandallSPQR/StPT-MP-Coordination) | none | `4f9e26b26a36` (MP entries D32–D44, P7–P14, A30–A33 on branch `claude/festive-ritchie-e5hga4`, merged with main `4ac488d`) |
+| Shared coordination record | [RandallSPQR/StPT-MP-Coordination](https://github.com/RandallSPQR/StPT-MP-Coordination) | none | `4e1494d55aa7` (MP entries D32–D44, P7–P14, A30–A34 on branch `claude/festive-ritchie-e5hga4`, merged with main `e6abfb0`) |
 | Evidence schema | coordination `schema/evidence_schema_v1.0.json` | 1.0 | copy in `gates/S1/schema/` |
 
 **What the coordination record holds:**

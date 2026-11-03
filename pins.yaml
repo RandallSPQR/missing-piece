@@ -11,8 +11,8 @@ pipeline:                      # the shared five-model pipeline; no serving is b
   previous: {tag: v1.2.0, commit: 5ca15f56a71f35d5818d0392f7f3b4acb2d85d1b}   # MP's pin until 2026-11-03; v1.3.0-strict serves identically (gates/S0/link_check/)
 coordination:                  # the shared coordination record (StPT + Missing Piece)
   repo: https://github.com/RandallSPQR/StPT-MP-Coordination
-  commit: 4f9e26b26a3693faabef1c1f0d0c4d7fd1170495   # MP entries D32-D44, P7-P14, A30-A33 over main 4ac488d (StPT D31, A29); branch claude/festive-ritchie-e5hga4, fast-forwardable onto main; re-pin to main's commit after the merge
-  base_main_commit: 4ac488d408fdf7316a4786983776bebeae037d98   # main as merged 2026-11-03 (D1-D31, A1-A29); first read at 9c155be
+  commit: 4e1494d55aa7c9a562e8fc8d2c3936458b56a671   # MP entries D32-D44, P7-P14, A30-A34 over main e6abfb0; branch claude/festive-ritchie-e5hga4, fast-forwardable onto main; re-pin to main's commit after the merge
+  base_main_commit: e6abfb0   # main as merged 2026-11-03 (D1-D31, A1-A29, SEALED S10); first read at 9c155be
   evidence_schema: "1.0"      # schema/evidence_schema_v1.0.json
   protocol_spec_version: "0.0"
 brief:
