@@ -1,0 +1,452 @@
+{
+ "runs": {
+  "gemma-3-27b-it": "20261103T0606Z",
+  "qwen3.5-27b": "20261103T0606Zb",
+  "llama-3.1-8b-it": "20261103T0606Zc",
+  "qwen3.5-9b": "20261103T0607Z",
+  "gemma-2-9b-it": "20261103T0612Z"
+ },
+ "files_sha256": {
+  "missing-piece/S0/20261103T0606Z/gemma-3-27b-it/DONE": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "missing-piece/S0/20261103T0606Z/gemma-3-27b-it/c12_throughput_gemma-3-27b-it.json": "71ae6dc4310360b640d5afd2095d5170506ff835171686cc19ecf22634457ed3",
+  "missing-piece/S0/20261103T0606Z/gemma-3-27b-it/c3_strict_gemma-3-27b-it.json": "b167af49cb68bb6c303f98cf99cae7118d11316c5842011877edd175f5a0d43a",
+  "missing-piece/S0/20261103T0606Z/gemma-3-27b-it/c3_throughput_gemma-3-27b-it.json": "7f6b5416ad42d0d008d5cb359ba4fce07824c904a40a894caa4ced16f4dd1189",
+  "missing-piece/S0/20261103T0606Z/gemma-3-27b-it/gpu.txt": "0b25c51fe41cd9f6b5d4aa444f121535d19c109eea794ef645cff466b33be558",
+  "missing-piece/S0/20261103T0606Z/gemma-3-27b-it/part1_gemma-3-27b-it.json": "4846524462e3c86247d0a3c82fc161fc133495f827401309e7f47bcce9332c2e",
+  "missing-piece/S0/20261103T0606Z/gemma-3-27b-it/pip_freeze_vllm.txt": "8f4ea537162ee0169f2eee89ab5c208ce2d87b7a17ca545ab2b09bfeaea6b5e2",
+  "missing-piece/S0/20261103T0606Z/gemma-3-27b-it/preflight.json": "21a7cc43f1622887715e1cd0456d20ef22fc8377cd67027e95bba1a7ec7f78d9",
+  "missing-piece/S0/20261103T0606Z/gemma-3-27b-it/serve_cmd_strict.txt": "03cc2b8e02e036a16a8561b9279f7876fb18ea53c2e5d8f38665896e4249d005",
+  "missing-piece/S0/20261103T0606Z/gemma-3-27b-it/serve_cmd_throughput.txt": "2ef7cd75435bc05efc3d29db60ec9fb7f538663b61719fdd995bd0fb1827ae23",
+  "missing-piece/S0/20261103T0606Z/gemma-3-27b-it/serve_cmd_throughput_invariant.txt": "18003bce7e9ad5c4d2f579684d9c96e8edfc6400375b3b7c1d0c0b90880c1925",
+  "missing-piece/S0/20261103T0606Z/gemma-3-27b-it/server_strict.json": "3cc9951e6f777ab42e0c4a8c8594d418b361fd088e8ed8da960e0e5d6fe39478",
+  "missing-piece/S0/20261103T0606Z/gemma-3-27b-it/server_throughput.json": "19320cf46e88de67e6c5e668349a9a4498e842ed7733a24265c2a2f701de94ef",
+  "missing-piece/S0/20261103T0606Z/gemma-3-27b-it/server_throughput_invariant.json": "84a082007adaf2774b8f73a43700ca74f1703583f5d1a84769fd8fe526937936",
+  "missing-piece/S0/20261103T0606Z/gemma-3-27b-it/stack.txt": "17ba245647d54ff022fce9530a9ef1365751cda37f9f857ea0a86bced4f9f90c",
+  "missing-piece/S0/20261103T0606Z/gemma-3-27b-it/summary_gemma-3-27b-it.json": "63a86f38ca20aee426205ebda974d123e5b9585d6be8863572a1900d016d04dc",
+  "missing-piece/S0/20261103T0606Z/gemma-3-27b-it/vote_prompts_gemma-3-27b-it.json": "db1faecd7bf6d1877b0bfd1d249adc014b9f0ac75798e1e07c27c7bbb9791a7f",
+  "missing-piece/S0/20261103T0606Z/gemma-3-27b-it/weight_hash.json": "62bf934e1556d61db3afa7b5d6f3cff3076a7605b8fd88ab4cd5674606f936cc",
+  "missing-piece/S0/20261103T0606Zb/qwen3.5-27b/c3_strict_qwen3.5-27b.json": "0a13eb4c86f12d50def64e4004be8b1c6810f2a0561a06a093fbaed65705034a",
+  "missing-piece/S0/20261103T0606Zb/qwen3.5-27b/gpu.txt": "0b25c51fe41cd9f6b5d4aa444f121535d19c109eea794ef645cff466b33be558",
+  "missing-piece/S0/20261103T0606Zb/qwen3.5-27b/part1_qwen3.5-27b.json": "30a513c94b198b8bcba75b364e0e84b8a6a52777012058e873ee21269af9b7c8",
+  "missing-piece/S0/20261103T0606Zb/qwen3.5-27b/pip_freeze_vllm.txt": "8f4ea537162ee0169f2eee89ab5c208ce2d87b7a17ca545ab2b09bfeaea6b5e2",
+  "missing-piece/S0/20261103T0606Zb/qwen3.5-27b/preflight.json": "2e11407c42cbec1130094d700f294339d9699a1fe3a45fbd705da62a48ae4266",
+  "missing-piece/S0/20261103T0606Zb/qwen3.5-27b/serve_cmd_strict.txt": "20e898b2cb6f6ecab955bf12896ba1720fd7cb02a71be84bd900c7f97929ef44",
+  "missing-piece/S0/20261103T0606Zb/qwen3.5-27b/server_strict.json": "e842470e9be83a2b113951c794b7e3d4d181c602ccfb137ebf1babde0da36942",
+  "missing-piece/S0/20261103T0606Zb/qwen3.5-27b/stack.txt": "17ba245647d54ff022fce9530a9ef1365751cda37f9f857ea0a86bced4f9f90c",
+  "missing-piece/S0/20261103T0606Zb/qwen3.5-27b/vote_prompts_qwen3.5-27b.json": "a7d3b180b86274b91e991e16945792b4980ef2593c82f1bd70fe0a05ca5641a1",
+  "missing-piece/S0/20261103T0606Zb/qwen3.5-27b/weight_hash.json": "3f57c71199d086fd391e0fb8b1ab37d41fb9904c6ff941946ce433d187ff8a13",
+  "missing-piece/S0/20261103T0606Zc/llama-3.1-8b-it/DONE": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "missing-piece/S0/20261103T0606Zc/llama-3.1-8b-it/c12_throughput_invariant_llama-3.1-8b-it.json": "5350b608a85a4eeca98f15acd2672bbf1a0846b1ff280eb114fbf377bdb078bd",
+  "missing-piece/S0/20261103T0606Zc/llama-3.1-8b-it/c12_throughput_llama-3.1-8b-it.json": "7e3ba19da6333c7ccbb9367e70c02a2350db78478b9810867e736cf7d5318016",
+  "missing-piece/S0/20261103T0606Zc/llama-3.1-8b-it/c3_strict_llama-3.1-8b-it.json": "d43ef37732a77f9bd6bcd2a2725db456d2c5ad802973a2ce547b98d4c8ee065f",
+  "missing-piece/S0/20261103T0606Zc/llama-3.1-8b-it/c3_throughput_invariant_llama-3.1-8b-it.json": "0ad14561ad381008426952b169ad34a7573a1882ef0601f0fb959a8f72d073e8",
+  "missing-piece/S0/20261103T0606Zc/llama-3.1-8b-it/c3_throughput_llama-3.1-8b-it.json": "a789a0545577efd13e5d6a3f691b62ac2724b09667962ffef8f67232c3267134",
+  "missing-piece/S0/20261103T0606Zc/llama-3.1-8b-it/gpu.txt": "0b25c51fe41cd9f6b5d4aa444f121535d19c109eea794ef645cff466b33be558",
+  "missing-piece/S0/20261103T0606Zc/llama-3.1-8b-it/part1_llama-3.1-8b-it.json": "64e615c8967b70f42f0e85f9a9674e03235f8837c52e23c5110c25350e29e6c3",
+  "missing-piece/S0/20261103T0606Zc/llama-3.1-8b-it/pip_freeze_vllm.txt": "8f4ea537162ee0169f2eee89ab5c208ce2d87b7a17ca545ab2b09bfeaea6b5e2",
+  "missing-piece/S0/20261103T0606Zc/llama-3.1-8b-it/preflight.json": "1d7103132c73ab5b081943b6cf2c6a0b737f8a14aac303297586ad6b5685a6c9",
+  "missing-piece/S0/20261103T0606Zc/llama-3.1-8b-it/serve_cmd_strict.txt": "2f6b3eb46160fe35e5b0c7aeeccf7687bee2409166965bf2f88c6c526c23f106",
+  "missing-piece/S0/20261103T0606Zc/llama-3.1-8b-it/serve_cmd_throughput.txt": "ece714a33887cf48bb8acb7daa8b3b0d05ba3dd95e65350282bd1286721d3d02",
+  "missing-piece/S0/20261103T0606Zc/llama-3.1-8b-it/serve_cmd_throughput_invariant.txt": "9f6e96830a80186edf292991be33278d1ff7d02a7597a6f4f1ad8a702f190fbf",
+  "missing-piece/S0/20261103T0606Zc/llama-3.1-8b-it/server_strict.json": "b24cc08e6da6c204365c40f8e804d361db304201cb5eaff032a611e870830421",
+  "missing-piece/S0/20261103T0606Zc/llama-3.1-8b-it/server_throughput.json": "c1bebdd2677cd775e9a997c8a4f4a8efb46f8c6e3e93888fb5ebcfc069347230",
+  "missing-piece/S0/20261103T0606Zc/llama-3.1-8b-it/server_throughput_invariant.json": "bf6db0a1d54266ea2e0581ac86338ea67253be0b0d13c7178d5dbff05e9a6c1c",
+  "missing-piece/S0/20261103T0606Zc/llama-3.1-8b-it/stack.txt": "17ba245647d54ff022fce9530a9ef1365751cda37f9f857ea0a86bced4f9f90c",
+  "missing-piece/S0/20261103T0606Zc/llama-3.1-8b-it/summary_llama-3.1-8b-it.json": "78b360f6924cfb7af8ff324c3d278ed6b7549f6ae0d7d71886b8ea8787f6308c",
+  "missing-piece/S0/20261103T0606Zc/llama-3.1-8b-it/vote_prompts_llama-3.1-8b-it.json": "f1b5a8060b6b6dfa0b37852f47efc7969df7a66e0c717850b86f9a375803a197",
+  "missing-piece/S0/20261103T0606Zc/llama-3.1-8b-it/weight_hash.json": "19cfaa0513be3d8290d7cdadd8ef947f948dacba7e24c34f3dc03f2b3af07729",
+  "missing-piece/S0/20261103T0607Z/qwen3.5-9b/c12_throughput_qwen3.5-9b.json": "9db70b703eb7da57ce2b44d30c14465639411319e256567291c2ac15e88d2795",
+  "missing-piece/S0/20261103T0607Z/qwen3.5-9b/c3_strict_qwen3.5-9b.json": "6388fbc8423abda24373dfc1e02ace7f6a1f70915abf425046df6a90a5804c68",
+  "missing-piece/S0/20261103T0607Z/qwen3.5-9b/c3_throughput_qwen3.5-9b.json": "44b6f87b81904e12ca06a1f0471bb5b33400330e1dafa0319e3e1a1157232e7a",
+  "missing-piece/S0/20261103T0607Z/qwen3.5-9b/gpu.txt": "0b25c51fe41cd9f6b5d4aa444f121535d19c109eea794ef645cff466b33be558",
+  "missing-piece/S0/20261103T0607Z/qwen3.5-9b/part1_qwen3.5-9b.json": "f6113d29bd18f1139578614f9d4d1da5dd56c9a657a7547dfa542c2f29fb2749",
+  "missing-piece/S0/20261103T0607Z/qwen3.5-9b/pip_freeze_vllm.txt": "8f4ea537162ee0169f2eee89ab5c208ce2d87b7a17ca545ab2b09bfeaea6b5e2",
+  "missing-piece/S0/20261103T0607Z/qwen3.5-9b/preflight.json": "45ac02276d3001fc272ae7d5fbecebdc29e693768ebbdaf37025eca87a5332ff",
+  "missing-piece/S0/20261103T0607Z/qwen3.5-9b/serve_cmd_strict.txt": "cd1661a09cab611465fd88a4e22525f927858a2e97afe830a0fd975c09ce687c",
+  "missing-piece/S0/20261103T0607Z/qwen3.5-9b/serve_cmd_throughput.txt": "9622dfaa84885d8099a31c9c7b7375aaaf754603fe22dfe8acb1df6ce35fa29c",
+  "missing-piece/S0/20261103T0607Z/qwen3.5-9b/server_strict.json": "772c8bd2030563c31eca9d43e2f57f47b5be02f456ed266eb6cda97014c002aa",
+  "missing-piece/S0/20261103T0607Z/qwen3.5-9b/server_throughput.json": "3b9098d771ba43b4631345741fa1204385b2246dc0a64ed911b39cd87e699d5e",
+  "missing-piece/S0/20261103T0607Z/qwen3.5-9b/stack.txt": "17ba245647d54ff022fce9530a9ef1365751cda37f9f857ea0a86bced4f9f90c",
+  "missing-piece/S0/20261103T0607Z/qwen3.5-9b/vote_prompts_qwen3.5-9b.json": "4050655f1d62916b638a09ad8116a3db9418c7f9cf48b3cc576e913cb7b0e7fb",
+  "missing-piece/S0/20261103T0607Z/qwen3.5-9b/weight_hash.json": "5849125f04107f7dfaff442bf192628b4572d2f653fafd6f272431260ee48c21",
+  "missing-piece/S0/20261103T0612Z/gemma-2-9b-it/DONE": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "missing-piece/S0/20261103T0612Z/gemma-2-9b-it/c12_throughput_gemma-2-9b-it.json": "e446ea04dc365f41b1edf8422933a728e90e06c85631a4e64b943478dd053c8c",
+  "missing-piece/S0/20261103T0612Z/gemma-2-9b-it/c12_throughput_invariant_gemma-2-9b-it.json": "9669db230ebf9102a885116befebcf11098aef5d13de677e0e094e0c76b69045",
+  "missing-piece/S0/20261103T0612Z/gemma-2-9b-it/c3_strict_gemma-2-9b-it.json": "6cd5789e46704316f9a1f59298dfa0e9e43bdd0043931247d2aa8ae91ea650f0",
+  "missing-piece/S0/20261103T0612Z/gemma-2-9b-it/c3_throughput_gemma-2-9b-it.json": "f1b424160b3e1037667273aee8097c7b2c7f5405285c7bbd44fe0a4af4cc502f",
+  "missing-piece/S0/20261103T0612Z/gemma-2-9b-it/c3_throughput_invariant_gemma-2-9b-it.json": "69c57c2a6aa3b2866bb28849aa3d66f29136bca188625d447c605076708387e5",
+  "missing-piece/S0/20261103T0612Z/gemma-2-9b-it/gpu.txt": "0b25c51fe41cd9f6b5d4aa444f121535d19c109eea794ef645cff466b33be558",
+  "missing-piece/S0/20261103T0612Z/gemma-2-9b-it/part1_gemma-2-9b-it.json": "9341c5630c8510243a49f32102f083a1d819f49fb3df9ee5fc1b1d11d8d8a3de",
+  "missing-piece/S0/20261103T0612Z/gemma-2-9b-it/pip_freeze_vllm.txt": "8f4ea537162ee0169f2eee89ab5c208ce2d87b7a17ca545ab2b09bfeaea6b5e2",
+  "missing-piece/S0/20261103T0612Z/gemma-2-9b-it/preflight.json": "7f85078d57af560b53f77a7076d1a8f858a4c91ae48af004399bdc16c295081a",
+  "missing-piece/S0/20261103T0612Z/gemma-2-9b-it/serve_cmd_strict.txt": "50a3d97f3902c02e218bd5e74e2f78fbc8f1cda28f4adc019a7ff062f7e9f8e1",
+  "missing-piece/S0/20261103T0612Z/gemma-2-9b-it/serve_cmd_throughput.txt": "ba6a2ad69c9bd30e0795d2faf0bc7272e9e1b26e2534e3bdf559620de66877b9",
+  "missing-piece/S0/20261103T0612Z/gemma-2-9b-it/serve_cmd_throughput_invariant.txt": "0a438f6d4d4482ff86000b210f77ff29938d7566b357cd8b10970530b154b71c",
+  "missing-piece/S0/20261103T0612Z/gemma-2-9b-it/server_strict.json": "b69a54e0276c432700d1e37282900bef4ad014e659a62f2a60809df951f9eb6f",
+  "missing-piece/S0/20261103T0612Z/gemma-2-9b-it/server_throughput.json": "dc9e5b2545f237fe46898f0e5ba2e98ec10cad9a2470c1f4da687a962e16fd2b",
+  "missing-piece/S0/20261103T0612Z/gemma-2-9b-it/server_throughput_invariant.json": "70bb79c96d55bb5ed661a22b55d3d40885c7e273fc3319a915df0d541313e22a",
+  "missing-piece/S0/20261103T0612Z/gemma-2-9b-it/stack.txt": "17ba245647d54ff022fce9530a9ef1365751cda37f9f857ea0a86bced4f9f90c",
+  "missing-piece/S0/20261103T0612Z/gemma-2-9b-it/summary_gemma-2-9b-it.json": "877c7b2b84bab00d1df1ed3d6ae1a9253afc46f88552493205d86ef116b02234",
+  "missing-piece/S0/20261103T0612Z/gemma-2-9b-it/vote_prompts_gemma-2-9b-it.json": "c8a699a24707e0fd61b5da268463c500fd4aa7bf3423968f4b0bdcec3e84d26d",
+  "missing-piece/S0/20261103T0612Z/gemma-2-9b-it/weight_hash.json": "20bc3b8b48fdf228d9bca964a556e0434d79ebbbc3f5ec4082267d8591696453"
+ },
+ "models": {
+  "llama-3.1-8b-it": {
+   "run": "20261103T0606Zc",
+   "weight_hash": {
+    "weight_hash_got": "495b73750141622d",
+    "weight_hash_want": "495b73750141622d",
+    "ok": true
+   },
+   "part1_pass": true,
+   "link_check": {
+    "min_over_v120_starts_max_abs_nats": 0.0,
+    "v120_restart_max_abs_nats": 0.11510229110717773,
+    "n_v120_starts": 2,
+    "bit_identical_to_a_v120_start": true
+   },
+   "throughput": {
+    "server_up": true,
+    "C1": {
+     "n": 64,
+     "max_abs_nats": 0.12500011564407032,
+     "share_logit_delta_gt_0.05": 0.140625,
+     "all_zero": false,
+     "pass": false
+    },
+    "C2": {
+     "n": 64,
+     "max_abs_nats": 0.25000004516914487,
+     "share_logit_delta_gt_0.05": 0.40625,
+     "all_zero": false,
+     "pass": false
+    },
+    "C3_model": {
+     "games": 32,
+     "quads": 8,
+     "support_diff_mean": 0.09375,
+     "support_diff_ci95": [
+      -0.0546875,
+      0.2421875
+     ],
+     "words_ks_p": 0.1270495298764848,
+     "out_of_band_diff": 0.03437499999999999,
+     "non_ab_mass_diff": -0.00032445031420498397,
+     "invalid_strict": 0,
+     "invalid_mode": 0,
+     "pass": false
+    },
+    "wall_s_per_game": 2.9375,
+    "excluded_invalid": false
+   },
+   "throughput_invariant": {
+    "server_up": true,
+    "C1": {
+     "n": 64,
+     "max_abs_nats": 0.0,
+     "share_logit_delta_gt_0.05": 0.0,
+     "all_zero": true,
+     "pass": true
+    },
+    "C2": {
+     "n": 64,
+     "max_abs_nats": 0.0,
+     "share_logit_delta_gt_0.05": 0.0,
+     "all_zero": true,
+     "pass": true
+    },
+    "C3_model": {
+     "games": 32,
+     "quads": 8,
+     "support_diff_mean": 0.046875,
+     "support_diff_ci95": [
+      -0.171875,
+      0.265625
+     ],
+     "words_ks_p": 0.06336442700822219,
+     "out_of_band_diff": 0.05781249999999999,
+     "non_ab_mass_diff": -0.00027491832635718745,
+     "invalid_strict": 0,
+     "invalid_mode": 0,
+     "pass": false
+    },
+    "wall_s_per_game": 4.909375,
+    "excluded_invalid": false
+   },
+   "strict_wall_s_per_game": 42.16875
+  },
+  "gemma-2-9b-it": {
+   "run": "20261103T0612Z",
+   "weight_hash": {
+    "weight_hash_got": "7055bc8c5f456ced",
+    "weight_hash_want": "7055bc8c5f456ced",
+    "ok": true
+   },
+   "part1_pass": true,
+   "link_check": {
+    "min_over_v120_starts_max_abs_nats": 0.0,
+    "v120_restart_max_abs_nats": 0.0,
+    "n_v120_starts": 2,
+    "bit_identical_to_a_v120_start": true
+   },
+   "throughput": {
+    "server_up": true,
+    "C1": {
+     "n": 64,
+     "max_abs_nats": 0.12500029196962714,
+     "share_logit_delta_gt_0.05": 0.078125,
+     "all_zero": false,
+     "pass": false
+    },
+    "C2": {
+     "n": 64,
+     "max_abs_nats": 0.12500028312206268,
+     "share_logit_delta_gt_0.05": 0.21875,
+     "all_zero": false,
+     "pass": false
+    },
+    "C3_model": {
+     "games": 32,
+     "quads": 8,
+     "support_diff_mean": 0.03125,
+     "support_diff_ci95": [
+      -0.1171875,
+      0.1953125
+     ],
+     "words_ks_p": 0.4007255477536338,
+     "out_of_band_diff": -0.004687499999999997,
+     "non_ab_mass_diff": 0.00016333946478912296,
+     "invalid_strict": 0,
+     "invalid_mode": 0,
+     "pass": false
+    },
+    "wall_s_per_game": 14.45625,
+    "excluded_invalid": false
+   },
+   "throughput_invariant": {
+    "server_up": true,
+    "C1": {
+     "n": 64,
+     "max_abs_nats": 0.0,
+     "share_logit_delta_gt_0.05": 0.0,
+     "all_zero": true,
+     "pass": true
+    },
+    "C2": {
+     "n": 64,
+     "max_abs_nats": 0.0,
+     "share_logit_delta_gt_0.05": 0.0,
+     "all_zero": true,
+     "pass": true
+    },
+    "C3_model": {
+     "games": 32,
+     "quads": 8,
+     "support_diff_mean": 0.1484375,
+     "support_diff_ci95": [
+      -0.03125,
+      0.3359375
+     ],
+     "words_ks_p": 0.005945088695116163,
+     "out_of_band_diff": -0.04687499999999999,
+     "non_ab_mass_diff": 0.00021426148438784764,
+     "invalid_strict": 0,
+     "invalid_mode": 0,
+     "pass": false
+    },
+    "wall_s_per_game": 24.571875,
+    "excluded_invalid": false
+   },
+   "strict_wall_s_per_game": 111.61875
+  },
+  "qwen3.5-9b": {
+   "run": "20261103T0607Z",
+   "weight_hash": {
+    "weight_hash_got": "4b570a1e6e5db4b9",
+    "weight_hash_want": "4b570a1e6e5db4b9",
+    "ok": true
+   },
+   "part1_pass": true,
+   "link_check": {
+    "min_over_v120_starts_max_abs_nats": 0.0012778043746948242,
+    "v120_restart_max_abs_nats": 0.12348365783691406,
+    "n_v120_starts": 2,
+    "bit_identical_to_a_v120_start": false
+   },
+   "throughput": {
+    "server_up": true,
+    "C1": {
+     "n": 64,
+     "max_abs_nats": 0.0,
+     "share_logit_delta_gt_0.05": 0.0,
+     "all_zero": true,
+     "pass": true
+    },
+    "C2": {
+     "n": 64,
+     "max_abs_nats": 0.2500003152526915,
+     "share_logit_delta_gt_0.05": 0.09375,
+     "all_zero": false,
+     "pass": false
+    },
+    "C3_model": {
+     "games": 32,
+     "quads": 8,
+     "support_diff_mean": 0.015625,
+     "support_diff_ci95": [
+      -0.09375,
+      0.15625
+     ],
+     "words_ks_p": 0.020963865476686327,
+     "out_of_band_diff": 0.014062499999999978,
+     "non_ab_mass_diff": -2.6696988852826327e-05,
+     "invalid_strict": 0,
+     "invalid_mode": 0,
+     "pass": false
+    },
+    "wall_s_per_game": 46.5,
+    "excluded_invalid": true
+   },
+   "throughput_invariant": {
+    "server_up": null,
+    "C1": null,
+    "C2": null,
+    "C3_model": null,
+    "wall_s_per_game": null,
+    "excluded_invalid": true
+   },
+   "strict_wall_s_per_game": 50.025
+  },
+  "gemma-3-27b-it": {
+   "run": "20261103T0606Z",
+   "weight_hash": {
+    "weight_hash_got": "34f745e7c6ef5b7b",
+    "weight_hash_want": "34f745e7c6ef5b7b",
+    "ok": true
+   },
+   "part1_pass": true,
+   "link_check": {
+    "min_over_v120_starts_max_abs_nats": 0.49670839309692383,
+    "v120_restart_max_abs_nats": 0.2498002052307129,
+    "n_v120_starts": 2,
+    "bit_identical_to_a_v120_start": false
+   },
+   "throughput": {
+    "server_up": true,
+    "C1": {
+     "n": 64,
+     "max_abs_nats": 0.375,
+     "share_logit_delta_gt_0.05": 0.328125,
+     "all_zero": false,
+     "pass": false
+    },
+    "C2": {
+     "n": 64,
+     "max_abs_nats": 0.375,
+     "share_logit_delta_gt_0.05": 0.25,
+     "all_zero": false,
+     "pass": false
+    },
+    "C3_model": {
+     "games": 32,
+     "quads": 8,
+     "support_diff_mean": 0.0546875,
+     "support_diff_ci95": [
+      -0.15625,
+      0.2734375
+     ],
+     "words_ks_p": 0.7595224760414525,
+     "out_of_band_diff": -0.003124999999999989,
+     "non_ab_mass_diff": 2.1414617912274277e-09,
+     "invalid_strict": 0,
+     "invalid_mode": 0,
+     "pass": false
+    },
+    "wall_s_per_game": 21.278125,
+    "excluded_invalid": false
+   },
+   "throughput_invariant": {
+    "server_up": false,
+    "C1": null,
+    "C2": null,
+    "C3_model": null,
+    "wall_s_per_game": null,
+    "excluded_invalid": false
+   },
+   "strict_wall_s_per_game": 154.415625
+  },
+  "qwen3.5-27b": {
+   "run": "20261103T0606Zb",
+   "weight_hash": {
+    "weight_hash_got": "5e536c8708a9430b",
+    "weight_hash_want": "5e536c8708a9430b",
+    "ok": true
+   },
+   "part1_pass": true,
+   "link_check": {
+    "min_over_v120_starts_max_abs_nats": 0.12457704544067383,
+    "v120_restart_max_abs_nats": 0.22573637962341309,
+    "n_v120_starts": 2,
+    "bit_identical_to_a_v120_start": false
+   },
+   "throughput": {
+    "server_up": null,
+    "C1": null,
+    "C2": null,
+    "C3_model": null,
+    "wall_s_per_game": null,
+    "excluded_invalid": true
+   },
+   "throughput_invariant": {
+    "server_up": null,
+    "C1": null,
+    "C2": null,
+    "C3_model": null,
+    "wall_s_per_game": null,
+    "excluded_invalid": true
+   },
+   "strict_wall_s_per_game": 143.440625
+  }
+ },
+ "c3_pooled": {
+  "throughput": {
+   "games": 96,
+   "quads": 24,
+   "support_diff_mean": 0.059895833333333336,
+   "support_diff_ci95": [
+    -0.046875,
+    0.16152343749999964
+   ],
+   "words_ks_p": 0.2526138767766969,
+   "out_of_band_diff": 0.00885416666666669,
+   "non_ab_mass_diff": -5.370290265135658e-05,
+   "invalid_strict": 0,
+   "invalid_mode": 0,
+   "pass": false,
+   "models": [
+    "gemma-2-9b-it",
+    "gemma-3-27b-it",
+    "llama-3.1-8b-it"
+   ]
+  },
+  "throughput_invariant": {
+   "games": 64,
+   "quads": 16,
+   "support_diff_mean": 0.09765625,
+   "support_diff_ci95": [
+    -0.04296875,
+    0.24609375
+   ],
+   "words_ks_p": 0.305456820617584,
+   "out_of_band_diff": 0.0054687499999999944,
+   "non_ab_mass_diff": -3.0328420984670015e-05,
+   "invalid_strict": 0,
+   "invalid_mode": 0,
+   "pass": false,
+   "models": [
+    "gemma-2-9b-it",
+    "llama-3.1-8b-it"
+   ]
+  }
+ }
+}

@@ -44,6 +44,14 @@ flight.
 - Batch-invariant kernels at 0.4 / 0.6 / 0.8 of the non-invariant throughput.
 - $2.49 per pod-hour; 8 quads per server start.
 
+## Measured in S0-GPU (2026-11-03; `gates/S0/S0_GPU_REPORT.md`)
+
+- **Strict serving**, the only validated mode: 42 / 112 / 50 / 154 / 143 s per game (Llama / Gemma-2 / Qwen-9B /
+  Gemma-3 / Qwen-27B). That is **502 s per five-model game**, against about 410 s assumed in Part B.
+- With loads: about **$92** GPU at Lean (30 stories) and about **$219** at Standard (72).
+- **Plain `throughput`, measured:** 2.9 / 14.5 / – / 21.3 s per game. **`throughput_invariant`, measured:** 4.9 /
+  24.6 s for Llama and Gemma-2. Neither mode is validated (C3 fails).
+
 ## Part C: grading (Paper 1's graders via OpenRouter, owner 2026-11-03)
 
 Verified against RandallSPQR/edsl_wwil @ `35ffd5dc`, `data/perfect_lie/models.json`:

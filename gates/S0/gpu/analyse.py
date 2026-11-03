@@ -27,6 +27,10 @@ from serving_check import game_compare  # noqa: E402
 REPO = "RandallSPQR/stpt-gate-artifacts"
 MODELS = ["llama-3.1-8b-it", "gemma-2-9b-it", "qwen3.5-9b", "gemma-3-27b-it", "qwen3.5-27b"]
 MODES = ["throughput", "throughput_invariant"]
+# Excluded from C1-C3 verdicts (not a test of the mode): under pipeline v1.3.0 the Qwen3.5 profiles kept
+# `--max-num-seqs 1` in throughput modes (profile-flag bug, fixed in proposed v1.3.1); the Qwen pair's modes are re-run.
+INVALID = {("qwen3.5-9b", "throughput"), ("qwen3.5-9b", "throughput_invariant"),
+           ("qwen3.5-27b", "throughput"), ("qwen3.5-27b", "throughput_invariant")}
 CACHE = Path("/tmp/claude-0/-home-user/c33b92ab-3163-5d4d-bb33-9391ff19d3c0/scratchpad/s0gpu")
 
 
@@ -102,7 +106,8 @@ def main():
             r[mode] = {"server_up": srv and srv.get("up") == 1, "C1": c12 and c12["C1"], "C2": c12 and c12["C2"],
                        "C3_model": game_compare(strict["records"], c3["records"]) if strict and c3 else None,
                        "wall_s_per_game": (c3["wall_s"] / len(c3["records"])) if c3 else None}
-            if strict and c3:
+            r[mode]["excluded_invalid"] = (model, mode) in INVALID
+            if strict and c3 and (model, mode) not in INVALID:
                 pooled[mode][0].extend(strict["records"]); pooled[mode][1].extend(c3["records"])
         r["strict_wall_s_per_game"] = (strict["wall_s"] / len(strict["records"])) if strict else None
         res["models"][model] = r
@@ -115,6 +120,8 @@ def main():
     for mode in MODES:
         s, m = pooled[mode]
         res["c3_pooled"][mode] = game_compare(s, m) if s else None
+        if s:
+            res["c3_pooled"][mode]["models"] = sorted({x["model"] for x in s})
     md += ["", "| mode | model | server up | C1 cache (max nats; pass) | C2 batching (max nats; pass) | C3 own Δ [95% CI] | s/game strict → mode |",
            "|---|---|---|---|---|---|---|"]
     for mode in MODES:
@@ -123,13 +130,13 @@ def main():
             if not r:
                 continue
             c1, c2, c3 = r["C1"], r["C2"], r["C3_model"]
-            md.append(f"| {mode} | {model} | {r['server_up']} | " + (f"{c1['max_abs_nats']:.3f}; {c1['pass']}" if c1 else "–") + " | "
+            md.append(f"| {mode} | {model}{' (EXCLUDED: v1.3.0 bug)' if r.get('excluded_invalid') else ''} | {r['server_up']} | " + (f"{c1['max_abs_nats']:.3f}; {c1['pass']}" if c1 else "–") + " | "
                       + (f"{c2['max_abs_nats']:.3f}; {c2['pass']}" if c2 else "–") + " | "
                       + (f"{c3['support_diff_mean']:+.3f} [{c3['support_diff_ci95'][0]:+.3f}, {c3['support_diff_ci95'][1]:+.3f}]" if c3 else "–") + " | "
                       + (f"{res['models'][model]['strict_wall_s_per_game']:.1f} → {r['wall_s_per_game']:.1f}" if r['wall_s_per_game'] and res['models'][model]['strict_wall_s_per_game'] else "–") + " |")
         p = res["c3_pooled"][mode]
         if p:
-            md.append(f"| **{mode}** | **pooled ({p['quads']} quads)** | | | | **{p['support_diff_mean']:+.3f} [{p['support_diff_ci95'][0]:+.3f}, "
+            md.append(f"| **{mode}** | **pooled: {', '.join(p['models'])} ({p['quads']} quads)** | | | | **{p['support_diff_mean']:+.3f} [{p['support_diff_ci95'][0]:+.3f}, "
                       f"{p['support_diff_ci95'][1]:+.3f}]; KS p {p['words_ks_p']:.2f}; pass {p['pass']}** | |")
     (HERE / "results").mkdir(exist_ok=True)
     (HERE / "results/s0_gpu_results.json").write_text(json.dumps(res, indent=1, default=str) + "\n")
