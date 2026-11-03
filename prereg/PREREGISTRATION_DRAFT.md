@@ -87,21 +87,16 @@ lying is interpretation, not measurement.
   - The exact P(A), P(B) and non-A/B mass are recorded.
   - An invalid vote gets up to 3 seeded retries and is then counted invalid.
 - **Exit poll.** One or two sentences on the main reason for the vote.
-- **Probes.** Private conviction (the probability of the report option) runs on forked branches for the four
-  receivers, after round ⌈R/2⌉ and after round R; answers never return. A round-3 probe is added only if the pilot
-  rule in S4 triggers.
-  - **[OWNER]** Whether to add one speaker probe at the final round, for the advocate's private conviction named in the
-    mechanism hypothesis.
-  - Before the run, a check shows live contexts are byte-identical with and without probes: on CPU, and on GPU within
-    one start (strict or batch-invariant serving), or distributionally equivalent under non-invariant batched serving.
-- **Serving.** **[S0-GPU/OWNER]**
-  - The mode is either `strict` (pipeline v1.2.0: batch size 1, prefix caching off) or a validated throughput mode
-    (pipeline v1.3.0: prefix caching, lockstep batches with the four cells of each quad interleaved).
+- **Probes.** Private conviction (the probability of the report option) runs on forked branches. Answers never return.
+  - **Schedule:** the four receivers after round ⌈R/2⌉ and after round R, and the speaker after round R (P13). A round-3
+    probe is added only if the pilot rule in S4 triggers.
+  - **Isolation:** before the run, a check shows live contexts are byte-identical with and without probes. It runs on
+    CPU, and on GPU within one start (strict or batch-invariant serving), or as distributional equivalence under
+    non-invariant batched serving.
+- **Serving.** **[S0-GPU]**
+  - Missing Piece runs on pipeline v1.3.0 (D40): either `strict` (batch size 1, prefix caching off, as v1.2.0) or a
+    throughput mode (prefix caching, lockstep batches with the four cells of each quad interleaved) that passed S0-GPU.
   - The same mode serves every cell, and it is recorded in every manifest with every call's batch cohort.
-- **Wording.**
-  - The wording is fixed after S3's held-out check **[S3]**.
-  - If no single wording passes for every model, each model uses its own valid wording set. The pooled test uses the
-    primary wording for the models valid in it.
 
 ## 5. Arms and controls
 
@@ -124,13 +119,18 @@ lying is interpretation, not measurement.
   - advocacy compliance per speaker message (advocates / hedges / refuses / discloses);
   - exit-poll reasons;
   - natural discussion minus standardised disclosure.
-- **Grading** (secondary measures only):
-  - a Sonnet-class Claude grader of Paper 1's frozen family as primary (direct route, Batch API, frozen rubric with
-    coded examples as a cached prefix, cell hidden) **[OWNER: model ID]**;
-  - a second-family grader on a stratified 10% subsample;
-  - Paper 1's per-category agreement rule **[S5]**.
-  - Coverage: a seeded 50% quad-level subsample of the secondary measures, unless S5's too-noisy rule requires 100%
-    for a measure. **[OWNER]** Whether speaker compliance is coded on every message, as the brief says.
+- **Grading** (secondary measures only), with Paper 1's frozen graders via OpenRouter, non-thinking, at temperature 0:
+  - primary `anthropic/claude-sonnet-4.5`;
+  - gate grader `google/gemini-2.5-flash` on the same items;
+  - frozen rubric with coded examples as a cached prefix, cell hidden.
+- **Coverage.** Every speaker message (P14). Verifier messages and exit polls on a seeded 50% quad subsample, unless
+  S5's too-noisy rule requires 100%.
+- **Agreement gate** (Paper 1, verbatim in `gates/S5/S5_PLAN.md`):
+  - A binary code is excluded only if both Cohen's kappa and Gwet's AC1 have 95% lower bounds below 0.70 (percentile
+    bootstrap, 2,000 resamples, seed 20261006).
+  - Codes with fewer than 30 positives are not gated: they are kept, flagged, and dropped in a sensitivity analysis.
+  - The gate is computed from annotations only, blind to cell, on the confirmatory grades before any secondary analysis.
+    The resulting code set is frozen.
 
 ## 7. Analysis
 

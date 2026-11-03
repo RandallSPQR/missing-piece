@@ -58,16 +58,22 @@ def speaker_items(records: list[dict], specs: dict, seed: int = 0):
     return items, key
 
 
-# Grader (owner, 2026-11-03): do NOT assume Opus. S5 tests reliability with a Sonnet-class grader first: Paper 1's
-# frozen grader family. The exact model ID and its frozen request settings are Paper 1's and are entered here by the
-# owner; batch_requests() refuses to build requests until they are.
-GRADER_MODEL: str | None = None           # e.g. Paper 1's frozen Sonnet-class model ID (owner to supply)
-GRADER_SETTINGS: dict = {}                 # Paper 1's frozen request settings, verbatim (owner to supply)
+# Graders (owner, 2026-11-03): Paper 1's frozen graders and route, verified against RandallSPQR/edsl_wwil @ 35ffd5dc
+# (two_truths_lie_study/two_truths_lie/data/perfect_lie/models.json, "graders"): OpenRouter route ("fine - OR it is"),
+# non-thinking, temperature 0, max 2,000 output tokens. The primary grades every graded item; the gate grader grades
+# the SAME items, because Paper 1's agreement gate is computed on "primary versus Google on every lie" (mp.reliability).
+GRADERS = {
+    "primary": {"id": "anthropic/claude-sonnet-4.5", "temperature": 0.0, "reasoning": {"enabled": False},
+                "max_tokens": 2000, "usd_per_mtok": (3.00, 15.00)},
+    "gate": {"id": "google/gemini-2.5-flash", "temperature": 0.0, "reasoning": {"enabled": False},
+             "max_tokens": 2000, "usd_per_mtok": (0.30, 2.50)},
+}
+ROUTE = "openrouter"   # https://openrouter.ai/api/v1/chat/completions; no batch endpoint on this route (no batch discount)
 
-# Prompt caching: the rubric is sent as ONE cached system prefix shared by every item. A prefix shorter than the
-# grader's minimum cacheable length (512 tokens on Claude Sonnet 5.5; 1,024 on Claude Sonnet 5 and Sonnet 4.x) is
-# silently not cached. MP-R1 alone is ~320 tokens, so S5 freezes coded anchor examples (CODED_EXAMPLES) into the prefix,
-# which also serve reliability, and checks `usage.cache_read_input_tokens` on the first batch (route check).
+# Prompt caching: the rubric is one system prefix shared by every item, marked with an Anthropic cache breakpoint
+# (OpenRouter passes `cache_control` content parts through to Anthropic). A prefix shorter than Claude Sonnet 4.5's
+# minimum cacheable length (1,024 tokens) is silently not cached; MP-R1 alone is ~320 tokens, so S5 freezes coded anchor
+# examples (CODED_EXAMPLES) into the prefix and checks the reported cache reads on the first requests (route check).
 CODED_EXAMPLES: str = ""                   # frozen at S5 from pilot messages, double-coded by the owner
 
 
@@ -93,14 +99,30 @@ def subsample_quads(records: list[dict], frac: float = 0.5, seed: int = 20261103
     return keep
 
 
-def batch_requests(items, max_tokens=2000, ttl="1h"):
-    """Message Batches API request bodies (not sent here): the rubric as a cached system prefix (1-hour TTL: a batch
-    can run longer than the 5-minute default), the item in the user turn."""
-    if not GRADER_MODEL:
-        raise RuntimeError("GRADER_MODEL is not set: enter Paper 1's frozen Sonnet-class grader ID (owner)")
-    sys_block = [{"type": "text", "text": system_prefix(), "cache_control": {"type": "ephemeral", "ttl": ttl}}]
-    return [{"custom_id": it["id"],
-             "params": {"model": GRADER_MODEL, "max_tokens": max_tokens, "system": sys_block, **GRADER_SETTINGS,
-                        "messages": [{"role": "user", "content": json.dumps(
-                            {k: it[k] for k in ("question", "answers", "report", "record", "message")}, indent=1)}]}}
+CODES_SCHEMA = {"type": "json_schema", "json_schema": {"name": "mp_code", "strict": True, "schema": {
+    "type": "object", "additionalProperties": False,
+    "required": ["compliance", "confidence", "concession"],
+    "properties": {"compliance": {"type": "string", "enum": list(COMPLIANCE)},
+                   "confidence": {"type": "integer", "minimum": 1, "maximum": 5},
+                   "concession": {"type": "boolean"}}}}}
+
+
+def openrouter_requests(items, role: str = "primary") -> list[dict]:
+    """Chat-completions request bodies for one grader (not sent here). Structured output as in Paper 1."""
+    g = GRADERS[role]
+    sys_msg = {"role": "system", "content": [{"type": "text", "text": system_prefix(),
+                                              "cache_control": {"type": "ephemeral"}}]}
+    return [{"custom_id": it["id"], "role": role,
+             "body": {"model": g["id"], "temperature": g["temperature"], "max_tokens": g["max_tokens"],
+                      "reasoning": g["reasoning"], "response_format": CODES_SCHEMA, "usage": {"include": True},
+                      "messages": [sys_msg, {"role": "user", "content": json.dumps(
+                          {k: it[k] for k in ("question", "answers", "report", "record", "message")}, indent=1)}]}}
             for it in items]
+
+
+def graded_quads(records: list[dict]) -> dict:
+    """Coverage (owner, 2026-11-03): speaker compliance, confidence and concession on EVERY speaker message (P14,
+    approved); all other secondary measures (verifier disclosure, exit-poll reasons) on the seeded 50% quad subsample.
+    Self-identification hits are adjudicated in full."""
+    every = {r["quad_id"] for r in records}
+    return {"speaker_messages": every, "verifier_messages": subsample_quads(records), "exit_polls": subsample_quads(records)}

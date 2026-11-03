@@ -3,7 +3,7 @@
  "identical": 256,
  "negative_controls_detected": 256,
  "live_calls_compared": 7682,
- "probes_run": 2048,
+ "probes_run": 2304,
  "lockstep": {
   "games": 128,
   "identical_with_probes": true,
@@ -14,7 +14,7 @@
   {
    "game": "mp-dev-bakery-van-inspection-A/gemma-2-9b-it/r0/UA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -22,7 +22,7 @@
   {
    "game": "mp-dev-bakery-van-inspection-A/gemma-2-9b-it/r0/UP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -30,7 +30,7 @@
   {
    "game": "mp-dev-bakery-van-inspection-A/gemma-2-9b-it/r0/KA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -38,7 +38,7 @@
   {
    "game": "mp-dev-bakery-van-inspection-A/gemma-2-9b-it/r0/KP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -46,7 +46,7 @@
   {
    "game": "mp-dev-bakery-van-inspection-A/qwen3.5-27b/r0/UA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -54,7 +54,7 @@
   {
    "game": "mp-dev-bakery-van-inspection-A/qwen3.5-27b/r0/UP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -62,7 +62,7 @@
   {
    "game": "mp-dev-bakery-van-inspection-A/qwen3.5-27b/r0/KA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -70,7 +70,7 @@
   {
    "game": "mp-dev-bakery-van-inspection-A/qwen3.5-27b/r0/KP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -78,7 +78,7 @@
   {
    "game": "mp-dev-bakery-van-inspection-B/gemma-2-9b-it/r0/UA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -86,7 +86,7 @@
   {
    "game": "mp-dev-bakery-van-inspection-B/gemma-2-9b-it/r0/UP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -94,7 +94,7 @@
   {
    "game": "mp-dev-bakery-van-inspection-B/gemma-2-9b-it/r0/KA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -102,7 +102,7 @@
   {
    "game": "mp-dev-bakery-van-inspection-B/gemma-2-9b-it/r0/KP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -110,7 +110,7 @@
   {
    "game": "mp-dev-bakery-van-inspection-B/qwen3.5-27b/r0/UA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -118,7 +118,7 @@
   {
    "game": "mp-dev-bakery-van-inspection-B/qwen3.5-27b/r0/UP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -126,7 +126,7 @@
   {
    "game": "mp-dev-bakery-van-inspection-B/qwen3.5-27b/r0/KA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -134,7 +134,7 @@
   {
    "game": "mp-dev-bakery-van-inspection-B/qwen3.5-27b/r0/KP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -142,7 +142,7 @@
   {
    "game": "mp-dev-bike-dock-move-A/gemma-2-9b-it/r0/UA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -150,7 +150,7 @@
   {
    "game": "mp-dev-bike-dock-move-A/gemma-2-9b-it/r0/UP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -158,7 +158,7 @@
   {
    "game": "mp-dev-bike-dock-move-A/gemma-2-9b-it/r0/KA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -166,7 +166,7 @@
   {
    "game": "mp-dev-bike-dock-move-A/gemma-2-9b-it/r0/KP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -174,7 +174,7 @@
   {
    "game": "mp-dev-bike-dock-move-A/qwen3.5-27b/r0/UA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -182,7 +182,7 @@
   {
    "game": "mp-dev-bike-dock-move-A/qwen3.5-27b/r0/UP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -190,7 +190,7 @@
   {
    "game": "mp-dev-bike-dock-move-A/qwen3.5-27b/r0/KA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -198,7 +198,7 @@
   {
    "game": "mp-dev-bike-dock-move-A/qwen3.5-27b/r0/KP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -206,7 +206,7 @@
   {
    "game": "mp-dev-bike-dock-move-B/gemma-2-9b-it/r0/UA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -214,7 +214,7 @@
   {
    "game": "mp-dev-bike-dock-move-B/gemma-2-9b-it/r0/UP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -222,7 +222,7 @@
   {
    "game": "mp-dev-bike-dock-move-B/gemma-2-9b-it/r0/KA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -230,7 +230,7 @@
   {
    "game": "mp-dev-bike-dock-move-B/gemma-2-9b-it/r0/KP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -238,7 +238,7 @@
   {
    "game": "mp-dev-bike-dock-move-B/qwen3.5-27b/r0/UA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -246,7 +246,7 @@
   {
    "game": "mp-dev-bike-dock-move-B/qwen3.5-27b/r0/UP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -254,7 +254,7 @@
   {
    "game": "mp-dev-bike-dock-move-B/qwen3.5-27b/r0/KA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -262,7 +262,7 @@
   {
    "game": "mp-dev-bike-dock-move-B/qwen3.5-27b/r0/KP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -270,7 +270,7 @@
   {
    "game": "mp-dev-clinic-nurse-cert-A-challenge/gemma-2-9b-it/r0/UA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -278,7 +278,7 @@
   {
    "game": "mp-dev-clinic-nurse-cert-A-challenge/gemma-2-9b-it/r0/UP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -286,7 +286,7 @@
   {
    "game": "mp-dev-clinic-nurse-cert-A-challenge/gemma-2-9b-it/r0/KA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -294,7 +294,7 @@
   {
    "game": "mp-dev-clinic-nurse-cert-A-challenge/gemma-2-9b-it/r0/KP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -302,7 +302,7 @@
   {
    "game": "mp-dev-clinic-nurse-cert-A-challenge/qwen3.5-27b/r0/UA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -310,7 +310,7 @@
   {
    "game": "mp-dev-clinic-nurse-cert-A-challenge/qwen3.5-27b/r0/UP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -318,7 +318,7 @@
   {
    "game": "mp-dev-clinic-nurse-cert-A-challenge/qwen3.5-27b/r0/KA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -326,7 +326,7 @@
   {
    "game": "mp-dev-clinic-nurse-cert-A-challenge/qwen3.5-27b/r0/KP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -334,7 +334,7 @@
   {
    "game": "mp-dev-clinic-nurse-cert-A/gemma-2-9b-it/r0/UA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -342,7 +342,7 @@
   {
    "game": "mp-dev-clinic-nurse-cert-A/gemma-2-9b-it/r0/UP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -350,7 +350,7 @@
   {
    "game": "mp-dev-clinic-nurse-cert-A/gemma-2-9b-it/r0/KA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -358,7 +358,7 @@
   {
    "game": "mp-dev-clinic-nurse-cert-A/gemma-2-9b-it/r0/KP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -366,7 +366,7 @@
   {
    "game": "mp-dev-clinic-nurse-cert-A/qwen3.5-27b/r0/UA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -374,7 +374,7 @@
   {
    "game": "mp-dev-clinic-nurse-cert-A/qwen3.5-27b/r0/UP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -382,7 +382,7 @@
   {
    "game": "mp-dev-clinic-nurse-cert-A/qwen3.5-27b/r0/KA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -390,7 +390,7 @@
   {
    "game": "mp-dev-clinic-nurse-cert-A/qwen3.5-27b/r0/KP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -398,7 +398,7 @@
   {
    "game": "mp-dev-clinic-nurse-cert-B-challenge/gemma-2-9b-it/r0/UA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -406,7 +406,7 @@
   {
    "game": "mp-dev-clinic-nurse-cert-B-challenge/gemma-2-9b-it/r0/UP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -414,7 +414,7 @@
   {
    "game": "mp-dev-clinic-nurse-cert-B-challenge/gemma-2-9b-it/r0/KA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -422,7 +422,7 @@
   {
    "game": "mp-dev-clinic-nurse-cert-B-challenge/gemma-2-9b-it/r0/KP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -430,7 +430,7 @@
   {
    "game": "mp-dev-clinic-nurse-cert-B-challenge/qwen3.5-27b/r0/UA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -438,7 +438,7 @@
   {
    "game": "mp-dev-clinic-nurse-cert-B-challenge/qwen3.5-27b/r0/UP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -446,7 +446,7 @@
   {
    "game": "mp-dev-clinic-nurse-cert-B-challenge/qwen3.5-27b/r0/KA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -454,7 +454,7 @@
   {
    "game": "mp-dev-clinic-nurse-cert-B-challenge/qwen3.5-27b/r0/KP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -462,7 +462,7 @@
   {
    "game": "mp-dev-clinic-nurse-cert-B/gemma-2-9b-it/r0/UA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -470,7 +470,7 @@
   {
    "game": "mp-dev-clinic-nurse-cert-B/gemma-2-9b-it/r0/UP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -478,7 +478,7 @@
   {
    "game": "mp-dev-clinic-nurse-cert-B/gemma-2-9b-it/r0/KA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -486,7 +486,7 @@
   {
    "game": "mp-dev-clinic-nurse-cert-B/gemma-2-9b-it/r0/KP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -494,7 +494,7 @@
   {
    "game": "mp-dev-clinic-nurse-cert-B/qwen3.5-27b/r0/UA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -502,7 +502,7 @@
   {
    "game": "mp-dev-clinic-nurse-cert-B/qwen3.5-27b/r0/UP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -510,7 +510,7 @@
   {
    "game": "mp-dev-clinic-nurse-cert-B/qwen3.5-27b/r0/KA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -518,7 +518,7 @@
   {
    "game": "mp-dev-clinic-nurse-cert-B/qwen3.5-27b/r0/KP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -526,7 +526,7 @@
   {
    "game": "mp-dev-concert-hall-licence-A/gemma-2-9b-it/r0/UA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -534,7 +534,7 @@
   {
    "game": "mp-dev-concert-hall-licence-A/gemma-2-9b-it/r0/UP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -542,7 +542,7 @@
   {
    "game": "mp-dev-concert-hall-licence-A/gemma-2-9b-it/r0/KA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -550,7 +550,7 @@
   {
    "game": "mp-dev-concert-hall-licence-A/gemma-2-9b-it/r0/KP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -558,7 +558,7 @@
   {
    "game": "mp-dev-concert-hall-licence-A/qwen3.5-27b/r0/UA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -566,7 +566,7 @@
   {
    "game": "mp-dev-concert-hall-licence-A/qwen3.5-27b/r0/UP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -574,7 +574,7 @@
   {
    "game": "mp-dev-concert-hall-licence-A/qwen3.5-27b/r0/KA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -582,7 +582,7 @@
   {
    "game": "mp-dev-concert-hall-licence-A/qwen3.5-27b/r0/KP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -590,7 +590,7 @@
   {
    "game": "mp-dev-concert-hall-licence-B/gemma-2-9b-it/r0/UA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -598,7 +598,7 @@
   {
    "game": "mp-dev-concert-hall-licence-B/gemma-2-9b-it/r0/UP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -606,7 +606,7 @@
   {
    "game": "mp-dev-concert-hall-licence-B/gemma-2-9b-it/r0/KA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -614,7 +614,7 @@
   {
    "game": "mp-dev-concert-hall-licence-B/gemma-2-9b-it/r0/KP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -622,7 +622,7 @@
   {
    "game": "mp-dev-concert-hall-licence-B/qwen3.5-27b/r0/UA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -630,7 +630,7 @@
   {
    "game": "mp-dev-concert-hall-licence-B/qwen3.5-27b/r0/UP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -638,7 +638,7 @@
   {
    "game": "mp-dev-concert-hall-licence-B/qwen3.5-27b/r0/KA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -646,7 +646,7 @@
   {
    "game": "mp-dev-concert-hall-licence-B/qwen3.5-27b/r0/KP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -654,7 +654,7 @@
   {
    "game": "mp-dev-farm-irrigation-permit-A-challenge/gemma-2-9b-it/r0/UA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -662,7 +662,7 @@
   {
    "game": "mp-dev-farm-irrigation-permit-A-challenge/gemma-2-9b-it/r0/UP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -670,7 +670,7 @@
   {
    "game": "mp-dev-farm-irrigation-permit-A-challenge/gemma-2-9b-it/r0/KA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -678,7 +678,7 @@
   {
    "game": "mp-dev-farm-irrigation-permit-A-challenge/gemma-2-9b-it/r0/KP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -686,7 +686,7 @@
   {
    "game": "mp-dev-farm-irrigation-permit-A-challenge/qwen3.5-27b/r0/UA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -694,7 +694,7 @@
   {
    "game": "mp-dev-farm-irrigation-permit-A-challenge/qwen3.5-27b/r0/UP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -702,7 +702,7 @@
   {
    "game": "mp-dev-farm-irrigation-permit-A-challenge/qwen3.5-27b/r0/KA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -710,7 +710,7 @@
   {
    "game": "mp-dev-farm-irrigation-permit-A-challenge/qwen3.5-27b/r0/KP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -718,7 +718,7 @@
   {
    "game": "mp-dev-farm-irrigation-permit-A/gemma-2-9b-it/r0/UA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -726,7 +726,7 @@
   {
    "game": "mp-dev-farm-irrigation-permit-A/gemma-2-9b-it/r0/UP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -734,7 +734,7 @@
   {
    "game": "mp-dev-farm-irrigation-permit-A/gemma-2-9b-it/r0/KA",
    "live_calls": 31,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -742,7 +742,7 @@
   {
    "game": "mp-dev-farm-irrigation-permit-A/gemma-2-9b-it/r0/KP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -750,7 +750,7 @@
   {
    "game": "mp-dev-farm-irrigation-permit-A/qwen3.5-27b/r0/UA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -758,7 +758,7 @@
   {
    "game": "mp-dev-farm-irrigation-permit-A/qwen3.5-27b/r0/UP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -766,7 +766,7 @@
   {
    "game": "mp-dev-farm-irrigation-permit-A/qwen3.5-27b/r0/KA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -774,7 +774,7 @@
   {
    "game": "mp-dev-farm-irrigation-permit-A/qwen3.5-27b/r0/KP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -782,7 +782,7 @@
   {
    "game": "mp-dev-farm-irrigation-permit-B-challenge/gemma-2-9b-it/r0/UA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -790,7 +790,7 @@
   {
    "game": "mp-dev-farm-irrigation-permit-B-challenge/gemma-2-9b-it/r0/UP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -798,7 +798,7 @@
   {
    "game": "mp-dev-farm-irrigation-permit-B-challenge/gemma-2-9b-it/r0/KA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -806,7 +806,7 @@
   {
    "game": "mp-dev-farm-irrigation-permit-B-challenge/gemma-2-9b-it/r0/KP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -814,7 +814,7 @@
   {
    "game": "mp-dev-farm-irrigation-permit-B-challenge/qwen3.5-27b/r0/UA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -822,7 +822,7 @@
   {
    "game": "mp-dev-farm-irrigation-permit-B-challenge/qwen3.5-27b/r0/UP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -830,7 +830,7 @@
   {
    "game": "mp-dev-farm-irrigation-permit-B-challenge/qwen3.5-27b/r0/KA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -838,7 +838,7 @@
   {
    "game": "mp-dev-farm-irrigation-permit-B-challenge/qwen3.5-27b/r0/KP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -846,7 +846,7 @@
   {
    "game": "mp-dev-farm-irrigation-permit-B/gemma-2-9b-it/r0/UA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -854,7 +854,7 @@
   {
    "game": "mp-dev-farm-irrigation-permit-B/gemma-2-9b-it/r0/UP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -862,7 +862,7 @@
   {
    "game": "mp-dev-farm-irrigation-permit-B/gemma-2-9b-it/r0/KA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -870,7 +870,7 @@
   {
    "game": "mp-dev-farm-irrigation-permit-B/gemma-2-9b-it/r0/KP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -878,7 +878,7 @@
   {
    "game": "mp-dev-farm-irrigation-permit-B/qwen3.5-27b/r0/UA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -886,7 +886,7 @@
   {
    "game": "mp-dev-farm-irrigation-permit-B/qwen3.5-27b/r0/UP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -894,7 +894,7 @@
   {
    "game": "mp-dev-farm-irrigation-permit-B/qwen3.5-27b/r0/KA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -902,7 +902,7 @@
   {
    "game": "mp-dev-farm-irrigation-permit-B/qwen3.5-27b/r0/KP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -910,7 +910,7 @@
   {
    "game": "mp-dev-ferry-timetable-A-challenge/gemma-2-9b-it/r0/UA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -918,7 +918,7 @@
   {
    "game": "mp-dev-ferry-timetable-A-challenge/gemma-2-9b-it/r0/UP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -926,7 +926,7 @@
   {
    "game": "mp-dev-ferry-timetable-A-challenge/gemma-2-9b-it/r0/KA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -934,7 +934,7 @@
   {
    "game": "mp-dev-ferry-timetable-A-challenge/gemma-2-9b-it/r0/KP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -942,7 +942,7 @@
   {
    "game": "mp-dev-ferry-timetable-A-challenge/qwen3.5-27b/r0/UA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -950,7 +950,7 @@
   {
    "game": "mp-dev-ferry-timetable-A-challenge/qwen3.5-27b/r0/UP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -958,7 +958,7 @@
   {
    "game": "mp-dev-ferry-timetable-A-challenge/qwen3.5-27b/r0/KA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -966,7 +966,7 @@
   {
    "game": "mp-dev-ferry-timetable-A-challenge/qwen3.5-27b/r0/KP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -974,7 +974,7 @@
   {
    "game": "mp-dev-ferry-timetable-A/gemma-2-9b-it/r0/UA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -982,7 +982,7 @@
   {
    "game": "mp-dev-ferry-timetable-A/gemma-2-9b-it/r0/UP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -990,7 +990,7 @@
   {
    "game": "mp-dev-ferry-timetable-A/gemma-2-9b-it/r0/KA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -998,7 +998,7 @@
   {
    "game": "mp-dev-ferry-timetable-A/gemma-2-9b-it/r0/KP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1006,7 +1006,7 @@
   {
    "game": "mp-dev-ferry-timetable-A/qwen3.5-27b/r0/UA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1014,7 +1014,7 @@
   {
    "game": "mp-dev-ferry-timetable-A/qwen3.5-27b/r0/UP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1022,7 +1022,7 @@
   {
    "game": "mp-dev-ferry-timetable-A/qwen3.5-27b/r0/KA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1030,7 +1030,7 @@
   {
    "game": "mp-dev-ferry-timetable-A/qwen3.5-27b/r0/KP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1038,7 +1038,7 @@
   {
    "game": "mp-dev-ferry-timetable-B-challenge/gemma-2-9b-it/r0/UA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1046,7 +1046,7 @@
   {
    "game": "mp-dev-ferry-timetable-B-challenge/gemma-2-9b-it/r0/UP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1054,7 +1054,7 @@
   {
    "game": "mp-dev-ferry-timetable-B-challenge/gemma-2-9b-it/r0/KA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1062,7 +1062,7 @@
   {
    "game": "mp-dev-ferry-timetable-B-challenge/gemma-2-9b-it/r0/KP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1070,7 +1070,7 @@
   {
    "game": "mp-dev-ferry-timetable-B-challenge/qwen3.5-27b/r0/UA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1078,7 +1078,7 @@
   {
    "game": "mp-dev-ferry-timetable-B-challenge/qwen3.5-27b/r0/UP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1086,7 +1086,7 @@
   {
    "game": "mp-dev-ferry-timetable-B-challenge/qwen3.5-27b/r0/KA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1094,7 +1094,7 @@
   {
    "game": "mp-dev-ferry-timetable-B-challenge/qwen3.5-27b/r0/KP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1102,7 +1102,7 @@
   {
    "game": "mp-dev-ferry-timetable-B/gemma-2-9b-it/r0/UA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1110,7 +1110,7 @@
   {
    "game": "mp-dev-ferry-timetable-B/gemma-2-9b-it/r0/UP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1118,7 +1118,7 @@
   {
    "game": "mp-dev-ferry-timetable-B/gemma-2-9b-it/r0/KA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1126,7 +1126,7 @@
   {
    "game": "mp-dev-ferry-timetable-B/gemma-2-9b-it/r0/KP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1134,7 +1134,7 @@
   {
    "game": "mp-dev-ferry-timetable-B/qwen3.5-27b/r0/UA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1142,7 +1142,7 @@
   {
    "game": "mp-dev-ferry-timetable-B/qwen3.5-27b/r0/UP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1150,7 +1150,7 @@
   {
    "game": "mp-dev-ferry-timetable-B/qwen3.5-27b/r0/KA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1158,7 +1158,7 @@
   {
    "game": "mp-dev-ferry-timetable-B/qwen3.5-27b/r0/KP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1166,7 +1166,7 @@
   {
    "game": "mp-dev-guesthouse-group-booking-A/gemma-2-9b-it/r0/UA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1174,7 +1174,7 @@
   {
    "game": "mp-dev-guesthouse-group-booking-A/gemma-2-9b-it/r0/UP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1182,7 +1182,7 @@
   {
    "game": "mp-dev-guesthouse-group-booking-A/gemma-2-9b-it/r0/KA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1190,7 +1190,7 @@
   {
    "game": "mp-dev-guesthouse-group-booking-A/gemma-2-9b-it/r0/KP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1198,7 +1198,7 @@
   {
    "game": "mp-dev-guesthouse-group-booking-A/qwen3.5-27b/r0/UA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1206,7 +1206,7 @@
   {
    "game": "mp-dev-guesthouse-group-booking-A/qwen3.5-27b/r0/UP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1214,7 +1214,7 @@
   {
    "game": "mp-dev-guesthouse-group-booking-A/qwen3.5-27b/r0/KA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1222,7 +1222,7 @@
   {
    "game": "mp-dev-guesthouse-group-booking-A/qwen3.5-27b/r0/KP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1230,7 +1230,7 @@
   {
    "game": "mp-dev-guesthouse-group-booking-B/gemma-2-9b-it/r0/UA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1238,7 +1238,7 @@
   {
    "game": "mp-dev-guesthouse-group-booking-B/gemma-2-9b-it/r0/UP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1246,7 +1246,7 @@
   {
    "game": "mp-dev-guesthouse-group-booking-B/gemma-2-9b-it/r0/KA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1254,7 +1254,7 @@
   {
    "game": "mp-dev-guesthouse-group-booking-B/gemma-2-9b-it/r0/KP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1262,7 +1262,7 @@
   {
    "game": "mp-dev-guesthouse-group-booking-B/qwen3.5-27b/r0/UA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1270,7 +1270,7 @@
   {
    "game": "mp-dev-guesthouse-group-booking-B/qwen3.5-27b/r0/UP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1278,7 +1278,7 @@
   {
    "game": "mp-dev-guesthouse-group-booking-B/qwen3.5-27b/r0/KA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1286,7 +1286,7 @@
   {
    "game": "mp-dev-guesthouse-group-booking-B/qwen3.5-27b/r0/KP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1294,7 +1294,7 @@
   {
    "game": "mp-dev-library-atlas-loan-A/gemma-2-9b-it/r0/UA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1302,7 +1302,7 @@
   {
    "game": "mp-dev-library-atlas-loan-A/gemma-2-9b-it/r0/UP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1310,7 +1310,7 @@
   {
    "game": "mp-dev-library-atlas-loan-A/gemma-2-9b-it/r0/KA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1318,7 +1318,7 @@
   {
    "game": "mp-dev-library-atlas-loan-A/gemma-2-9b-it/r0/KP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1326,7 +1326,7 @@
   {
    "game": "mp-dev-library-atlas-loan-A/qwen3.5-27b/r0/UA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1334,7 +1334,7 @@
   {
    "game": "mp-dev-library-atlas-loan-A/qwen3.5-27b/r0/UP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1342,7 +1342,7 @@
   {
    "game": "mp-dev-library-atlas-loan-A/qwen3.5-27b/r0/KA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1350,7 +1350,7 @@
   {
    "game": "mp-dev-library-atlas-loan-A/qwen3.5-27b/r0/KP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1358,7 +1358,7 @@
   {
    "game": "mp-dev-library-atlas-loan-B/gemma-2-9b-it/r0/UA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1366,7 +1366,7 @@
   {
    "game": "mp-dev-library-atlas-loan-B/gemma-2-9b-it/r0/UP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1374,7 +1374,7 @@
   {
    "game": "mp-dev-library-atlas-loan-B/gemma-2-9b-it/r0/KA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1382,7 +1382,7 @@
   {
    "game": "mp-dev-library-atlas-loan-B/gemma-2-9b-it/r0/KP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1390,7 +1390,7 @@
   {
    "game": "mp-dev-library-atlas-loan-B/qwen3.5-27b/r0/UA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1398,7 +1398,7 @@
   {
    "game": "mp-dev-library-atlas-loan-B/qwen3.5-27b/r0/UP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1406,7 +1406,7 @@
   {
    "game": "mp-dev-library-atlas-loan-B/qwen3.5-27b/r0/KA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1414,7 +1414,7 @@
   {
    "game": "mp-dev-library-atlas-loan-B/qwen3.5-27b/r0/KP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1422,7 +1422,7 @@
   {
    "game": "mp-dev-museum-painting-loan-A-challenge/gemma-2-9b-it/r0/UA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1430,7 +1430,7 @@
   {
    "game": "mp-dev-museum-painting-loan-A-challenge/gemma-2-9b-it/r0/UP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1438,7 +1438,7 @@
   {
    "game": "mp-dev-museum-painting-loan-A-challenge/gemma-2-9b-it/r0/KA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1446,7 +1446,7 @@
   {
    "game": "mp-dev-museum-painting-loan-A-challenge/gemma-2-9b-it/r0/KP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1454,7 +1454,7 @@
   {
    "game": "mp-dev-museum-painting-loan-A-challenge/qwen3.5-27b/r0/UA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1462,7 +1462,7 @@
   {
    "game": "mp-dev-museum-painting-loan-A-challenge/qwen3.5-27b/r0/UP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1470,7 +1470,7 @@
   {
    "game": "mp-dev-museum-painting-loan-A-challenge/qwen3.5-27b/r0/KA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1478,7 +1478,7 @@
   {
    "game": "mp-dev-museum-painting-loan-A-challenge/qwen3.5-27b/r0/KP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1486,7 +1486,7 @@
   {
    "game": "mp-dev-museum-painting-loan-A/gemma-2-9b-it/r0/UA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1494,7 +1494,7 @@
   {
    "game": "mp-dev-museum-painting-loan-A/gemma-2-9b-it/r0/UP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1502,7 +1502,7 @@
   {
    "game": "mp-dev-museum-painting-loan-A/gemma-2-9b-it/r0/KA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1510,7 +1510,7 @@
   {
    "game": "mp-dev-museum-painting-loan-A/gemma-2-9b-it/r0/KP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1518,7 +1518,7 @@
   {
    "game": "mp-dev-museum-painting-loan-A/qwen3.5-27b/r0/UA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1526,7 +1526,7 @@
   {
    "game": "mp-dev-museum-painting-loan-A/qwen3.5-27b/r0/UP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1534,7 +1534,7 @@
   {
    "game": "mp-dev-museum-painting-loan-A/qwen3.5-27b/r0/KA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1542,7 +1542,7 @@
   {
    "game": "mp-dev-museum-painting-loan-A/qwen3.5-27b/r0/KP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1550,7 +1550,7 @@
   {
    "game": "mp-dev-museum-painting-loan-B-challenge/gemma-2-9b-it/r0/UA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1558,7 +1558,7 @@
   {
    "game": "mp-dev-museum-painting-loan-B-challenge/gemma-2-9b-it/r0/UP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1566,7 +1566,7 @@
   {
    "game": "mp-dev-museum-painting-loan-B-challenge/gemma-2-9b-it/r0/KA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1574,7 +1574,7 @@
   {
    "game": "mp-dev-museum-painting-loan-B-challenge/gemma-2-9b-it/r0/KP",
    "live_calls": 31,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1582,7 +1582,7 @@
   {
    "game": "mp-dev-museum-painting-loan-B-challenge/qwen3.5-27b/r0/UA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1590,7 +1590,7 @@
   {
    "game": "mp-dev-museum-painting-loan-B-challenge/qwen3.5-27b/r0/UP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1598,7 +1598,7 @@
   {
    "game": "mp-dev-museum-painting-loan-B-challenge/qwen3.5-27b/r0/KA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1606,7 +1606,7 @@
   {
    "game": "mp-dev-museum-painting-loan-B-challenge/qwen3.5-27b/r0/KP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1614,7 +1614,7 @@
   {
    "game": "mp-dev-museum-painting-loan-B/gemma-2-9b-it/r0/UA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1622,7 +1622,7 @@
   {
    "game": "mp-dev-museum-painting-loan-B/gemma-2-9b-it/r0/UP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1630,7 +1630,7 @@
   {
    "game": "mp-dev-museum-painting-loan-B/gemma-2-9b-it/r0/KA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1638,7 +1638,7 @@
   {
    "game": "mp-dev-museum-painting-loan-B/gemma-2-9b-it/r0/KP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1646,7 +1646,7 @@
   {
    "game": "mp-dev-museum-painting-loan-B/qwen3.5-27b/r0/UA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1654,7 +1654,7 @@
   {
    "game": "mp-dev-museum-painting-loan-B/qwen3.5-27b/r0/UP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1662,7 +1662,7 @@
   {
    "game": "mp-dev-museum-painting-loan-B/qwen3.5-27b/r0/KA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1670,7 +1670,7 @@
   {
    "game": "mp-dev-museum-painting-loan-B/qwen3.5-27b/r0/KP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1678,7 +1678,7 @@
   {
    "game": "mp-dev-school-bus-route-A/gemma-2-9b-it/r0/UA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1686,7 +1686,7 @@
   {
    "game": "mp-dev-school-bus-route-A/gemma-2-9b-it/r0/UP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1694,7 +1694,7 @@
   {
    "game": "mp-dev-school-bus-route-A/gemma-2-9b-it/r0/KA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1702,7 +1702,7 @@
   {
    "game": "mp-dev-school-bus-route-A/gemma-2-9b-it/r0/KP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1710,7 +1710,7 @@
   {
    "game": "mp-dev-school-bus-route-A/qwen3.5-27b/r0/UA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1718,7 +1718,7 @@
   {
    "game": "mp-dev-school-bus-route-A/qwen3.5-27b/r0/UP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1726,7 +1726,7 @@
   {
    "game": "mp-dev-school-bus-route-A/qwen3.5-27b/r0/KA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1734,7 +1734,7 @@
   {
    "game": "mp-dev-school-bus-route-A/qwen3.5-27b/r0/KP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1742,7 +1742,7 @@
   {
    "game": "mp-dev-school-bus-route-B/gemma-2-9b-it/r0/UA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1750,7 +1750,7 @@
   {
    "game": "mp-dev-school-bus-route-B/gemma-2-9b-it/r0/UP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1758,7 +1758,7 @@
   {
    "game": "mp-dev-school-bus-route-B/gemma-2-9b-it/r0/KA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1766,7 +1766,7 @@
   {
    "game": "mp-dev-school-bus-route-B/gemma-2-9b-it/r0/KP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1774,7 +1774,7 @@
   {
    "game": "mp-dev-school-bus-route-B/qwen3.5-27b/r0/UA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1782,7 +1782,7 @@
   {
    "game": "mp-dev-school-bus-route-B/qwen3.5-27b/r0/UP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1790,7 +1790,7 @@
   {
    "game": "mp-dev-school-bus-route-B/qwen3.5-27b/r0/KA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1798,7 +1798,7 @@
   {
    "game": "mp-dev-school-bus-route-B/qwen3.5-27b/r0/KP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1806,7 +1806,7 @@
   {
    "game": "mp-dev-software-release-date-A/gemma-2-9b-it/r0/UA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1814,7 +1814,7 @@
   {
    "game": "mp-dev-software-release-date-A/gemma-2-9b-it/r0/UP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1822,7 +1822,7 @@
   {
    "game": "mp-dev-software-release-date-A/gemma-2-9b-it/r0/KA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1830,7 +1830,7 @@
   {
    "game": "mp-dev-software-release-date-A/gemma-2-9b-it/r0/KP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1838,7 +1838,7 @@
   {
    "game": "mp-dev-software-release-date-A/qwen3.5-27b/r0/UA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1846,7 +1846,7 @@
   {
    "game": "mp-dev-software-release-date-A/qwen3.5-27b/r0/UP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1854,7 +1854,7 @@
   {
    "game": "mp-dev-software-release-date-A/qwen3.5-27b/r0/KA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1862,7 +1862,7 @@
   {
    "game": "mp-dev-software-release-date-A/qwen3.5-27b/r0/KP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1870,7 +1870,7 @@
   {
    "game": "mp-dev-software-release-date-B/gemma-2-9b-it/r0/UA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1878,7 +1878,7 @@
   {
    "game": "mp-dev-software-release-date-B/gemma-2-9b-it/r0/UP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1886,7 +1886,7 @@
   {
    "game": "mp-dev-software-release-date-B/gemma-2-9b-it/r0/KA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1894,7 +1894,7 @@
   {
    "game": "mp-dev-software-release-date-B/gemma-2-9b-it/r0/KP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1902,7 +1902,7 @@
   {
    "game": "mp-dev-software-release-date-B/qwen3.5-27b/r0/UA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1910,7 +1910,7 @@
   {
    "game": "mp-dev-software-release-date-B/qwen3.5-27b/r0/UP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1918,7 +1918,7 @@
   {
    "game": "mp-dev-software-release-date-B/qwen3.5-27b/r0/KA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1926,7 +1926,7 @@
   {
    "game": "mp-dev-software-release-date-B/qwen3.5-27b/r0/KP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1934,7 +1934,7 @@
   {
    "game": "mp-dev-warehouse-fire-cert-A/gemma-2-9b-it/r0/UA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1942,7 +1942,7 @@
   {
    "game": "mp-dev-warehouse-fire-cert-A/gemma-2-9b-it/r0/UP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1950,7 +1950,7 @@
   {
    "game": "mp-dev-warehouse-fire-cert-A/gemma-2-9b-it/r0/KA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1958,7 +1958,7 @@
   {
    "game": "mp-dev-warehouse-fire-cert-A/gemma-2-9b-it/r0/KP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1966,7 +1966,7 @@
   {
    "game": "mp-dev-warehouse-fire-cert-A/qwen3.5-27b/r0/UA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1974,7 +1974,7 @@
   {
    "game": "mp-dev-warehouse-fire-cert-A/qwen3.5-27b/r0/UP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1982,7 +1982,7 @@
   {
    "game": "mp-dev-warehouse-fire-cert-A/qwen3.5-27b/r0/KA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1990,7 +1990,7 @@
   {
    "game": "mp-dev-warehouse-fire-cert-A/qwen3.5-27b/r0/KP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -1998,7 +1998,7 @@
   {
    "game": "mp-dev-warehouse-fire-cert-B/gemma-2-9b-it/r0/UA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -2006,7 +2006,7 @@
   {
    "game": "mp-dev-warehouse-fire-cert-B/gemma-2-9b-it/r0/UP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -2014,7 +2014,7 @@
   {
    "game": "mp-dev-warehouse-fire-cert-B/gemma-2-9b-it/r0/KA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -2022,7 +2022,7 @@
   {
    "game": "mp-dev-warehouse-fire-cert-B/gemma-2-9b-it/r0/KP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -2030,7 +2030,7 @@
   {
    "game": "mp-dev-warehouse-fire-cert-B/qwen3.5-27b/r0/UA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -2038,7 +2038,7 @@
   {
    "game": "mp-dev-warehouse-fire-cert-B/qwen3.5-27b/r0/UP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -2046,7 +2046,7 @@
   {
    "game": "mp-dev-warehouse-fire-cert-B/qwen3.5-27b/r0/KA",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10
@@ -2054,7 +2054,7 @@
   {
    "game": "mp-dev-warehouse-fire-cert-B/qwen3.5-27b/r0/KP",
    "live_calls": 30,
-   "probes_run": 8,
+   "probes_run": 9,
    "identical_with_probes": true,
    "negative_control_detected": true,
    "first_divergence_control": 10

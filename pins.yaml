@@ -8,6 +8,9 @@ pipeline:                      # the shared five-model pipeline that StPT's Step
   commit: 5ca15f56a71f35d5818d0392f7f3b4acb2d85d1b
   tag_form: lightweight         # the GitHub tag points at the commit itself (coordination PIPELINE.md)
   lineup_file: pipeline/lineup/lineup.yaml
+  next: "v1.3.0 (D40, 2026-11-03): Missing Piece adopts it once applied and tagged by someone with write access (patch:
+    proposals/pipeline-v1.3.0/); re-pin tag + commit here then; S0-GPU validates the throughput modes before any other run.
+    StPT stays on v1.2.0."
 coordination:                  # the shared coordination record (StPT + Missing Piece)
   repo: https://github.com/RandallSPQR/StPT-MP-Coordination
   commit: 751ae738f64b63feb181e66dc0de53bf8421e08d   # MP entries D31-D39, P7-P14, A29-A30 (MP's first entry, filed as A28, renumbered A29 on merging main 25b6d23); branch claude/festive-ritchie-e5hga4 until merged, then re-pinned to the main commit
@@ -25,5 +28,10 @@ models:                        # D1, D8: all five from the pinned lineup; Qwen p
   - qwen3.5-27b
 serving:                       # owner 2026-11-03 (cost reduction, engineering only); mp/serving.py
   mode: strict                 # the only mode pipeline v1.2.0 supports
-  proposed: {pipeline: "v1.3.0 (proposed, not tagged; proposals/pipeline-v1.3.0/)", modes: [throughput, throughput_invariant]}
+  adopted: {pipeline: "v1.3.0 (D40; not yet tagged)", modes_opt_in: [throughput, throughput_invariant], amends: "D1, D9 (Missing Piece only)"}
   validated_modes: {}          # model -> modes that passed S0-GPU validation; empty until it runs
+grading:                       # owner 2026-11-03; Paper 1's frozen graders, verified at RandallSPQR/edsl_wwil 35ffd5dc
+  route: openrouter
+  primary: {id: anthropic/claude-sonnet-4.5, temperature: 0.0, reasoning: {enabled: false}, max_tokens: 2000}
+  gate: {id: google/gemini-2.5-flash, temperature: 0.0, reasoning: {enabled: false}, max_tokens: 2000}
+  agreement_rule: "Paper 1 PREREG_DRAFT.md section 6 (mp/reliability.py)"

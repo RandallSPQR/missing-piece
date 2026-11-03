@@ -16,7 +16,7 @@ Revised 2026-11-03 for the owner's cost-reduction items (engineering only, no de
   - Scope: every development scenario (32) × all four cells × two serializers (gemma2, qwen3_5) = 256 games;
     7,682 live calls compared.
   - Every game's live calls (serialised prompt sha256 and output, in order) are byte-identical with and without the
-    conviction probes. That is 2,048 probes under the new policy: 4 receivers × rounds 2 and 4.
+    conviction probes. That is 2,304 probes under the new policy: 4 receivers × rounds 2 and 4, plus the speaker at round 4.
   - A leaky probe (one that writes its trace into the event list) was detected in every game.
 - **Lockstep (batched runner):** 128 games run in cohorts with and without probes are identical, and the leaky control
   is detected.
@@ -25,29 +25,27 @@ The engine rebuilds each live context from the game's event list. Probes run on 
 log that no live context reads. On GPU, byte-identity of live **outputs** under batching needs batch-invariant kernels
 (`gates/S0/S0_GPU_PLAN.md`).
 
-## Probe policy (owner, 2026-11-03)
+## Probe policy (owner, 2026-11-03; P13 approved)
 
-- **Private conviction probes:** receivers only, after round ⌈R/2⌉ (round 2 when R = 4) and after round R. That is 8
-  readouts per game, against 20 under the earlier schedule. `Settings(probe_labels="receivers",
-  probe_rounds="midpoint_final")`; the earlier schedule is `probe_labels="all", probe_rounds="every"`.
+- **Private conviction probes:**
+  - the four receivers, after round ⌈R/2⌉ (round 2 when R = 4) and after round R;
+  - **plus the speaker after round R** (P13), for the advocate's private conviction named in the mechanism hypothesis.
+
+  That is 9 readouts per game, against 20 under the earlier schedule. `Settings(probe_labels="receivers",
+  probe_rounds="midpoint_final", probe_speaker_final=True)`; the earlier schedule is `probe_labels="all",
+  probe_rounds="every"`.
 - **More probes only if the pilot shows they are needed.** Rule, fixed now: if the receivers' mean conviction changes
   by more than 0.05 between rounds 2 and 4 in any cell (pooled over models), a round-3 receiver probe is added before
   S6.
-- **Consequence for the brief (owner's decision needed).** The mechanism hypothesis includes *advocates'* private
-  conviction ("Advocates' expressed confidence and private conviction differ by knowledge"). Receivers-only probes
-  drop that measure.
-  - The cheapest restoration is **one speaker probe at the final round**: 1 readout per game, under 1% of a game's GPU
-    time.
-  - Without it, the mechanism analysis rests on the speaker's graded expressed confidence alone.
 
 ## Serving
 
 - **Batched runner.** `mp.runner.run_lockstep` advances all games of a server start call by call. The k-th calls of the
   four cells of every quad are submitted in the same cohort. Every call records its cohort; every cohort records its
   members (game, call kind, agent) and wall time.
-- **Mode.** The pilot runs in the serving mode chosen for the confirmatory run:
-  - `strict` on pipeline v1.2.0;
-  - or, after v1.3.0 and S0-GPU C1–C3 pass, `throughput` / `throughput_invariant`.
+- **Mode (D40).** Missing Piece moves to pipeline v1.3.0 once it is applied and tagged. Its S0-GPU check validates the
+  throughput modes before any other run. The pilot then runs in the mode chosen for the confirmatory run: `strict`, or
+  a validated `throughput` / `throughput_invariant`.
 
   The same mode serves all four cells, and it is recorded in the manifest (`mp.manifest.header(..., serving_mode=)`).
   `mp.serving.check_mode` refuses a mode the installed pipeline does not support or that has not passed S0-GPU for the

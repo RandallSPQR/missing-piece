@@ -80,7 +80,13 @@ Analysis validation on synthetic data: **12/12 checks pass** (`analysis/VALIDATI
   (`mp/runner.py`).
 - **Serving modes:** `mp/serving.py` checks the mode. Prefix caching and batching need pipeline v1.3.0 (proposed,
   `proposals/pipeline-v1.3.0/`) and S0-GPU validation (`gates/S0/S0_GPU_PLAN.md`).
-- **Grading:** a Sonnet-class grader, the Batch API, a cached rubric and a 50% quad subsample (`gates/S5/S5_PLAN.md`).
+- **Pipeline (D40):** StPT stays on v1.2.0. Missing Piece adopts v1.3.0 once it is tagged, with throughput modes
+  opt-in, validated by S0-GPU first. The CPU link check passes: v1.3.0-strict serves exactly as v1.2.0
+  (`gates/S0/link_check/`).
+- **Probes:** P13 adds the speaker at the final round.
+- **Grading:** Paper 1's graders via OpenRouter (Sonnet 4.5 primary, Gemini 2.5 Flash gate grader on the same items),
+  a cached rubric, 100% speaker coding (P14) and a 50% quad subsample for the rest. Paper 1's kappa/AC1 gate is
+  reproduced exactly (`mp/reliability.py`, `gates/S5/S5_PLAN.md`).
 - **Costs:** recomputed from measured token counts (`gates/S6/COST_RECOMPUTE.md`). The final recompute uses the S4
   pilot's measured per-call costs, before any tier is chosen.
 Draft pre-registration: `prereg/PREREGISTRATION_DRAFT.md`.

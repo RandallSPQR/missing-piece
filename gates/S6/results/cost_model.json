@@ -14,16 +14,16 @@
   },
   "S6_as_filed_mean_message_words": 94.9,
   "new_probes": {
-   "prompt": 98647.9,
-   "uncached_prompt": 98647.9,
-   "output": 2774.6,
-   "calls": 43.0
+   "prompt": 101843.2,
+   "uncached_prompt": 101843.2,
+   "output": 2775.6,
+   "calls": 44.0
   },
   "new_probes_cache": {
-   "prompt": 98647.9,
-   "uncached_prompt": 18680.4,
-   "output": 2774.6,
-   "calls": 43.0
+   "prompt": 101843.2,
+   "uncached_prompt": 17613.7,
+   "output": 2775.6,
+   "calls": 44.0
   },
   "new_probes_mean_message_words": 94.9,
   "games_per_variant": 32
@@ -56,22 +56,27 @@
   "quads_per_start": 8
  },
  "grading": {
-  "items_per_game": 11,
+  "speaker_items_per_game": 4,
+  "other_items_per_game": 7,
+  "subsample": 0.5,
   "content_tok_per_item": 260,
   "output_tok_per_item": 45,
   "rubric_tok": 1100,
-  "sonnet_usd_in": 2.0,
-  "sonnet_usd_out": 10.0,
-  "batch_discount": 0.5,
+  "primary_usd": [
+   3.0,
+   15.0
+  ],
+  "gate_usd": [
+   0.3,
+   2.5
+  ],
   "cache_read_factor": 0.1,
-  "subsample": 0.5,
-  "second_grader_share": 0.1,
   "opus_as_filed_usd_per_game": 0.018
  },
  "grading_usd_per_game": {
   "opus_as_filed": 0.018,
-  "sonnet_batch_cached_50pct": 0.0036,
-  "sonnet_batch_uncached_50pct": 0.00959
+  "paper1_graders_openrouter_cached": 0.01729,
+  "paper1_graders_openrouter_uncached": 0.03957
  },
  "tiers_1_replicate": {
   "24": {
@@ -85,58 +90,58 @@
    },
    "new probes (sequential, no cache)": {
     "mid": {
-     "gpu_hours": 24.1,
+     "gpu_hours": 24.3,
      "gpu_usd": 60,
-     "grading_usd": 3,
-     "total_usd": 63
+     "grading_usd": 17,
+     "total_usd": 77
     }
    },
    "new probes + prefix caching (sequential)": {
     "mid": {
      "gpu_hours": 19.0,
      "gpu_usd": 47,
-     "grading_usd": 3,
-     "total_usd": 51
+     "grading_usd": 17,
+     "total_usd": 64
     }
    },
    "new probes + caching + batched": {
     "low": {
      "gpu_hours": 6.7,
      "gpu_usd": 17,
-     "grading_usd": 3,
-     "total_usd": 20
+     "grading_usd": 17,
+     "total_usd": 33
     },
     "mid": {
-     "gpu_hours": 5.6,
+     "gpu_hours": 5.5,
      "gpu_usd": 14,
-     "grading_usd": 3,
-     "total_usd": 17
+     "grading_usd": 17,
+     "total_usd": 30
     },
     "high": {
-     "gpu_hours": 5.0,
+     "gpu_hours": 4.9,
      "gpu_usd": 12,
-     "grading_usd": 3,
-     "total_usd": 16
+     "grading_usd": 17,
+     "total_usd": 29
     }
    },
    "new probes + caching + batched, batch-invariant": {
     "low": {
-     "gpu_hours": 13.1,
-     "gpu_usd": 33,
-     "grading_usd": 3,
-     "total_usd": 36
+     "gpu_hours": 13.0,
+     "gpu_usd": 32,
+     "grading_usd": 17,
+     "total_usd": 49
     },
     "mid": {
-     "gpu_hours": 7.7,
+     "gpu_hours": 7.5,
      "gpu_usd": 19,
-     "grading_usd": 3,
-     "total_usd": 23
+     "grading_usd": 17,
+     "total_usd": 35
     },
     "high": {
-     "gpu_hours": 5.6,
+     "gpu_hours": 5.5,
      "gpu_usd": 14,
-     "grading_usd": 3,
-     "total_usd": 17
+     "grading_usd": 17,
+     "total_usd": 30
     }
    }
   },
@@ -151,58 +156,58 @@
    },
    "new probes (sequential, no cache)": {
     "mid": {
-     "gpu_hours": 26.3,
-     "gpu_usd": 65,
-     "grading_usd": 4,
-     "total_usd": 69
+     "gpu_hours": 26.5,
+     "gpu_usd": 66,
+     "grading_usd": 18,
+     "total_usd": 84
     }
    },
    "new probes + prefix caching (sequential)": {
     "mid": {
      "gpu_hours": 20.8,
      "gpu_usd": 52,
-     "grading_usd": 4,
-     "total_usd": 56
+     "grading_usd": 18,
+     "total_usd": 70
     }
    },
    "new probes + caching + batched": {
     "low": {
-     "gpu_hours": 7.5,
+     "gpu_hours": 7.4,
      "gpu_usd": 19,
-     "grading_usd": 4,
-     "total_usd": 22
+     "grading_usd": 18,
+     "total_usd": 37
     },
     "mid": {
-     "gpu_hours": 6.3,
-     "gpu_usd": 16,
-     "grading_usd": 4,
-     "total_usd": 19
+     "gpu_hours": 6.2,
+     "gpu_usd": 15,
+     "grading_usd": 18,
+     "total_usd": 33
     },
     "high": {
-     "gpu_hours": 5.6,
+     "gpu_hours": 5.5,
      "gpu_usd": 14,
-     "grading_usd": 4,
-     "total_usd": 18
+     "grading_usd": 18,
+     "total_usd": 32
     }
    },
    "new probes + caching + batched, batch-invariant": {
     "low": {
-     "gpu_hours": 14.4,
-     "gpu_usd": 36,
-     "grading_usd": 4,
-     "total_usd": 40
+     "gpu_hours": 14.2,
+     "gpu_usd": 35,
+     "grading_usd": 18,
+     "total_usd": 53
     },
     "mid": {
-     "gpu_hours": 8.5,
+     "gpu_hours": 8.4,
      "gpu_usd": 21,
-     "grading_usd": 4,
-     "total_usd": 25
+     "grading_usd": 18,
+     "total_usd": 39
     },
     "high": {
-     "gpu_hours": 6.2,
-     "gpu_usd": 16,
-     "grading_usd": 4,
-     "total_usd": 19
+     "gpu_hours": 6.1,
+     "gpu_usd": 15,
+     "grading_usd": 18,
+     "total_usd": 33
     }
    }
   },
@@ -217,58 +222,58 @@
    },
    "new probes (sequential, no cache)": {
     "mid": {
-     "gpu_hours": 30.3,
-     "gpu_usd": 75,
-     "grading_usd": 4,
-     "total_usd": 80
+     "gpu_hours": 30.5,
+     "gpu_usd": 76,
+     "grading_usd": 21,
+     "total_usd": 97
     }
    },
    "new probes + prefix caching (sequential)": {
     "mid": {
      "gpu_hours": 24.0,
      "gpu_usd": 60,
-     "grading_usd": 4,
-     "total_usd": 64
+     "grading_usd": 21,
+     "total_usd": 80
     }
    },
    "new probes + caching + batched": {
     "low": {
      "gpu_hours": 8.6,
-     "gpu_usd": 22,
-     "grading_usd": 4,
-     "total_usd": 26
+     "gpu_usd": 21,
+     "grading_usd": 21,
+     "total_usd": 42
     },
     "mid": {
-     "gpu_hours": 7.2,
+     "gpu_hours": 7.1,
      "gpu_usd": 18,
-     "grading_usd": 4,
-     "total_usd": 22
+     "grading_usd": 21,
+     "total_usd": 38
     },
     "high": {
-     "gpu_hours": 6.4,
+     "gpu_hours": 6.3,
      "gpu_usd": 16,
-     "grading_usd": 4,
-     "total_usd": 20
+     "grading_usd": 21,
+     "total_usd": 36
     }
    },
    "new probes + caching + batched, batch-invariant": {
     "low": {
-     "gpu_hours": 16.6,
+     "gpu_hours": 16.4,
      "gpu_usd": 41,
-     "grading_usd": 4,
-     "total_usd": 46
+     "grading_usd": 21,
+     "total_usd": 62
     },
     "mid": {
-     "gpu_hours": 9.8,
+     "gpu_hours": 9.6,
      "gpu_usd": 24,
-     "grading_usd": 4,
-     "total_usd": 29
+     "grading_usd": 21,
+     "total_usd": 45
     },
     "high": {
-     "gpu_hours": 7.2,
+     "gpu_hours": 7.1,
      "gpu_usd": 18,
-     "grading_usd": 4,
-     "total_usd": 22
+     "grading_usd": 21,
+     "total_usd": 38
     }
    }
   },
@@ -283,58 +288,58 @@
    },
    "new probes (sequential, no cache)": {
     "mid": {
-     "gpu_hours": 36.1,
-     "gpu_usd": 90,
-     "grading_usd": 5,
-     "total_usd": 95
+     "gpu_hours": 36.4,
+     "gpu_usd": 91,
+     "grading_usd": 25,
+     "total_usd": 116
     }
    },
    "new probes + prefix caching (sequential)": {
     "mid": {
-     "gpu_hours": 28.6,
+     "gpu_hours": 28.5,
      "gpu_usd": 71,
-     "grading_usd": 5,
-     "total_usd": 76
+     "grading_usd": 25,
+     "total_usd": 96
     }
    },
    "new probes + caching + batched": {
     "low": {
-     "gpu_hours": 10.1,
+     "gpu_hours": 10.0,
      "gpu_usd": 25,
-     "grading_usd": 5,
-     "total_usd": 30
+     "grading_usd": 25,
+     "total_usd": 50
     },
     "mid": {
-     "gpu_hours": 8.4,
+     "gpu_hours": 8.3,
      "gpu_usd": 21,
-     "grading_usd": 5,
-     "total_usd": 26
+     "grading_usd": 25,
+     "total_usd": 46
     },
     "high": {
-     "gpu_hours": 7.4,
+     "gpu_hours": 7.3,
      "gpu_usd": 18,
-     "grading_usd": 5,
-     "total_usd": 24
+     "grading_usd": 25,
+     "total_usd": 43
     }
    },
    "new probes + caching + batched, batch-invariant": {
     "low": {
-     "gpu_hours": 19.7,
-     "gpu_usd": 49,
-     "grading_usd": 5,
-     "total_usd": 54
+     "gpu_hours": 19.4,
+     "gpu_usd": 48,
+     "grading_usd": 25,
+     "total_usd": 73
     },
     "mid": {
-     "gpu_hours": 11.5,
-     "gpu_usd": 29,
-     "grading_usd": 5,
-     "total_usd": 34
+     "gpu_hours": 11.3,
+     "gpu_usd": 28,
+     "grading_usd": 25,
+     "total_usd": 53
     },
     "high": {
-     "gpu_hours": 8.3,
-     "gpu_usd": 21,
-     "grading_usd": 5,
-     "total_usd": 26
+     "gpu_hours": 8.2,
+     "gpu_usd": 20,
+     "grading_usd": 25,
+     "total_usd": 45
     }
    }
   },
@@ -349,58 +354,58 @@
    },
    "new probes (sequential, no cache)": {
     "mid": {
-     "gpu_hours": 48.1,
-     "gpu_usd": 120,
-     "grading_usd": 7,
-     "total_usd": 127
+     "gpu_hours": 48.5,
+     "gpu_usd": 121,
+     "grading_usd": 33,
+     "total_usd": 154
     }
    },
    "new probes + prefix caching (sequential)": {
     "mid": {
-     "gpu_hours": 38.1,
+     "gpu_hours": 38.0,
      "gpu_usd": 95,
-     "grading_usd": 7,
-     "total_usd": 102
+     "grading_usd": 33,
+     "total_usd": 128
     }
    },
    "new probes + caching + batched": {
     "low": {
-     "gpu_hours": 13.5,
-     "gpu_usd": 34,
-     "grading_usd": 7,
-     "total_usd": 41
+     "gpu_hours": 13.4,
+     "gpu_usd": 33,
+     "grading_usd": 33,
+     "total_usd": 66
     },
     "mid": {
-     "gpu_hours": 11.2,
+     "gpu_hours": 11.1,
      "gpu_usd": 28,
-     "grading_usd": 7,
-     "total_usd": 35
+     "grading_usd": 33,
+     "total_usd": 61
     },
     "high": {
-     "gpu_hours": 9.9,
-     "gpu_usd": 25,
-     "grading_usd": 7,
-     "total_usd": 32
+     "gpu_hours": 9.8,
+     "gpu_usd": 24,
+     "grading_usd": 33,
+     "total_usd": 58
     }
    },
    "new probes + caching + batched, batch-invariant": {
     "low": {
-     "gpu_hours": 26.2,
+     "gpu_hours": 25.9,
      "gpu_usd": 65,
-     "grading_usd": 7,
-     "total_usd": 72
+     "grading_usd": 33,
+     "total_usd": 98
     },
     "mid": {
-     "gpu_hours": 15.3,
+     "gpu_hours": 15.1,
      "gpu_usd": 38,
-     "grading_usd": 7,
-     "total_usd": 45
+     "grading_usd": 33,
+     "total_usd": 71
     },
     "high": {
-     "gpu_hours": 11.1,
-     "gpu_usd": 28,
-     "grading_usd": 7,
-     "total_usd": 35
+     "gpu_hours": 11.0,
+     "gpu_usd": 27,
+     "grading_usd": 33,
+     "total_usd": 61
     }
    }
   },
@@ -415,58 +420,58 @@
    },
    "new probes (sequential, no cache)": {
     "mid": {
-     "gpu_hours": 60.1,
-     "gpu_usd": 150,
-     "grading_usd": 9,
-     "total_usd": 158
+     "gpu_hours": 60.7,
+     "gpu_usd": 151,
+     "grading_usd": 41,
+     "total_usd": 193
     }
    },
    "new probes + prefix caching (sequential)": {
     "mid": {
-     "gpu_hours": 47.6,
-     "gpu_usd": 119,
-     "grading_usd": 9,
-     "total_usd": 127
+     "gpu_hours": 47.5,
+     "gpu_usd": 118,
+     "grading_usd": 41,
+     "total_usd": 160
     }
    },
    "new probes + caching + batched": {
     "low": {
-     "gpu_hours": 16.9,
+     "gpu_hours": 16.7,
      "gpu_usd": 42,
-     "grading_usd": 9,
-     "total_usd": 51
+     "grading_usd": 41,
+     "total_usd": 83
     },
     "mid": {
-     "gpu_hours": 14.0,
-     "gpu_usd": 35,
-     "grading_usd": 9,
-     "total_usd": 43
+     "gpu_hours": 13.8,
+     "gpu_usd": 34,
+     "grading_usd": 41,
+     "total_usd": 76
     },
     "high": {
-     "gpu_hours": 12.4,
-     "gpu_usd": 31,
-     "grading_usd": 9,
-     "total_usd": 39
+     "gpu_hours": 12.2,
+     "gpu_usd": 30,
+     "grading_usd": 41,
+     "total_usd": 72
     }
    },
    "new probes + caching + batched, batch-invariant": {
     "low": {
-     "gpu_hours": 32.8,
-     "gpu_usd": 82,
-     "grading_usd": 9,
-     "total_usd": 90
+     "gpu_hours": 32.4,
+     "gpu_usd": 81,
+     "grading_usd": 41,
+     "total_usd": 122
     },
     "mid": {
-     "gpu_hours": 19.1,
-     "gpu_usd": 48,
-     "grading_usd": 9,
-     "total_usd": 56
+     "gpu_hours": 18.9,
+     "gpu_usd": 47,
+     "grading_usd": 41,
+     "total_usd": 88
     },
     "high": {
-     "gpu_hours": 13.9,
-     "gpu_usd": 35,
-     "grading_usd": 9,
-     "total_usd": 43
+     "gpu_hours": 13.7,
+     "gpu_usd": 34,
+     "grading_usd": 41,
+     "total_usd": 76
     }
    }
   },
@@ -481,58 +486,58 @@
    },
    "new probes (sequential, no cache)": {
     "mid": {
-     "gpu_hours": 72.2,
-     "gpu_usd": 180,
-     "grading_usd": 10,
-     "total_usd": 190
+     "gpu_hours": 72.8,
+     "gpu_usd": 181,
+     "grading_usd": 50,
+     "total_usd": 231
     }
    },
    "new probes + prefix caching (sequential)": {
     "mid": {
-     "gpu_hours": 57.1,
+     "gpu_hours": 57.0,
      "gpu_usd": 142,
-     "grading_usd": 10,
-     "total_usd": 153
+     "grading_usd": 50,
+     "total_usd": 192
     }
    },
    "new probes + caching + batched": {
     "low": {
-     "gpu_hours": 20.2,
+     "gpu_hours": 20.0,
      "gpu_usd": 50,
-     "grading_usd": 10,
-     "total_usd": 61
+     "grading_usd": 50,
+     "total_usd": 100
     },
     "mid": {
-     "gpu_hours": 16.8,
-     "gpu_usd": 42,
-     "grading_usd": 10,
-     "total_usd": 52
+     "gpu_hours": 16.6,
+     "gpu_usd": 41,
+     "grading_usd": 50,
+     "total_usd": 91
     },
     "high": {
-     "gpu_hours": 14.9,
+     "gpu_hours": 14.7,
      "gpu_usd": 37,
-     "grading_usd": 10,
-     "total_usd": 47
+     "grading_usd": 50,
+     "total_usd": 86
     }
    },
    "new probes + caching + batched, batch-invariant": {
     "low": {
-     "gpu_hours": 39.3,
-     "gpu_usd": 98,
-     "grading_usd": 10,
-     "total_usd": 108
+     "gpu_hours": 38.9,
+     "gpu_usd": 97,
+     "grading_usd": 50,
+     "total_usd": 147
     },
     "mid": {
-     "gpu_hours": 23.0,
-     "gpu_usd": 57,
-     "grading_usd": 10,
-     "total_usd": 68
+     "gpu_hours": 22.6,
+     "gpu_usd": 56,
+     "grading_usd": 50,
+     "total_usd": 106
     },
     "high": {
-     "gpu_hours": 16.7,
-     "gpu_usd": 42,
-     "grading_usd": 10,
-     "total_usd": 52
+     "gpu_hours": 16.4,
+     "gpu_usd": 41,
+     "grading_usd": 50,
+     "total_usd": 91
     }
    }
   }

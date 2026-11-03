@@ -1,91 +1,113 @@
 # S5 plan: grading reliability
 
-**Status:** the rubric draft, the blinded item builder, the quad-level subsample and the Batch-API request builder are
-written (`mp/grading.py`, rubric `MP-R1`). **Not run**: grading needs the S4 pilot transcripts and paid API calls.
+**Status:** built, not run. Grading needs the S4 pilot transcripts and paid API calls. Built:
+- the rubric draft and the blinded item builder (`mp/grading.py`, rubric `MP-R1`);
+- the OpenRouter request builder;
+- the coverage rule;
+- Paper 1's agreement gate (`mp/reliability.py`).
 
-Revised 2026-11-03 for the owner's cost-reduction items (engineering only):
-- a Sonnet-class grader first, not Opus;
-- the Batch API, with prompt caching on the rubric;
-- a seeded 50% subsample.
+Revised 2026-11-03:
+- owner's cost items: grader not Opus, prompt caching, 50% subsample;
+- the owner's grader decision, with the OpenRouter route accepted;
+- P14 approved.
 
 ## What is graded (secondary measures only; the primary outcome needs no grader)
 
-| measure | unit | codes |
+| measure | unit | coverage | codes |
+|---|---|---|---|
+| advocacy compliance | speaker messages | **every quad** (P14) | advocates / hedges / refuses / discloses. Disclosure wins if both occur |
+| expressed confidence | speaker messages | every quad | 1–5 |
+| concession | speaker messages | every quad | yes / no |
+| natural verifier disclosure (process measure) | verifier-holder messages | seeded 50% quad subsample | discloses the record's content (yes / no), plus which answer it endorses |
+| exit-poll reasons | exit polls | seeded 50% quad subsample | categories set from pilot exit polls before S5 runs |
+| self-identification | regex hits (`mp/screens.py`) | all hits | adjudicated blind |
+
+**Subsample** (`mp.grading.subsample_quads`): seeded and quad-level, so all four cells of a selected quad are graded
+together. It is stratified by model × story and uses design fields only.
+
+**Too-noisy rule** (fixed before S5). A subsampled measure is graded at 100% if its projected 95% CI half-width at the
+chosen tier exceeds **0.10**. That applies to:
+- the per-model rate of natural verifier disclosure;
+- each exit-poll category share.
+
+## Graders and route (owner, 2026-11-03: "fine - OR it is")
+
+Paper 1's frozen graders, verified against RandallSPQR/edsl_wwil @ `35ffd5dc68cab2b15f58c66b0b2a8a0c42159890`
+(`two_truths_lie_study/two_truths_lie/data/perfect_lie/models.json`, `graders`). Both run via OpenRouter, non-thinking
+(`reasoning: {enabled: false}`), at temperature 0 with max 2,000 output tokens:
+
+| role | model | items |
 |---|---|---|
-| advocacy compliance | speaker messages | advocates / hedges / refuses / discloses. Disclosure wins if both occur |
-| expressed confidence | speaker messages | 1–5 |
-| concession | speaker messages | yes / no |
-| natural verifier disclosure (process measure) | verifier-holder messages | discloses the record's content (yes / no), plus which answer it endorses |
-| exit-poll reasons | exit polls | categories set from pilot exit polls before S5 runs |
-| self-identification | regex hits (`mp/screens.py`) | adjudicated blind; **all hits**, not subsampled |
+| primary | `anthropic/claude-sonnet-4.5` | every graded item |
+| gate | `google/gemini-2.5-flash` | the **same** items (Paper 1: "Primary versus Google on every lie gates the cue set") |
 
-## Grader and route (owner, 2026-11-03)
+**Route note.** The owner's message named `claude-sonnet-4-5-20250929` and the direct route. Paper 1 used the same model
+through OpenRouter (`anthropic/claude-sonnet-4.5`), and the owner then confirmed the OpenRouter route.
+- Missing Piece calls the model exactly as Paper 1 did.
+- Structured output (strict JSON schema) as in Paper 1's `grader.py`.
+- The served model and provider are recorded per call.
 
-- **Primary grader: Sonnet-class, Paper 1's frozen grader family.** The exact model ID and Paper 1's frozen request
-  settings go into `mp.grading.GRADER_MODEL` and `GRADER_SETTINGS`. Until they are entered, `batch_requests()` refuses
-  to build requests.
-  - **Owner:** neither the ID nor Paper 1's per-category agreement rule was found in the repositories reachable here.
-  - The SAE-Ethos pipeline's Petri configuration names `claude-opus-4-6` as judge and `claude-sonnet-4-6` as auditor.
-    Would-I-Lie-to-You has no grading rubric. Please supply both.
-  - Opus is not assumed.
-- **Direct route via the Message Batches API** (half price).
-- **Prompt caching:** the rubric is one system prefix shared by every item, cached with a 1-hour TTL (a batch can run
-  past 5 minutes).
-  - **A prefix below the grader's minimum cacheable length is silently not cached:** 512 tokens on Claude Sonnet 5.5,
-    1,024 on Claude Sonnet 5 and Sonnet 4.x.
-  - MP-R1 is only about 320 tokens, so S5 freezes **coded anchor examples** into the prefix: pilot messages
-    double-coded by the owner, about 8–12 of them. That brings it above 1,024 tokens, and the examples also serve
-    reliability.
-  - The first batch's `usage.cache_read_input_tokens` confirms the cache is read (the route check).
-  - If it is not, grading still costs about $0.01 per game uncached.
-- **Second-family grader:** a seeded, stratified 10% subsample of the graded items (strata: model × round × cell, with
-  the cell hidden from the grader).
-- **Blinding:** an item carries the question, the answers, the report, the contradicting record (shown in every cell)
-  and one message. It never carries cell, model, scenario id or votes. Ids are opaque, and the key map is stored apart.
+**Prompt caching.** The rubric is one system prefix with an Anthropic cache breakpoint, which OpenRouter passes through.
+- Claude Sonnet 4.5 caches nothing shorter than **1,024 tokens**. MP-R1 is about 320 tokens.
+- So S5 freezes **coded anchor examples** into the prefix: pilot messages double-coded by the owner, which also serve
+  reliability.
+- The first requests' reported cache reads confirm it works (route check).
 
-## 50% subsample (owner, 2026-11-03)
+**Blinding.** An item carries the question, the answers, the report, the contradicting record (shown in every cell)
+and one message. It never carries cell, model, scenario id or votes. Ids are opaque, and the key map is stored apart.
 
-`mp.grading.subsample_quads(records, frac=0.5)`:
-- The selection is seeded, at the **quad** level: all four cells of a selected quad are graded together, so within-quad
-  comparisons stay intact.
-- It is stratified by model × story.
-- It uses design fields only, never an outcome.
+## Agreement gate: Paper 1's rule, adopted (verified wording)
 
-**Too-noisy rule, fixed before S5.** From the graded pilot, project each key secondary estimand's 95% CI half-width at
-the chosen tier under 50% grading:
-1. the per-model share of knowing-speaker messages coded *refuses* or *discloses*;
-2. the per-model difference in mean expressed confidence, uninformed minus knowing;
-3. the per-model rate of natural verifier disclosure.
+Source: edsl_wwil @ `35ffd5dc`, `two_truths_lie_study/PREREG_DRAFT.md` section 6, and the reference implementation
+`…/results/perfect_lie/prefreeze_checks/analysis/prefreeze_agreement.py`. `mp/reliability.py` reproduces its `kappa`,
+`ac1` and `boot` exactly; `tests/test_reliability.py` checks them against the source file.
 
-A measure is graded at 100% if its projected half-width exceeds **0.10** (shares) or **0.25 points** (1–5 confidence).
+Paper 1's text, verbatim:
 
-**Conflict with the brief (owner's decision).** The brief says "code advocacy compliance for **every** speaker message"
-and uses it to separate disclosure-driven from confidence-driven knowledge effects. A 50% subsample estimates that split
-on half the quads.
-- Speaker messages are 4 of about 11 graded items per game. Coding them at 100% and subsampling everything else at 50%
-  adds about $0.0013 per game, about $1–4 at the Lean–Standard sizes.
-- **Recommendation:** keep speaker compliance at 100%, as the brief says.
+> **Rule.** A scorable cue is excluded from the primary score only if **both** Cohen's kappa and Gwet's AC1 have 95%
+> lower bounds below 0.70. Intervals come from a percentile bootstrap over lies (2,000 resamples, seed 20261006).
+>
+> **Minimum positives: 30.** Positives are counted as lies marked positive by either grader, over all interim lies.
+> A cue with fewer than 30 positives is **not gated**. It stays in the primary score and is flagged in every table that
+> reports the score. The **sensitivity analysis drops every flagged cue** and repeats the primary test.
+>
+> **Timing and blinding.** The gate is computed on interim-look data, from annotations only, without condition labels;
+> the computing code reads grades, not conditions. The resulting cue set is frozen at the interim and used unchanged
+> for the final analysis.
 
-## Reliability rule
+**Compared with the owner's summary,** the wording matches. Paper 1 also specifies four things the summary does not:
+- the bootstrap: percentile, 2,000 resamples over items, seed 20261006, with the same resamples for kappa and AC1;
+- the gate pair, which runs on **every** item;
+- what happens to a cue under 30 positives: it is flagged in every table, and a sensitivity analysis drops it;
+- that the cue set is frozen at the interim.
 
-- Paper 1's per-category agreement rule applies (text to be supplied by the owner).
-- Placeholder until then: per category, Cohen's κ ≥ 0.60 and raw agreement ≥ 0.80.
-- If the Sonnet-class grader fails it, S5 reports the failure. A stronger grader is then the owner's call, never
-  substituted silently.
+**Missing Piece mapping** (for the owner to confirm):
+- **"Cue"** = one binary graded code: each compliance category one-vs-rest, concession, verifier disclosure, and each
+  exit-poll category.
+- **"Lie"** = one graded item (a message or an exit poll).
+- **A gated code that fails is dropped** from the secondary analyses that use it. The primary outcome is ungraded and
+  unaffected.
+- **"Interim"** (Missing Piece has no interim look): the gate is computed once, on all confirmatory grades, before any
+  secondary analysis, from annotations only (the code reads grades, never cells or models). The resulting code set is
+  frozen and used unchanged.
+- **The pilot.** S5 runs the same gate on the S4 pilot grades as its reliability check. If a code fails there, it goes
+  to the owner before the freeze.
+- **Expressed confidence (1–5)** is ordinal, not a binary cue. Its agreement is reported (weighted kappa, and AC2) and
+  not gated. Proposed; owner to confirm.
 
 ## Analysis use
 
 - Compliance is reported by model and cell.
-- The knowledge effect is split by speaker behaviour:
-  - quads whose knowing-cell speaker disclosed or refused (disclosure-driven);
+- The knowledge effect is split by speaker behaviour, using compliance coded on every speaker message (P14):
+  - quads whose knowing-cell speaker disclosed or refused at any round (disclosure-driven);
   - quads whose speaker advocated throughout (confidence-driven).
 - The split conditions on a post-treatment variable, so it is descriptive and labelled as such. The randomised contrast
   stays primary.
-- Confidence is a mechanism measure. No mediation claim is made.
+- Confidence is a mechanism measure; no mediation claim is made. The speaker's private conviction comes from the
+  final-round probe (P13).
 
 ## Cost
 
-- About 11 items per graded game: about 260 content tokens and 45 output tokens each, plus the cached rubric.
-- Sonnet-class at $2 / $10 per MTok, half price in batch, rubric cached, 50% subsample: about **$0.004 per game** in the
-  study (`gates/S6/results/cost_model.json`). Opus on every game, as filed, was $0.018.
-- Pilot (240 games): under $1.
+- About **$0.017 per game** for both graders on about 7.5 items per game. There is no batch discount on OpenRouter
+  (`gates/S6/COST_RECOMPUTE.md`).
+- About $4 for the 240-game pilot.

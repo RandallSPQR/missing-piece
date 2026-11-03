@@ -16,8 +16,9 @@ Part B, assumed: GPU time from token counts. Sequential = S6's assumption (batch
   tokens at the prefill rate plus decode at the single-stream rate. Batched = lockstep cohorts of 16+ in flight: decode
   aggregate throughput x speedup; prefill unchanged (compute-bound). Batch-invariant kernels: a throughput penalty.
   ALL rates and speedups here are assumptions, bracketed low/high; the S4 pilot measures them.
-Part C, grading: Sonnet-class grader (Paper 1's frozen family; exact ID from the owner), Message Batches API (50% off),
-  rubric as a cached system prefix, a seeded 50% quad subsample.
+Part C, grading: Paper 1's graders via OpenRouter (primary anthropic/claude-sonnet-4.5 and gate grader
+  google/gemini-2.5-flash on the same items; no batch discount on this route), the rubric as a cached prefix for the
+  primary, speaker messages on every quad (P14), other measures on a seeded 50% quad subsample.
 
 Writes gates/S6/results/cost_model.json and cost_model.md."""
 from __future__ import annotations
@@ -135,11 +136,15 @@ A = {
     "invariant_throughput_factor": {"low": 0.4, "mid": 0.6, "high": 0.8},   # batch-invariant kernels (beta)
     "quads_per_start": 8,
 }
-GRADE = {   # per graded game: ~11 items (4 speaker messages, ~2 verifier-holder messages, 5 exit polls)
-    "items_per_game": 11, "content_tok_per_item": 260, "output_tok_per_item": 45,
-    "rubric_tok": 1100,               # MP-R1 plus coded examples, sized to clear the cacheable minimum (see report)
-    "sonnet_usd_in": 2.0, "sonnet_usd_out": 10.0, "batch_discount": 0.5, "cache_read_factor": 0.1,
-    "subsample": 0.5, "second_grader_share": 0.10,
+GRADE = {   # Paper 1's graders via OpenRouter (owner 2026-11-03): no batch discount on this route
+    "speaker_items_per_game": 4,      # graded on every quad (P14)
+    "other_items_per_game": 7,        # ~2 verifier-holder messages + 5 exit polls, on the 50% quad subsample
+    "subsample": 0.5,
+    "content_tok_per_item": 260, "output_tok_per_item": 45,
+    "rubric_tok": 1100,               # MP-R1 plus coded examples, sized to clear Sonnet 4.5's 1,024-token cache minimum
+    "primary_usd": (3.00, 15.00),     # anthropic/claude-sonnet-4.5 (Paper 1 models.json price)
+    "gate_usd": (0.30, 2.50),         # google/gemini-2.5-flash, on the same items (Paper 1's gate pair)
+    "cache_read_factor": 0.1,         # primary rubric reads; the gate grader is costed uncached (conservative)
     "opus_as_filed_usd_per_game": 0.018,   # S6 as filed: Opus 5.5 batch, 6,000 in / 600 out, all games
 }
 
@@ -157,9 +162,11 @@ def seconds_per_game(tokens: dict, size: str, batched: bool, invariant_factor: f
 
 def grading_usd_per_game(cached: bool) -> float:
     g = GRADE
-    rub_in = g["rubric_tok"] * (g["cache_read_factor"] if cached else 1.0)
-    per_item = ((rub_in + g["content_tok_per_item"]) * g["sonnet_usd_in"] + g["output_tok_per_item"] * g["sonnet_usd_out"]) / 1e6
-    return per_item * g["items_per_game"] * g["batch_discount"] * g["subsample"] * (1 + g["second_grader_share"])
+    items = g["speaker_items_per_game"] + g["other_items_per_game"] * g["subsample"]
+    rub = g["rubric_tok"] * (g["cache_read_factor"] if cached else 1.0)
+    prim = ((rub + g["content_tok_per_item"]) * g["primary_usd"][0] + g["output_tok_per_item"] * g["primary_usd"][1]) / 1e6
+    gate = ((g["rubric_tok"] + g["content_tok_per_item"]) * g["gate_usd"][0] + g["output_tok_per_item"] * g["gate_usd"][1]) / 1e6
+    return items * (prim + gate)
 
 
 def tier_costs(tokens: dict, stories: int, reps: int = 1) -> dict:
@@ -208,8 +215,8 @@ def main():
     tiers = {K: tier_costs(tokens, K) for K in (24, 26, 30, 36, 48, 60, 72)}
     out = {"tokens_per_game_measured_cpu": tokens, "assumptions": A, "grading": GRADE,
            "grading_usd_per_game": {"opus_as_filed": GRADE["opus_as_filed_usd_per_game"],
-                                     "sonnet_batch_cached_50pct": round(grading_usd_per_game(True), 5),
-                                     "sonnet_batch_uncached_50pct": round(grading_usd_per_game(False), 5)},
+                                     "paper1_graders_openrouter_cached": round(grading_usd_per_game(True), 5),
+                                     "paper1_graders_openrouter_uncached": round(grading_usd_per_game(False), 5)},
            "tiers_1_replicate": tiers}
     (ROOT / "gates/S6/results").mkdir(exist_ok=True)
     (ROOT / "gates/S6/results/cost_model.json").write_text(json.dumps(out, indent=1) + "\n")

@@ -127,7 +127,8 @@ def test_probe_policy_receivers_midpoint_final():
     plan = make_plan(s, "qwen3.5-27b", 0, 4)
     r = run_game(s, plan, "UP", MockBackend("qwen3.5-27b"), Settings(), probes=True)
     assert {p["round"] for p in r["probes"]} == {2, 4}
-    assert plan.speaker not in {p["label"] for p in r["probes"]} and len(r["probes"]) == 8
+    assert len(r["probes"]) == 9                                   # 4 receivers x 2 rounds + the speaker at round 4 (P13)
+    assert [p["round"] for p in r["probes"] if p["label"] == plan.speaker] == [4]
 
 
 def test_grading_subsample_quad_level_and_grader_required():
@@ -138,8 +139,14 @@ def test_grading_subsample_quad_level_and_grader_required():
     quads = {r["quad_id"] for r in recs}
     assert abs(len(keep) / len(quads) - 0.5) < 0.05
     assert keep == grading.subsample_quads(recs)                       # seeded
-    with pytest.raises(RuntimeError):
-        grading.batch_requests([{"id": "x", "question": "", "answers": [], "report": "", "record": "", "message": ""}])
+    item = {"id": "x", "question": "q", "answers": ["a", "b"], "report": "r", "record": "c", "message": "m"}
+    req = grading.openrouter_requests([item], "primary")[0]["body"]
+    assert req["model"] == "anthropic/claude-sonnet-4.5" and req["temperature"] == 0.0
+    assert req["reasoning"] == {"enabled": False} and req["max_tokens"] == 2000
+    assert req["messages"][0]["content"][0]["cache_control"] == {"type": "ephemeral"}
+    assert grading.openrouter_requests([item], "gate")[0]["body"]["model"] == "google/gemini-2.5-flash"
+    cov = grading.graded_quads(recs)
+    assert cov["speaker_messages"] == quads and cov["verifier_messages"] == keep           # P14: speakers on 100%
 
 
 def test_serving_compare_detects_shift():

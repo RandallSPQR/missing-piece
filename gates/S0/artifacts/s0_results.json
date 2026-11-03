@@ -144,6 +144,7 @@
    "commit": "5ca15f56a71f35d5818d0392f7f3b4acb2d85d1b",
    "lineup_file": "pipeline/lineup/lineup.yaml",
    "name": "sae-ethos-pipeline",
+   "next": "v1.3.0 (D40, 2026-11-03): Missing Piece adopts it once applied and tagged by someone with write access (patch: proposals/pipeline-v1.3.0/); re-pin tag + commit here then; S0-GPU validates the throughput modes before any other run. StPT stays on v1.2.0.",
    "repo": "https://github.com/RandallSPQR/SAE-Ethos-Calibration",
    "tag": "v1.2.0",
    "tag_form": "lightweight"

@@ -41,6 +41,7 @@ class Settings:
     # unless the S4 pilot shows more are needed. "all"/"every" restore the earlier, fuller schedule.
     probe_labels: str = "receivers"      # receivers | all
     probe_rounds: str = "midpoint_final"  # midpoint_final | every
+    probe_speaker_final: bool = True     # P13 (approved 2026-11-03): the speaker too, at the final round only
     arm: str = "natural"            # natural (the 2 x 2) | no_comm (vote on own briefing) | disclosure (standardised
                                     # complete-evidence list, then vote; no discussion)
 
@@ -237,7 +238,8 @@ class Game:
     def _probe_round(self, r):
         upto = len(self.events)
         F = self.spec["evidence_model"]["report_option"]
-        who = [k for k in range(1, 6) if self.s.probe_labels == "all" or k != self.plan.speaker]
+        who = [k for k in range(1, 6) if self.s.probe_labels == "all" or k != self.plan.speaker
+               or (self.s.probe_speaker_final and r == self.s.rounds)]
         for me in who:
             q = self.W["probe_conviction"].format(question_block=self.qblock)
             branch = self.context(me, upto, q)            # a fresh list: the live context is never touched
@@ -279,7 +281,8 @@ class Game:
             "out_of_band": sum(1 for m in msgs if not m["in_band"]),
             "self_id_hits": screens.self_id(msgs + [{"text": t} for t in exits.values()]),
             "probes": self.probes,
-            "probe_policy": {"labels": self.s.probe_labels, "rounds": probe_rounds(self.s)},
+            "probe_policy": {"labels": self.s.probe_labels, "rounds": probe_rounds(self.s),
+                             "speaker_final": self.s.probe_speaker_final},
             "live_calls": self.calls,
             "live_readouts": self.readouts,
         }
