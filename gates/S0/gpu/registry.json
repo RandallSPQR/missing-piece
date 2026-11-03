@@ -46,7 +46,8 @@
    "repo": "RandallSPQR/stpt-gate-artifacts",
    "model": "llama-3.1-8b-it",
    "mp_commit": "cf8a3769cb43aec2a698ab1fcb71817933bf4c2d",
-   "pipe_commit": "37031bcd0d33b6dbd2c6f6573127714367c306fe"
+   "pipe_commit": "37031bcd0d33b6dbd2c6f6573127714367c306fe",
+   "ended": "terminated 2026-11-03T06:41:42.531787+00:00: run DONE and uploaded (06:41); pod self-delete did not take effect"
   },
   "b6e1mcau3plsig": {
    "name": "mp-s0-gemma-2-9b-it-20261103T0606Zd",
