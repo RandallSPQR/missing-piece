@@ -15,7 +15,7 @@ called and nothing was paid for.
 | pipeline | sae-ethos-pipeline **v1.2.0** | `git rev-parse v1.2.0^{commit}` in a clone of SAE-Ethos-Calibration gives `5ca15f56a71f35d5818d0392f7f3b4acb2d85d1b`; the tag is lightweight (coordination `PIPELINE.md`) |
 | installed commit | `5ca15f56a71f35d5818d0392f7f3b4acb2d85d1b` | `pip install "sae-ethos-pipeline @ git+…@5ca15f56…"`; `lineup.manifest.check_pin` passes for all five models (`mp.manifest.check_environment`; read from pip's `direct_url.json`) |
 | lineup file | sha256 `74327b48de5c741f…` | identity block per model, recorded in `s0_results.json` |
-| coordination record | `9c155beb9054a9b639d41d0b92d1dfce11f81ac1` (D1–D30, A1–A27), re-pinned to `3f223e7b7e8e` once MP's entries D31–D38 and A28 (renumbered A29) were added, then to `751ae738f64b` (D39, A30) and `f29c4c289ba5` (D40–D42, A31) (branch `claude/festive-ritchie-e5hga4`, pending merge) | `pins.yaml` |
+| coordination record | `9c155beb9054a9b639d41d0b92d1dfce11f81ac1` at the S0 run (D1–D30, A1–A27); now pinned to `4f9e26b26a36` (MP's entries D32–D44 and A30–A33, renumbered twice to keep main's numbers; branch `claude/festive-ritchie-e5hga4`) | `pins.yaml` |
 | evidence schema | v1.0, sha256 `cd186ef99b4dfa12…` (a copy in `gates/S1/schema/`) | byte copy of the coordination record's `schema/evidence_schema_v1.0.json` |
 
 Missing Piece builds no model serving. Every run manifest starts with `mp.manifest.header(model, server_start)`. That

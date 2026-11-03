@@ -94,7 +94,7 @@ lying is interpretation, not measurement.
     CPU, and on GPU within one start (strict or batch-invariant serving), or as distributional equivalence under
     non-invariant batched serving.
 - **Serving.** **[S0-GPU]**
-  - Missing Piece runs on pipeline v1.3.0 (D40): either `strict` (batch size 1, prefix caching off, as v1.2.0) or a
+  - Missing Piece runs on pipeline v1.3.0 (D41): either `strict` (batch size 1, prefix caching off, as v1.2.0) or a
     throughput mode (prefix caching, lockstep batches with the four cells of each quad interleaved) that passed S0-GPU.
   - The same mode serves every cell, and it is recorded in every manifest with every call's batch cohort.
 

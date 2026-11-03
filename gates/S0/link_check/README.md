@@ -1,6 +1,6 @@
 # Link check: pipeline v1.3.0 (strict) against v1.2.0 (owner, 2026-11-03; optional)
 
-Purpose: confirm that v1.3.0's default `strict` mode serves exactly as v1.2.0. StPT stays pinned to v1.2.0 (D40), and
+Purpose: confirm that v1.3.0's default `strict` mode serves exactly as v1.2.0. StPT stays pinned to v1.2.0 (D41), and
 the matched bridge must run both arms on one pipeline version and serving mode.
 
 ## CPU part: PASS (2026-11-03)

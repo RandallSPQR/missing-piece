@@ -43,7 +43,7 @@ log that no live context reads. On GPU, byte-identity of live **outputs** under 
 - **Batched runner.** `mp.runner.run_lockstep` advances all games of a server start call by call. The k-th calls of the
   four cells of every quad are submitted in the same cohort. Every call records its cohort; every cohort records its
   members (game, call kind, agent) and wall time.
-- **Mode (D40).** Missing Piece moves to pipeline v1.3.0 once it is applied and tagged. Its S0-GPU check validates the
+- **Mode (D41).** Missing Piece moves to pipeline v1.3.0 once it is applied and tagged. Its S0-GPU check validates the
   throughput modes before any other run. The pilot then runs in the mode chosen for the confirmatory run: `strict`, or
   a validated `throughput` / `throughput_invariant`.
 

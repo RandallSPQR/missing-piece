@@ -79,7 +79,7 @@ Verified against RandallSPQR/edsl_wwil @ `35ffd5dc`, `data/perfect_lie/models.js
 
 ## What happens next (owner's items 1, 2 and 5)
 
-1. **Pipeline (D40).** Missing Piece adopts v1.3.0 once it is applied and tagged. MP S0-GPU validates the throughput
+1. **Pipeline (D41).** Missing Piece adopts v1.3.0 once it is applied and tagged. MP S0-GPU validates the throughput
    modes (C1–C3) before any other run.
 2. **The S4 pilot runs in the mode chosen for the confirmatory run**, through `mp.runner.run_lockstep`. Every call
    records server-reported prompt, cached and completion tokens, latency and cohort, plus grader usage.
