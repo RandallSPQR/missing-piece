@@ -16,7 +16,7 @@ wait for the owner's approval of GPU spend.
 | what | where | tag | commit |
 |---|---|---|---|
 | Shared five-model pipeline (LOCKED; built and tagged by StPT's Step 0; no serving is built here) | RandallSPQR/SAE-Ethos-Calibration | `v1.2.0` | `5ca15f56a71f35d5818d0392f7f3b4acb2d85d1b` |
-| Shared coordination record | [RandallSPQR/StPT-MP-Coordination](https://github.com/RandallSPQR/StPT-MP-Coordination) | none | `9c155beb9054a9b639d41d0b92d1dfce11f81ac1` |
+| Shared coordination record | [RandallSPQR/StPT-MP-Coordination](https://github.com/RandallSPQR/StPT-MP-Coordination) | none | `3f223e7b7e8e` (MP entries D31–D38 on branch `claude/festive-ritchie-e5hga4`, over main `9c155be`) |
 | Evidence schema | coordination `schema/evidence_schema_v1.0.json` | 1.0 | copy in `gates/S1/schema/` |
 
 **What the coordination record holds:**
@@ -67,7 +67,7 @@ All five come from the pinned lineup: bf16, batch size 1, exact logprobs.
 | S1 evidence specifications | **passes** with conventions **proposed**: 12 development stories (32 specs incl. 8 challenge variants) and 26 confirmatory stories (52 specs); schema v1.0; all verifier-present cells solvable (2.79 ≥ 2.2) | `gates/S1/S1_REPORT.md`, `gates/S1/CONVENTIONS.md` |
 | S2 scenario pipeline | **lint passes on both banks**; prior check and refusal screen built, pending GPU | `gates/S2/S2_REPORT.md` |
 | S3 comprehension (dev, branched) + held-out | built (1,280 items per model per set), pending GPU | `gates/S3/S3_PLAN.md` |
-| S4 pilot | **CPU probe isolation passes** (256 games, 7,684 live calls byte-identical; 256/256 leaky controls detected); pilot pending GPU | `gates/S4/S4_PLAN.md` |
+| S4 pilot | **CPU probe isolation passes** (256 games, 7,682 live calls byte-identical; 256/256 leaky controls detected); pilot pending GPU | `gates/S4/S4_PLAN.md` |
 | S5 grading reliability | rubric and blinded item builder drafted; pending pilot transcripts | `gates/S5/S5_PLAN.md` |
 | S6 power and bounds | **provisional tier table on proxy variances**; re-run on S4 variance components before the owner picks | `gates/S6/S6_REPORT.md` |
 | S7 freeze | not started | |

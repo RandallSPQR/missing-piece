@@ -1,0 +1,129 @@
+{
+ "rules": "Reads results/tier_table.json and proposes three tiers by rules fixed here (before reading the table):\n  Lean      cheapest configuration whose MDE for the knowledge effect is <= 0.10 in the PESSIMISTIC proxy scenario\n  Standard  cheapest configuration with TOST power >= 0.80 at the +-0.05 bound (true effect 0) in the CENTRAL scenario\n  Strong    cheapest configuration with TOST power >= 0.80 in the PESSIMISTIC scenario\nEach tier is shown under all three proxy scenarios. Also re-computes any power value the noncentral t returned as NaN\n(normal approximation). Writes results/tiers.json and results/tiers.md.",
+ "tiers": {
+  "Lean": [
+   30,
+   1
+  ],
+  "Standard": [
+   72,
+   1
+  ],
+  "Strong": null
+ },
+ "rows": {
+  "Lean": [
+   {
+    "scenario": "optimistic",
+    "stories": 30,
+    "scenarios": 60,
+    "replicates": 1,
+    "sd_estimate": 0.0202,
+    "mde_main_80": 0.059,
+    "power_main_at_0.10": 0.998,
+    "tost_power_at_0_bound_0.05": 0.63,
+    "mde_interaction_80": 0.099,
+    "power_interaction_at_0.10": 0.808,
+    "type1_check": null,
+    "games": 1200,
+    "gpu_hours": 34.2,
+    "gpu_usd": 85.0,
+    "grading_usd": 24.0,
+    "total_usd": 109.0
+   },
+   {
+    "scenario": "central",
+    "stories": 30,
+    "scenarios": 60,
+    "replicates": 1,
+    "sd_estimate": 0.0237,
+    "mde_main_80": 0.069,
+    "power_main_at_0.10": 0.983,
+    "tost_power_at_0_bound_0.05": 0.357,
+    "mde_interaction_80": 0.108,
+    "power_interaction_at_0.10": 0.737,
+    "type1_check": null,
+    "games": 1200,
+    "gpu_hours": 34.2,
+    "gpu_usd": 85.0,
+    "grading_usd": 24.0,
+    "total_usd": 109.0
+   },
+   {
+    "scenario": "pessimistic",
+    "stories": 30,
+    "scenarios": 60,
+    "replicates": 1,
+    "sd_estimate": 0.0321,
+    "mde_main_80": 0.093,
+    "power_main_at_0.10": 0.853,
+    "tost_power_at_0_bound_0.05": 0.04,
+    "mde_interaction_80": 0.137,
+    "power_interaction_at_0.10": 0.534,
+    "type1_check": null,
+    "games": 1200,
+    "gpu_hours": 34.2,
+    "gpu_usd": 85.0,
+    "grading_usd": 24.0,
+    "total_usd": 109.0
+   }
+  ],
+  "Standard": [
+   {
+    "scenario": "optimistic",
+    "stories": 72,
+    "scenarios": 144,
+    "replicates": 1,
+    "sd_estimate": 0.0119,
+    "mde_main_80": 0.034,
+    "power_main_at_0.10": 1.0,
+    "tost_power_at_0_bound_0.05": 0.993,
+    "mde_interaction_80": 0.069,
+    "power_interaction_at_0.10": 0.982,
+    "type1_check": null,
+    "games": 2880,
+    "gpu_hours": 81.6,
+    "gpu_usd": 203.0,
+    "grading_usd": 57.0,
+    "total_usd": 260.0
+   },
+   {
+    "scenario": "central",
+    "stories": 72,
+    "scenarios": 144,
+    "replicates": 1,
+    "sd_estimate": 0.0157,
+    "mde_main_80": 0.044,
+    "power_main_at_0.10": 1.0,
+    "tost_power_at_0_bound_0.05": 0.887,
+    "mde_interaction_80": 0.072,
+    "power_interaction_at_0.10": 0.973,
+    "type1_check": null,
+    "games": 2880,
+    "gpu_hours": 81.6,
+    "gpu_usd": 203.0,
+    "grading_usd": 57.0,
+    "total_usd": 260.0
+   },
+   {
+    "scenario": "pessimistic",
+    "stories": 72,
+    "scenarios": 144,
+    "replicates": 1,
+    "sd_estimate": 0.0202,
+    "mde_main_80": 0.057,
+    "power_main_at_0.10": 0.998,
+    "tost_power_at_0_bound_0.05": 0.56,
+    "mde_interaction_80": 0.094,
+    "power_interaction_at_0.10": 0.846,
+    "type1_check": null,
+    "games": 2880,
+    "gpu_hours": 81.6,
+    "gpu_usd": 203.0,
+    "grading_usd": 57.0,
+    "total_usd": 260.0
+   }
+  ],
+  "Strong": null
+ }
+}

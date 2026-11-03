@@ -2,7 +2,7 @@
  "games": 256,
  "identical": 256,
  "negative_controls_detected": 256,
- "live_calls_compared": 7684,
+ "live_calls_compared": 7682,
  "probes_run": 5120,
  "pass": true,
  "rows": [
@@ -1112,7 +1112,7 @@
   },
   {
    "game": "mp-dev-ferry-timetable-B/gemma-2-9b-it/r0/KA",
-   "live_calls": 31,
+   "live_calls": 30,
    "probes_run": 20,
    "identical_with_probes": true,
    "negative_control_detected": true,
@@ -1880,7 +1880,7 @@
   },
   {
    "game": "mp-dev-software-release-date-B/gemma-2-9b-it/r0/KA",
-   "live_calls": 31,
+   "live_calls": 30,
    "probes_run": 20,
    "identical_with_probes": true,
    "negative_control_detected": true,

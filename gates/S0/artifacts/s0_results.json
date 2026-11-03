@@ -134,7 +134,8 @@
  "pass": true,
  "pins": {
   "coordination": {
-   "commit": "9c155beb9054a9b639d41d0b92d1dfce11f81ac1",
+   "base_main_commit": "9c155beb9054a9b639d41d0b92d1dfce11f81ac1",
+   "commit": "3f223e7b7e8ee7f22d409224a8b262f2019bbdc9",
    "evidence_schema": "1.0",
    "protocol_spec_version": "0.0",
    "repo": "https://github.com/RandallSPQR/StPT-MP-Coordination"

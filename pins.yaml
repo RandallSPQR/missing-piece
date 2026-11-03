@@ -10,7 +10,8 @@ pipeline:                      # the shared five-model pipeline that StPT's Step
   lineup_file: pipeline/lineup/lineup.yaml
 coordination:                  # the shared coordination record (StPT + Missing Piece)
   repo: https://github.com/RandallSPQR/StPT-MP-Coordination
-  commit: 9c155beb9054a9b639d41d0b92d1dfce11f81ac1   # read 2026-11-03 (D1-D30, A1-A27); re-pinned when the MP entries land
+  commit: 3f223e7b7e8ee7f22d409224a8b262f2019bbdc9   # adds MP's entries D31-D38, P7-P11, A28 on top of main 9c155be; on branch claude/festive-ritchie-e5hga4 until merged, then re-pinned to the main commit
+  base_main_commit: 9c155beb9054a9b639d41d0b92d1dfce11f81ac1   # read 2026-11-03 (D1-D30, A1-A27)
   evidence_schema: "1.0"      # schema/evidence_schema_v1.0.json
   protocol_spec_version: "0.0"
 brief:

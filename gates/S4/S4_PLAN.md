@@ -7,7 +7,7 @@
 
 `python gates/S4/isolation_cpu.py`:
 - **Scope:** every development scenario (32) × all four cells × two serializers (gemma2, qwen3_5) = 256 games;
-  7,684 live calls compared.
+  7,682 live calls compared.
 - **Byte-identity:** every game's live calls (serialised prompt sha256 and output, in order) are byte-identical with
   and without the private conviction probe after every round (5,120 probes run).
 - **Negative control:** in every game, a leaky probe (one that writes its trace into the event list) **was detected**.
