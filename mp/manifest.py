@@ -35,7 +35,7 @@ def server_start_id(pod_id: str, start_index: int, started_at: str) -> dict:
 
 
 def header(model: str | None = None, server_start: dict | None = None, require_pipeline: bool = True,
-           serving_mode: str = "strict") -> dict:
+           serving_mode: str = "strict", validating: bool = False) -> dict:
     """Run-manifest header. A header for a model call must carry the server-start ID, the pipeline identity block and
     the serving mode (mp.serving; the same mode for all four cells of every quad)."""
     if model is not None and not (server_start and server_start.get("id")):
@@ -47,22 +47,22 @@ def header(model: str | None = None, server_start: dict | None = None, require_p
     if server_start is not None:
         h["server_start"] = server_start
     if model is not None and require_pipeline:
-        h["pipeline_identity"] = check_environment(model, serving_mode)
+        h["pipeline_identity"] = check_environment(model, serving_mode, validating)
     h["serving"] = {"mode": serving_mode}
     if model is not None:
         from mp.serving import MODES
-        h["serving"].update(MODES[serving_mode])
+        h["serving"].update(MODES[serving_mode], validating=bool(validating))
     return h
 
 
-def check_environment(model: str, serving_mode: str = "strict") -> dict:
+def check_environment(model: str, serving_mode: str = "strict", validating: bool = False) -> dict:
     """The installed pipeline must be the pinned commit, its lineup must name `model`, and the serving mode must be one
     that pipeline supports and that has passed S0-GPU validation for the model (mp.serving.check_mode)."""
     import sae_ethos_pipeline  # noqa: F401
     from lineup import manifest as lm
     from mp.serving import check_mode
     p = pins()["pipeline"]
-    check_mode(serving_mode, sae_ethos_pipeline.__version__, model, pins())
+    check_mode(serving_mode, sae_ethos_pipeline.__version__, model, pins(), validating)
     block = lm.identity_block(model) if serving_mode == "strict" else lm.identity_block(model, mode=serving_mode)
     lm.check_pin(block, p["tag"], p["commit"])
     if model not in pins()["models"]:

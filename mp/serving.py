@@ -23,7 +23,9 @@ def _ver(v: str) -> tuple:
     return tuple(int(x) for x in v.split(".")[:3])
 
 
-def check_mode(mode: str, pipeline_version: str, model: str, pins: dict) -> dict:
+def check_mode(mode: str, pipeline_version: str, model: str, pins: dict, validating: bool = False) -> dict:
+    """validating=True is used ONLY by the S0-GPU validation runs themselves: it still requires a pipeline release with
+    serving modes, but not a prior pass (the run is what produces it). Every study run uses validating=False."""
     if mode not in MODES:
         raise ValueError(f"unknown serving mode {mode!r}")
     if mode != "strict":
@@ -31,7 +33,7 @@ def check_mode(mode: str, pipeline_version: str, model: str, pins: dict) -> dict
             raise RuntimeError(f"serving mode {mode!r} needs a pipeline release with serving modes (proposed v1.3.0); "
                                f"installed {pipeline_version}. See proposals/pipeline-v1.3.0/.")
         ok = ((pins.get("serving") or {}).get("validated_modes") or {}).get(model, [])
-        if mode not in ok:
+        if mode not in ok and not validating:
             raise RuntimeError(f"serving mode {mode!r} has not passed S0-GPU validation for {model} "
                                f"(pins.yaml serving.validated_modes)")
-    return {"mode": mode, **MODES[mode]}
+    return {"mode": mode, "validating": bool(validating), **MODES[mode]}
