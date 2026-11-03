@@ -80,7 +80,8 @@
    "repo": "RandallSPQR/stpt-gate-artifacts",
    "model": "qwen3.5-9b",
    "mp_commit": "cf8a3769cb43aec2a698ab1fcb71817933bf4c2d",
-   "pipe_commit": "37031bcd0d33b6dbd2c6f6573127714367c306fe"
+   "pipe_commit": "37031bcd0d33b6dbd2c6f6573127714367c306fe",
+   "ended": "terminated 2026-11-03T07:13:41.996832+00:00: v1.3.0 bug: Qwen profile kept --max-num-seqs 1 under throughput modes; strict, part1 and C1 results uploaded; modes re-run under v1.3.1"
   },
   "axoymoib6ks1qs": {
    "name": "mp-s0-gemma-2-9b-it-20261103T0612Z",
