@@ -14,7 +14,8 @@
    "repo": "RandallSPQR/stpt-gate-artifacts",
    "model": "gemma-3-27b-it",
    "mp_commit": "cf8a3769cb43aec2a698ab1fcb71817933bf4c2d",
-   "pipe_commit": "37031bcd0d33b6dbd2c6f6573127714367c306fe"
+   "pipe_commit": "37031bcd0d33b6dbd2c6f6573127714367c306fe",
+   "ended": "terminated 2026-11-03T07:49:52.223029+00:00: run DONE and uploaded"
   },
   "u95p4if79zwonv": {
    "name": "mp-s0-qwen3.5-27b-20261103T0606Zb",
