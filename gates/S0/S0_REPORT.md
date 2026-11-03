@@ -41,7 +41,7 @@ transformers configures it. The two renderings were compared as strings, with BO
 
 | model | contexts compared | agree | context shapes (user turns) |
 |---|---|---|---|
-| llama-3.1-8b-it | 55 | **55** | message 1–4, probe 2–5, vote 5, exit poll 6 |
+| llama-3.1-8b-it | 56 | **56** | message 1–4, probe 2–5, vote 5 (one extra: a vote retry after an invalid mock vote), exit poll 6 |
 | gemma-2-9b-it | 55 | **55** | same |
 | gemma-3-27b-it | 55 | **55** | same |
 | qwen3.5-9b | 55 | **55** | same |

@@ -84,7 +84,8 @@ def main():
         thash = hashlib.sha256(tsrc.encode()).hexdigest()[:16]
         be = Capture(model)
         plan = make_plan(spec, model, 0, rounds=4, tag="s0")
-        g = Game(spec, plan, "KP", be, Settings())
+        # the FULL probe schedule (all agents, every round), so every context shape is serialised and checked
+        g = Game(spec, plan, "KP", be, Settings(probe_labels="all", probe_rounds="every"))
         g.run(probes=True)
         shapes, agree, examples = {}, [], {}
         for kind, msgs in be.seen:

@@ -18,11 +18,18 @@ for f in sorted((HERE.parents[1] / "gates/S1/banks/development").glob("*.json"))
         plan = make_plan(spec, model, 0, rounds=4, tag="s4cpu")
         for cell in ("UA", "UP", "KA", "KP"):
             rows.append(isolation.check(spec, plan, cell, lambda: MockBackend(model)))
-ok = all(r["identical_with_probes"] for r in rows) and all(r["negative_control_detected"] for r in rows)
+from mp.protocol import Game, Settings  # noqa: E402
+specs = [json.loads(p.read_text()) for p in sorted((HERE.parents[1] / "gates/S1/banks/development").glob("*.json"))]
+lock = isolation.check_lockstep(
+    lambda leaky: [Game(sp, make_plan(sp, "qwen3.5-9b", 0, 4, tag="s4lock"), c, MockBackend("qwen3.5-9b"), Settings(),
+                        leaky_probes=leaky) for sp in specs for c in ("UA", "UP", "KA", "KP")],
+    lambda: MockBackend("qwen3.5-9b"))
+ok = (all(r["identical_with_probes"] for r in rows) and all(r["negative_control_detected"] for r in rows)
+      and lock["identical_with_probes"] and lock["negative_control_detected"])
 out = {"games": len(rows), "identical": sum(r["identical_with_probes"] for r in rows),
        "negative_controls_detected": sum(r["negative_control_detected"] for r in rows),
        "live_calls_compared": sum(r["live_calls"] for r in rows), "probes_run": sum(r["probes_run"] for r in rows),
-       "pass": ok, "rows": rows}
+       "lockstep": lock, "pass": ok, "rows": rows}
 (HERE / "results").mkdir(exist_ok=True)
 (HERE / "results" / "isolation_cpu.json").write_text(json.dumps(out, indent=1) + "\n")
 print({k: v for k, v in out.items() if k != "rows"})

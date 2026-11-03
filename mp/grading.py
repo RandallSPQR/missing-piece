@@ -58,10 +58,49 @@ def speaker_items(records: list[dict], specs: dict, seed: int = 0):
     return items, key
 
 
-def batch_requests(items, model="claude-opus-5-5", max_tokens=2000):
-    """Message Batches API request bodies (not sent here)."""
+# Grader (owner, 2026-11-03): do NOT assume Opus. S5 tests reliability with a Sonnet-class grader first: Paper 1's
+# frozen grader family. The exact model ID and its frozen request settings are Paper 1's and are entered here by the
+# owner; batch_requests() refuses to build requests until they are.
+GRADER_MODEL: str | None = None           # e.g. Paper 1's frozen Sonnet-class model ID (owner to supply)
+GRADER_SETTINGS: dict = {}                 # Paper 1's frozen request settings, verbatim (owner to supply)
+
+# Prompt caching: the rubric is sent as ONE cached system prefix shared by every item. A prefix shorter than the
+# grader's minimum cacheable length (512 tokens on Claude Sonnet 5.5; 1,024 on Claude Sonnet 5 and Sonnet 4.x) is
+# silently not cached. MP-R1 alone is ~320 tokens, so S5 freezes coded anchor examples (CODED_EXAMPLES) into the prefix,
+# which also serve reliability, and checks `usage.cache_read_input_tokens` on the first batch (route check).
+CODED_EXAMPLES: str = ""                   # frozen at S5 from pilot messages, double-coded by the owner
+
+
+def system_prefix() -> str:
+    return "\n\n".join(x for x in (RUBRIC, VERIFIER_RUBRIC, CODED_EXAMPLES) if x)
+
+
+def subsample_quads(records: list[dict], frac: float = 0.5, seed: int = 20261103) -> set:
+    """Seeded 50% subsample for secondary-measure grading (owner, 2026-11-03), at the QUAD level so the four cells of a
+    selected quad are all graded (within-quad comparisons stay intact), stratified by model and story so every
+    model x story keeps the same share. Selection uses only design fields, never an outcome."""
+    by = {}
+    for r in records:
+        by.setdefault((r["model"], r["story_id"]), set()).add(r["quad_id"])
+    keep = set()
+    for k in sorted(by):
+        qs = sorted(by[k])
+        rng = random.Random(f"{seed}|{k[0]}|{k[1]}")
+        rng.shuffle(qs)
+        n = len(qs) * frac
+        n = int(n) + (1 if rng.random() < n - int(n) else 0)
+        keep.update(qs[:n])
+    return keep
+
+
+def batch_requests(items, max_tokens=2000, ttl="1h"):
+    """Message Batches API request bodies (not sent here): the rubric as a cached system prefix (1-hour TTL: a batch
+    can run longer than the 5-minute default), the item in the user turn."""
+    if not GRADER_MODEL:
+        raise RuntimeError("GRADER_MODEL is not set: enter Paper 1's frozen Sonnet-class grader ID (owner)")
+    sys_block = [{"type": "text", "text": system_prefix(), "cache_control": {"type": "ephemeral", "ttl": ttl}}]
     return [{"custom_id": it["id"],
-             "params": {"model": model, "max_tokens": max_tokens,
-                        "messages": [{"role": "user", "content": RUBRIC + "\n\n" + json.dumps(
+             "params": {"model": GRADER_MODEL, "max_tokens": max_tokens, "system": sys_block, **GRADER_SETTINGS,
+                        "messages": [{"role": "user", "content": json.dumps(
                             {k: it[k] for k in ("question", "answers", "report", "record", "message")}, indent=1)}]}}
             for it in items]

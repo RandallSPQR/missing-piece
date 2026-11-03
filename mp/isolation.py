@@ -24,3 +24,15 @@ def check(spec, plan, cell, backend_factory, settings: Settings | None = None) -
             "identical_with_probes": ta == tb,
             "negative_control_detected": ta != tc,
             "first_divergence_control": next((i for i, (x, y) in enumerate(zip(ta, tc)) if x != y), None)}
+
+
+def check_lockstep(games_factory, backend_factory) -> dict:
+    """Lockstep (batched) variant: the same set of games run in lockstep cohorts with and without probes, and with a
+    leaky negative control. On CPU the mock backend's outputs do not depend on batch composition, so this checks the
+    STRUCTURAL isolation of the batched runner; numerical isolation on GPU is S0-GPU's question."""
+    from mp.runner import run_lockstep
+    a = run_lockstep(games_factory(False), backend_factory(), probes=False)["records"]
+    b = run_lockstep(games_factory(False), backend_factory(), probes=True)["records"]
+    c = run_lockstep(games_factory(True), backend_factory(), probes=True)["records"]
+    ta, tb, tc = ([live_trace(r) for r in x] for x in (a, b, c))
+    return {"games": len(ta), "identical_with_probes": ta == tb, "negative_control_detected": ta != tc}

@@ -1,0 +1,540 @@
+{
+ "tokens_per_game_measured_cpu": {
+  "S6_as_filed": {
+   "prompt": 120853.2,
+   "uncached_prompt": 120853.2,
+   "output": 2786.6,
+   "calls": 55.0
+  },
+  "S6_as_filed_cache": {
+   "prompt": 120853.2,
+   "uncached_prompt": 18625.2,
+   "output": 2786.6,
+   "calls": 55.0
+  },
+  "S6_as_filed_mean_message_words": 94.9,
+  "new_probes": {
+   "prompt": 98647.9,
+   "uncached_prompt": 98647.9,
+   "output": 2774.6,
+   "calls": 43.0
+  },
+  "new_probes_cache": {
+   "prompt": 98647.9,
+   "uncached_prompt": 18680.4,
+   "output": 2774.6,
+   "calls": 43.0
+  },
+  "new_probes_mean_message_words": 94.9,
+  "games_per_variant": 32
+ },
+ "assumptions": {
+  "usd_per_pod_hour": 2.49,
+  "small": {
+   "decode_tps": 90,
+   "prefill_tps": 8000,
+   "load_min": 3,
+   "n_models": 3
+  },
+  "large": {
+   "decode_tps": 30,
+   "prefill_tps": 2500,
+   "load_min": 8,
+   "n_models": 2
+  },
+  "request_overhead_s": 0.05,
+  "batched_decode_speedup": {
+   "low": 5,
+   "mid": 8,
+   "high": 12
+  },
+  "invariant_throughput_factor": {
+   "low": 0.4,
+   "mid": 0.6,
+   "high": 0.8
+  },
+  "quads_per_start": 8
+ },
+ "grading": {
+  "items_per_game": 11,
+  "content_tok_per_item": 260,
+  "output_tok_per_item": 45,
+  "rubric_tok": 1100,
+  "sonnet_usd_in": 2.0,
+  "sonnet_usd_out": 10.0,
+  "batch_discount": 0.5,
+  "cache_read_factor": 0.1,
+  "subsample": 0.5,
+  "second_grader_share": 0.1,
+  "opus_as_filed_usd_per_game": 0.018
+ },
+ "grading_usd_per_game": {
+  "opus_as_filed": 0.018,
+  "sonnet_batch_cached_50pct": 0.0036,
+  "sonnet_batch_uncached_50pct": 0.00959
+ },
+ "tiers_1_replicate": {
+  "24": {
+   "S6_as_filed (sequential, no cache, all probes, Opus all games)": {
+    "mid": {
+     "gpu_hours": 25.7,
+     "gpu_usd": 64,
+     "grading_usd": 17,
+     "total_usd": 81
+    }
+   },
+   "new probes (sequential, no cache)": {
+    "mid": {
+     "gpu_hours": 24.1,
+     "gpu_usd": 60,
+     "grading_usd": 3,
+     "total_usd": 63
+    }
+   },
+   "new probes + prefix caching (sequential)": {
+    "mid": {
+     "gpu_hours": 19.0,
+     "gpu_usd": 47,
+     "grading_usd": 3,
+     "total_usd": 51
+    }
+   },
+   "new probes + caching + batched": {
+    "low": {
+     "gpu_hours": 6.7,
+     "gpu_usd": 17,
+     "grading_usd": 3,
+     "total_usd": 20
+    },
+    "mid": {
+     "gpu_hours": 5.6,
+     "gpu_usd": 14,
+     "grading_usd": 3,
+     "total_usd": 17
+    },
+    "high": {
+     "gpu_hours": 5.0,
+     "gpu_usd": 12,
+     "grading_usd": 3,
+     "total_usd": 16
+    }
+   },
+   "new probes + caching + batched, batch-invariant": {
+    "low": {
+     "gpu_hours": 13.1,
+     "gpu_usd": 33,
+     "grading_usd": 3,
+     "total_usd": 36
+    },
+    "mid": {
+     "gpu_hours": 7.7,
+     "gpu_usd": 19,
+     "grading_usd": 3,
+     "total_usd": 23
+    },
+    "high": {
+     "gpu_hours": 5.6,
+     "gpu_usd": 14,
+     "grading_usd": 3,
+     "total_usd": 17
+    }
+   }
+  },
+  "26": {
+   "S6_as_filed (sequential, no cache, all probes, Opus all games)": {
+    "mid": {
+     "gpu_hours": 28.0,
+     "gpu_usd": 70,
+     "grading_usd": 19,
+     "total_usd": 88
+    }
+   },
+   "new probes (sequential, no cache)": {
+    "mid": {
+     "gpu_hours": 26.3,
+     "gpu_usd": 65,
+     "grading_usd": 4,
+     "total_usd": 69
+    }
+   },
+   "new probes + prefix caching (sequential)": {
+    "mid": {
+     "gpu_hours": 20.8,
+     "gpu_usd": 52,
+     "grading_usd": 4,
+     "total_usd": 56
+    }
+   },
+   "new probes + caching + batched": {
+    "low": {
+     "gpu_hours": 7.5,
+     "gpu_usd": 19,
+     "grading_usd": 4,
+     "total_usd": 22
+    },
+    "mid": {
+     "gpu_hours": 6.3,
+     "gpu_usd": 16,
+     "grading_usd": 4,
+     "total_usd": 19
+    },
+    "high": {
+     "gpu_hours": 5.6,
+     "gpu_usd": 14,
+     "grading_usd": 4,
+     "total_usd": 18
+    }
+   },
+   "new probes + caching + batched, batch-invariant": {
+    "low": {
+     "gpu_hours": 14.4,
+     "gpu_usd": 36,
+     "grading_usd": 4,
+     "total_usd": 40
+    },
+    "mid": {
+     "gpu_hours": 8.5,
+     "gpu_usd": 21,
+     "grading_usd": 4,
+     "total_usd": 25
+    },
+    "high": {
+     "gpu_hours": 6.2,
+     "gpu_usd": 16,
+     "grading_usd": 4,
+     "total_usd": 19
+    }
+   }
+  },
+  "30": {
+   "S6_as_filed (sequential, no cache, all probes, Opus all games)": {
+    "mid": {
+     "gpu_hours": 32.3,
+     "gpu_usd": 80,
+     "grading_usd": 22,
+     "total_usd": 102
+    }
+   },
+   "new probes (sequential, no cache)": {
+    "mid": {
+     "gpu_hours": 30.3,
+     "gpu_usd": 75,
+     "grading_usd": 4,
+     "total_usd": 80
+    }
+   },
+   "new probes + prefix caching (sequential)": {
+    "mid": {
+     "gpu_hours": 24.0,
+     "gpu_usd": 60,
+     "grading_usd": 4,
+     "total_usd": 64
+    }
+   },
+   "new probes + caching + batched": {
+    "low": {
+     "gpu_hours": 8.6,
+     "gpu_usd": 22,
+     "grading_usd": 4,
+     "total_usd": 26
+    },
+    "mid": {
+     "gpu_hours": 7.2,
+     "gpu_usd": 18,
+     "grading_usd": 4,
+     "total_usd": 22
+    },
+    "high": {
+     "gpu_hours": 6.4,
+     "gpu_usd": 16,
+     "grading_usd": 4,
+     "total_usd": 20
+    }
+   },
+   "new probes + caching + batched, batch-invariant": {
+    "low": {
+     "gpu_hours": 16.6,
+     "gpu_usd": 41,
+     "grading_usd": 4,
+     "total_usd": 46
+    },
+    "mid": {
+     "gpu_hours": 9.8,
+     "gpu_usd": 24,
+     "grading_usd": 4,
+     "total_usd": 29
+    },
+    "high": {
+     "gpu_hours": 7.2,
+     "gpu_usd": 18,
+     "grading_usd": 4,
+     "total_usd": 22
+    }
+   }
+  },
+  "36": {
+   "S6_as_filed (sequential, no cache, all probes, Opus all games)": {
+    "mid": {
+     "gpu_hours": 38.5,
+     "gpu_usd": 96,
+     "grading_usd": 26,
+     "total_usd": 122
+    }
+   },
+   "new probes (sequential, no cache)": {
+    "mid": {
+     "gpu_hours": 36.1,
+     "gpu_usd": 90,
+     "grading_usd": 5,
+     "total_usd": 95
+    }
+   },
+   "new probes + prefix caching (sequential)": {
+    "mid": {
+     "gpu_hours": 28.6,
+     "gpu_usd": 71,
+     "grading_usd": 5,
+     "total_usd": 76
+    }
+   },
+   "new probes + caching + batched": {
+    "low": {
+     "gpu_hours": 10.1,
+     "gpu_usd": 25,
+     "grading_usd": 5,
+     "total_usd": 30
+    },
+    "mid": {
+     "gpu_hours": 8.4,
+     "gpu_usd": 21,
+     "grading_usd": 5,
+     "total_usd": 26
+    },
+    "high": {
+     "gpu_hours": 7.4,
+     "gpu_usd": 18,
+     "grading_usd": 5,
+     "total_usd": 24
+    }
+   },
+   "new probes + caching + batched, batch-invariant": {
+    "low": {
+     "gpu_hours": 19.7,
+     "gpu_usd": 49,
+     "grading_usd": 5,
+     "total_usd": 54
+    },
+    "mid": {
+     "gpu_hours": 11.5,
+     "gpu_usd": 29,
+     "grading_usd": 5,
+     "total_usd": 34
+    },
+    "high": {
+     "gpu_hours": 8.3,
+     "gpu_usd": 21,
+     "grading_usd": 5,
+     "total_usd": 26
+    }
+   }
+  },
+  "48": {
+   "S6_as_filed (sequential, no cache, all probes, Opus all games)": {
+    "mid": {
+     "gpu_hours": 51.3,
+     "gpu_usd": 128,
+     "grading_usd": 35,
+     "total_usd": 162
+    }
+   },
+   "new probes (sequential, no cache)": {
+    "mid": {
+     "gpu_hours": 48.1,
+     "gpu_usd": 120,
+     "grading_usd": 7,
+     "total_usd": 127
+    }
+   },
+   "new probes + prefix caching (sequential)": {
+    "mid": {
+     "gpu_hours": 38.1,
+     "gpu_usd": 95,
+     "grading_usd": 7,
+     "total_usd": 102
+    }
+   },
+   "new probes + caching + batched": {
+    "low": {
+     "gpu_hours": 13.5,
+     "gpu_usd": 34,
+     "grading_usd": 7,
+     "total_usd": 41
+    },
+    "mid": {
+     "gpu_hours": 11.2,
+     "gpu_usd": 28,
+     "grading_usd": 7,
+     "total_usd": 35
+    },
+    "high": {
+     "gpu_hours": 9.9,
+     "gpu_usd": 25,
+     "grading_usd": 7,
+     "total_usd": 32
+    }
+   },
+   "new probes + caching + batched, batch-invariant": {
+    "low": {
+     "gpu_hours": 26.2,
+     "gpu_usd": 65,
+     "grading_usd": 7,
+     "total_usd": 72
+    },
+    "mid": {
+     "gpu_hours": 15.3,
+     "gpu_usd": 38,
+     "grading_usd": 7,
+     "total_usd": 45
+    },
+    "high": {
+     "gpu_hours": 11.1,
+     "gpu_usd": 28,
+     "grading_usd": 7,
+     "total_usd": 35
+    }
+   }
+  },
+  "60": {
+   "S6_as_filed (sequential, no cache, all probes, Opus all games)": {
+    "mid": {
+     "gpu_hours": 64.2,
+     "gpu_usd": 160,
+     "grading_usd": 43,
+     "total_usd": 203
+    }
+   },
+   "new probes (sequential, no cache)": {
+    "mid": {
+     "gpu_hours": 60.1,
+     "gpu_usd": 150,
+     "grading_usd": 9,
+     "total_usd": 158
+    }
+   },
+   "new probes + prefix caching (sequential)": {
+    "mid": {
+     "gpu_hours": 47.6,
+     "gpu_usd": 119,
+     "grading_usd": 9,
+     "total_usd": 127
+    }
+   },
+   "new probes + caching + batched": {
+    "low": {
+     "gpu_hours": 16.9,
+     "gpu_usd": 42,
+     "grading_usd": 9,
+     "total_usd": 51
+    },
+    "mid": {
+     "gpu_hours": 14.0,
+     "gpu_usd": 35,
+     "grading_usd": 9,
+     "total_usd": 43
+    },
+    "high": {
+     "gpu_hours": 12.4,
+     "gpu_usd": 31,
+     "grading_usd": 9,
+     "total_usd": 39
+    }
+   },
+   "new probes + caching + batched, batch-invariant": {
+    "low": {
+     "gpu_hours": 32.8,
+     "gpu_usd": 82,
+     "grading_usd": 9,
+     "total_usd": 90
+    },
+    "mid": {
+     "gpu_hours": 19.1,
+     "gpu_usd": 48,
+     "grading_usd": 9,
+     "total_usd": 56
+    },
+    "high": {
+     "gpu_hours": 13.9,
+     "gpu_usd": 35,
+     "grading_usd": 9,
+     "total_usd": 43
+    }
+   }
+  },
+  "72": {
+   "S6_as_filed (sequential, no cache, all probes, Opus all games)": {
+    "mid": {
+     "gpu_hours": 77.0,
+     "gpu_usd": 192,
+     "grading_usd": 52,
+     "total_usd": 244
+    }
+   },
+   "new probes (sequential, no cache)": {
+    "mid": {
+     "gpu_hours": 72.2,
+     "gpu_usd": 180,
+     "grading_usd": 10,
+     "total_usd": 190
+    }
+   },
+   "new probes + prefix caching (sequential)": {
+    "mid": {
+     "gpu_hours": 57.1,
+     "gpu_usd": 142,
+     "grading_usd": 10,
+     "total_usd": 153
+    }
+   },
+   "new probes + caching + batched": {
+    "low": {
+     "gpu_hours": 20.2,
+     "gpu_usd": 50,
+     "grading_usd": 10,
+     "total_usd": 61
+    },
+    "mid": {
+     "gpu_hours": 16.8,
+     "gpu_usd": 42,
+     "grading_usd": 10,
+     "total_usd": 52
+    },
+    "high": {
+     "gpu_hours": 14.9,
+     "gpu_usd": 37,
+     "grading_usd": 10,
+     "total_usd": 47
+    }
+   },
+   "new probes + caching + batched, batch-invariant": {
+    "low": {
+     "gpu_hours": 39.3,
+     "gpu_usd": 98,
+     "grading_usd": 10,
+     "total_usd": 108
+    },
+    "mid": {
+     "gpu_hours": 23.0,
+     "gpu_usd": 57,
+     "grading_usd": 10,
+     "total_usd": 68
+    },
+    "high": {
+     "gpu_hours": 16.7,
+     "gpu_usd": 42,
+     "grading_usd": 10,
+     "total_usd": 52
+    }
+   }
+  }
+ }
+}

@@ -37,6 +37,10 @@ class Settings:
     exit_max_tokens: int = 120
     probe_conviction: bool = True
     probe_comprehension: bool = False
+    # Probe policy (owner, 2026-11-03, cost reduction): receivers only, at one midpoint round and the final round,
+    # unless the S4 pilot shows more are needed. "all"/"every" restore the earlier, fuller schedule.
+    probe_labels: str = "receivers"      # receivers | all
+    probe_rounds: str = "midpoint_final"  # midpoint_final | every
     arm: str = "natural"            # natural (the 2 x 2) | no_comm (vote on own briefing) | disclosure (standardised
                                     # complete-evidence list, then vote; no discussion)
 
@@ -58,6 +62,34 @@ class GamePlan:
     seed_root: int
     start_id: str | None = None
     cell_order: list = field(default_factory=lambda: list(ev.CELLS))
+
+
+@dataclass
+class Call:
+    """One model call a game asks for. kind: "generate" (sampled text) or "readout" (exact option probabilities)."""
+    kind: str
+    messages: list
+    gen: dict | None = None
+    tag: dict = field(default_factory=dict)
+
+
+def drive(game_steps, backend):
+    """Run a game generator sequentially against a backend (one call at a time)."""
+    try:
+        call = next(game_steps)
+        while True:
+            res = backend.generate(call.messages, **call.gen) if call.kind == "generate" else backend.readout(call.messages)
+            call = game_steps.send(res)
+    except StopIteration as e:
+        return e.value
+
+
+def probe_rounds(settings) -> list[int]:
+    R = settings.rounds
+    if settings.probe_rounds == "every":
+        return list(range(1, R + 1))
+    mid = (R + 1) // 2
+    return sorted({mid, R})
 
 
 def seed_of(*parts) -> int:
@@ -90,6 +122,8 @@ class Game:
         self.calls: list[dict] = []            # live calls only: label, kind, prompt sha256, output
         self.probes: list[dict] = []           # never read by any live context
         self.leaky = leaky_probes              # NEGATIVE CONTROL ONLY: writes probe Q/A into the event list
+        self.readouts: list[dict] = []         # live vote readouts (same prompt as the vote; recorded for cost)
+        self.cohort = None                     # set by mp.runner.run_lockstep: the batch a call was submitted in
         self.qblock = P.question_block(settings.wording, spec["story"], plan.letter_of)
 
     # ---- context construction (pure function of events) ----
@@ -136,12 +170,23 @@ class Game:
         return seed_of(self.plan.seed_root, *parts)   # NOT the cell: common random numbers across the four cells
 
     def _live(self, label, kind, msgs, **gen):
-        out = self.b.generate(msgs, **gen)
+        out = yield Call("generate", msgs, gen, {"label": label, "kind": kind})
         self.calls.append({"label": label, "kind": kind, "prompt_sha256": self.b.prompt_sha256(msgs),
-                           "seed": gen.get("seed"), "text": out["text"], "finish_reason": out.get("finish_reason")})
+                           "seed": gen.get("seed"), "text": out["text"], "finish_reason": out.get("finish_reason"),
+                           "usage": out.get("usage"), "latency_s": out.get("latency_s"), "cohort": self.cohort})
         return out
 
+    def _readout(self, label, kind, msgs):
+        ro = yield Call("readout", msgs, None, {"label": label, "kind": kind})
+        self.readouts.append({"label": label, "kind": kind, "prompt_sha256": self.b.prompt_sha256(msgs),
+                              "usage": ro.get("usage"), "latency_s": ro.get("latency_s"), "cohort": self.cohort})
+        return ro
+
     def run(self, probes: bool = False) -> dict:
+        """Sequential run (one call at a time). mp.runner.run_lockstep drives the same steps() in batches."""
+        return drive(self.steps(probes), self.b)
+
+    def steps(self, probes: bool = False):
         s = self.s
         if s.arm not in ("natural", "no_comm", "disclosure"):
             raise ValueError(s.arm)
@@ -150,31 +195,34 @@ class Game:
             for me in self.plan.orders[r - 1]:
                 prompt = self.W["turn"].format(r=r, me=me, lo=s.band[0], hi=s.band[1])
                 msgs = self.context(me, len(self.events), prompt)
-                out = self._live(me, "message", msgs, seed=self._seed("msg", r, me), max_tokens=s.message_max_tokens,
-                                 temperature=s.message_temperature, top_p=s.message_top_p)
+                out = yield from self._live(me, "message", msgs, seed=self._seed("msg", r, me),
+                                            max_tokens=s.message_max_tokens, temperature=s.message_temperature,
+                                            top_p=s.message_top_p)
                 text = out["text"].strip()
                 self.own[me].append((len(self.events), text))
                 self.events.append(("msg", r, me, text))
-            if probes:
-                self._probe_round(r)
+            if probes and r in probe_rounds(s):
+                yield from self._probe_round(r)
         votes, exits = {}, {}
         for me in range(1, 6):
             vprompt = self.W["vote"].format(question_block=self.qblock)
             msgs = self.context(me, len(self.events), vprompt)
-            votes[me] = self._vote(me, msgs)
+            votes[me] = yield from self._vote(me, msgs)
             ex_msgs = msgs + [{"role": "assistant", "content": votes[me]["raw"]},
                               {"role": "user", "content": self.W["exit"]}]
-            exits[me] = self._live(me, "exit", ex_msgs, seed=self._seed("exit", me), max_tokens=s.exit_max_tokens,
-                                   temperature=s.message_temperature, top_p=s.message_top_p)["text"].strip()
+            ex = yield from self._live(me, "exit", ex_msgs, seed=self._seed("exit", me), max_tokens=s.exit_max_tokens,
+                                       temperature=s.message_temperature, top_p=s.message_top_p)
+            exits[me] = ex["text"].strip()
         return self._record(votes, exits)
 
     def _vote(self, me, msgs) -> dict:
         s = self.s
-        ro = self.b.readout(msgs)      # exact P(A), P(B), non-A/B mass where the serving path allows
+        ro = yield from self._readout(me, "vote_readout", msgs)   # exact P(A), P(B), non-A/B mass
         attempts = []
         for a in range(1 + s.vote_retries):
-            out = self._live(me, "vote" if a == 0 else f"vote_retry{a}", msgs, seed=self._seed("vote", me, a),
-                             max_tokens=s.vote_max_tokens, temperature=s.vote_temperature, top_p=s.vote_top_p)
+            out = yield from self._live(me, "vote" if a == 0 else f"vote_retry{a}", msgs, seed=self._seed("vote", me, a),
+                                        max_tokens=s.vote_max_tokens, temperature=s.vote_temperature,
+                                        top_p=s.vote_top_p)
             attempts.append(out["text"])
             m = VOTE_RE.match(out["text"])
             if m:
@@ -189,14 +237,16 @@ class Game:
     def _probe_round(self, r):
         upto = len(self.events)
         F = self.spec["evidence_model"]["report_option"]
-        for me in range(1, 6):
+        who = [k for k in range(1, 6) if self.s.probe_labels == "all" or k != self.plan.speaker]
+        for me in who:
             q = self.W["probe_conviction"].format(question_block=self.qblock)
             branch = self.context(me, upto, q)            # a fresh list: the live context is never touched
-            ro = self.b.readout(branch)
+            ro = yield Call("readout", branch, None, {"label": me, "kind": "probe_conviction"})
             pF = ro["p"][self.plan.letter_of[F]]
             pAB = ro["p"]["A"] + ro["p"]["B"]
             rec = {"round": r, "label": me, "kind": "conviction", "p_report_option": pF / pAB if pAB > 0 else None,
-                   "non_ab_mass": ro["non_option_mass"], "prompt_sha256": self.b.prompt_sha256(branch)}
+                   "non_ab_mass": ro["non_option_mass"], "prompt_sha256": self.b.prompt_sha256(branch),
+                   "usage": ro.get("usage"), "latency_s": ro.get("latency_s"), "cohort": self.cohort}
             self.probes.append(rec)
             if self.leaky:                                # negative control: a probe that DOES return
                 self.events.append(("leak", f"(Agent {me} privately answered a question.)"))
@@ -229,7 +279,9 @@ class Game:
             "out_of_band": sum(1 for m in msgs if not m["in_band"]),
             "self_id_hits": screens.self_id(msgs + [{"text": t} for t in exits.values()]),
             "probes": self.probes,
+            "probe_policy": {"labels": self.s.probe_labels, "rounds": probe_rounds(self.s)},
             "live_calls": self.calls,
+            "live_readouts": self.readouts,
         }
 
 

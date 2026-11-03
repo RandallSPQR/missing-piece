@@ -1,0 +1,303 @@
+From 4f2f47ad13ff29f01d91beec70886e789998b128 Mon Sep 17 00:00:00 2001
+From: Claude <noreply@anthropic.com>
+Date: Tue, 3 Nov 2026 05:05:31 +0000
+Subject: [PATCH] v1.3.0 (proposed): named serving modes; strict default =
+ v1.2.0
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+Claude-Session: https://claude.ai/code/session_01AsLe4gBJicR3by4aoxjoD8
+---
+ RELEASE_NOTES.md                     | 33 +++++++++++++++++++++++++
+ pipeline/__init__.py                 |  2 +-
+ pipeline/lineup/__init__.py          |  2 +-
+ pipeline/lineup/lineup.yaml          | 20 +++++++++++++--
+ pipeline/lineup/manifest.py          |  9 ++++---
+ pipeline/lineup/serve.py             | 37 ++++++++++++++++++++++------
+ pipeline/lineup/tests/test_lineup.py | 36 +++++++++++++++++++++++++--
+ pyproject.toml                       |  2 +-
+ 8 files changed, 123 insertions(+), 18 deletions(-)
+
+diff --git a/RELEASE_NOTES.md b/RELEASE_NOTES.md
+index 7fcca8a..0dbfe41 100644
+--- a/RELEASE_NOTES.md
++++ b/RELEASE_NOTES.md
+@@ -1,3 +1,36 @@
++# sae-ethos-pipeline v1.3.0 (PROPOSED, not tagged): serving modes (2026-11-03)
++
++**Additive; the default serves exactly as v1.2.0.** v1.3.0 adds named serving modes to the lineup. Mode `strict`, the
++default, is the v1.2.0 determinism flag set unchanged: `lineup-serve-cmd NAME` and `identity_block(NAME)` give the same
++command and flags as v1.2.0, apart from the version string and the new `serving.mode` field. A study pinned to v1.2.0
++is unaffected. (Named v1.3.0, not v1.2.1: v1.2.1 is the rejected restart-drift candidate, coordination A6.)
++
++**Why.** Missing Piece's cost reduction (owner, 2026-11-03). Its multi-turn games re-read long contexts on every call,
++and run thousands of games; prefix caching and batched serving cut GPU time several-fold.
++
++**What is new.**
++- `lineup.yaml serving.modes`:
++  - `strict`: no change (batch size 1, prefix caching off).
++  - `throughput`: `--enable-prefix-caching`, `--max-num-seqs 32`, `--enable-prompt-tokens-details` (the server reports
++    prefix-cache hits per request).
++  - `throughput_invariant`: as `throughput`, plus vLLM's batch-invariant kernels (`VLLM_BATCH_INVARIANT=1`, beta) with
++    `--attention-backend FLASH_ATTN`.
++- `lineup-serve-cmd NAME --mode MODE`; `serve.mode_flags(mode)`, `serve.env(mode)`.
++- `identity_block(name, mode="strict")` records `serving.mode`, the mode's effective flags and env, and the batch size.
++
++**Not established; each study validates before use.** Neither non-strict mode is assumed deterministic:
++- Prefix caching can change logits by reusing KV computed under a different batch shape.
++- Batching makes numerics depend on what else is in flight, unless batch invariance holds.
++- vLLM documents batch invariance for compute capability >= 9.0 and tests it on H/B-series. The RTX PRO 6000 Blackwell
++  (sm_120) takes its untested fallback path, and the Qwen3.5 hybrid (Gated DeltaNet) layers are not on its tested list.
++
++Missing Piece's S0-GPU plan tests each mode per model on the D12 GPU type before any use.
++
++**Tests (CPU).**
++- `pytest pipeline/lineup/tests`: 43 pass, 24 skipped (tokenizer fixtures), the same skips as v1.2.0.
++- New: the strict mode equals the v1.2.0 flags and command for all five models; the throughput modes change only the
++  named flags; the identity block records the mode.
++
+ # sae-ethos-pipeline v1.2.0: the StPT / Missing Piece five-model lineup (2026-10-31)
+ 
+ **Additive.** v1.2.0 adds the `lineup` subpackage and the Qwen3.5 pair. Existing behaviour does not change: the SAE
+diff --git a/pipeline/__init__.py b/pipeline/__init__.py
+index 7b77d97..5e338de 100644
+--- a/pipeline/__init__.py
++++ b/pipeline/__init__.py
+@@ -15,7 +15,7 @@ names for one file would load it twice.
+ import sys
+ from pathlib import Path
+ 
+-__version__ = "1.2.0"
++__version__ = "1.3.0"
+ ROOT = Path(__file__).resolve().parent
+ CONFIG = ROOT / "config"
+ 
+diff --git a/pipeline/lineup/__init__.py b/pipeline/lineup/__init__.py
+index b9e5b61..9397444 100644
+--- a/pipeline/lineup/__init__.py
++++ b/pipeline/lineup/__init__.py
+@@ -1,5 +1,5 @@
+ """lineup: the shared five-model lineup for Stigmergic Phase Transitions (StPT) and Missing Piece, added in
+-sae-ethos-pipeline 1.2.0. Imported by its top-level name, like the rest of the pipeline:
++sae-ethos-pipeline 1.2.0 (serving modes from 1.3.0). Imported by its top-level name, like the rest of the pipeline:
+ 
+     import sae_ethos_pipeline                  # activates the pipeline's import root
+     import lineup
+diff --git a/pipeline/lineup/lineup.yaml b/pipeline/lineup/lineup.yaml
+index 0ca3108..d81595b 100644
+--- a/pipeline/lineup/lineup.yaml
++++ b/pipeline/lineup/lineup.yaml
+@@ -1,4 +1,5 @@
+-# The shared five-model lineup for Stigmergic Phase Transitions (StPT) and Missing Piece. sae-ethos-pipeline 1.2.0.
++# The shared five-model lineup for Stigmergic Phase Transitions (StPT) and Missing Piece. sae-ethos-pipeline 1.3.0
++# (1.2.0 + serving modes; the default mode "strict" serves exactly as 1.2.0 did).
+ # LOCKED at the v1.2.0 tag. Every StPT / Missing Piece run manifest records this file's sha256 together with the pipeline
+ # tag and commit (lineup.manifest.identity_block). Any change to a value here, to a serializer, or to the serving stack is a
+ # NEW pipeline version and a logged deviation in the shared coordination record; nothing is edited in place.
+@@ -10,7 +11,7 @@
+ # lineup.identity.offline_check recomputes every weight_hash and chat_template_hash below from the HF API at the pinned
+ # revision; on 2026-10-31 all five matched, including the three pod-measured pins (results in RELEASE_NOTES.md).
+ 
+-lineup_version: "1.2.0"
++lineup_version: "1.3.0"
+ locked: true
+ 
+ models:
+@@ -83,6 +84,21 @@ serving:
+     # The box check (lineup.identity box) requires bit-identical readouts over repeated identical requests before a
+     # model is used; "deterministic kernels" is established there, per model and GPU type, not assumed.
+     repeat_probe: {requests: 8, require: "bit-identical logprobs for the readout tokens"}
++  # Serving modes (1.3.0, additive). "strict" is the 1.2.0 determinism flag set above and stays the default; a study
++  # that pins 1.3.0 without naming a mode serves exactly as under 1.2.0. The other modes are OPT-IN, for Missing
++  # Piece's cost reduction (owner 2026-11-03), and each must pass that study's GPU validation (prefix caching on vs
++  # off; batched vs sequential; batch invariance) per model and GPU type before any use. A mode is recorded in every
++  # identity block (lineup.manifest.identity_block(name, mode)).
++  modes:
++    strict: {}
++    throughput:                            # prefix caching on, up to 32 sequences in flight
++      replace_flags: {"--max-num-seqs": "--max-num-seqs 32", "--no-enable-prefix-caching": "--enable-prefix-caching"}
++      add_flags: ["--enable-prompt-tokens-details"]
++      env: {}
++    throughput_invariant:                  # as throughput, plus vLLM batch-invariant kernels (beta; FA/Triton attention)
++      replace_flags: {"--max-num-seqs": "--max-num-seqs 32", "--no-enable-prefix-caching": "--enable-prefix-caching"}
++      add_flags: ["--enable-prompt-tokens-details", "--attention-backend FLASH_ATTN"]
++      env: {VLLM_BATCH_INVARIANT: "1"}
+   readout:
+     endpoint: "/v1/completions"            # prompt = the canonical serializer's token ids; the server's template is never used
+     max_tokens: 1
+diff --git a/pipeline/lineup/manifest.py b/pipeline/lineup/manifest.py
+index 3f77008..769f23e 100644
+--- a/pipeline/lineup/manifest.py
++++ b/pipeline/lineup/manifest.py
+@@ -13,6 +13,7 @@ import sys
+ from pathlib import Path
+ 
+ import lineup
++from lineup import serve
+ 
+ 
+ def _sha(path: Path) -> str:
+@@ -54,7 +55,7 @@ def pipeline_source() -> dict:
+     return out
+ 
+ 
+-def identity_block(name: str) -> dict:
++def identity_block(name: str, mode: str = "strict") -> dict:
+     import sae_ethos_pipeline  # noqa: F401
+     import model_io
+     e = lineup.models()[name]
+@@ -68,8 +69,10 @@ def identity_block(name: str) -> dict:
+         "profile": {"file": e["profile"], "sha256": _sha(lineup.CONFIG / e["profile"])},
+         "serializer": {"family": ser.FAMILY, "module": ser.__name__, "sha256": _sha(ser.__file__),
+                        "generation_prompt": ser.GENERATION_PROMPT},
+-        "serving": {"pins": ly["serving"]["pins"], "flags": ly["serving"]["determinism"]["flags"],
+-                    "env": ly["serving"]["determinism"]["env"], "batch_size": ly["serving"]["batch_size"]},
++        "serving": {"pins": ly["serving"]["pins"], "mode": mode, "flags": serve.mode_flags(mode),
++                    "env": serve.env(mode),
++                    "batch_size": ly["serving"]["batch_size"] if mode == "strict" else
++                    int(next(f.split()[1] for f in serve.mode_flags(mode) if f.startswith("--max-num-seqs")))},
+     }
+ 
+ 
+diff --git a/pipeline/lineup/serve.py b/pipeline/lineup/serve.py
+index 6a81ada..1aea26f 100644
+--- a/pipeline/lineup/serve.py
++++ b/pipeline/lineup/serve.py
+@@ -1,7 +1,8 @@
+ """The vLLM command line for a lineup model on the lineup serving stack (lineup-serve-cmd NAME).
+ 
+ Built from the model's profile (model, revision, served name, dtype, context) plus the lineup's determinism flags
+-(lineup.yaml serving.determinism); a flag the profile already sets is not repeated. Multimodal checkpoints
++(lineup.yaml serving.determinism, as modified by a serving mode from 1.3.0; default "strict" = 1.2.0); a flag the
++profile already sets is not repeated. Multimodal checkpoints
+ (hf_auto_class AutoModelForImageTextToText: Gemma-3-27B, Qwen3.5) are served text-only."""
+ from __future__ import annotations
+ 
+@@ -21,11 +22,23 @@ def _flag(s):
+     return s.split()[0]
+ 
+ 
+-def vllm_argv(name: str, python: str = VENV_PY, port: int = 8000) -> list[str]:
++def mode_flags(mode: str = "strict") -> list[str]:
++    """The determinism flags of a serving mode (1.3.0). "strict" returns the 1.2.0 list unchanged."""
++    ly = lineup.lineup()["serving"]
++    modes = ly.get("modes") or {"strict": {}}
++    if mode not in modes:
++        raise KeyError(f"unknown serving mode {mode!r}; known: {sorted(modes)}")
++    m = modes[mode] or {}
++    rep = m.get("replace_flags") or {}
++    flags = [rep.get(_flag(f), f) for f in ly["determinism"]["flags"]]
++    return flags + list(m.get("add_flags") or [])
++
++
++def vllm_argv(name: str, python: str = VENV_PY, port: int = 8000, mode: str = "strict") -> list[str]:
+     e = lineup.models()[name]
+     prof = yaml.safe_load((lineup.CONFIG / e["profile"]).read_text())
+     tm, s = prof["target_model"], prof.get("serve") or {}
+-    det = lineup.lineup()["serving"]["determinism"]["flags"]
++    det = mode_flags(mode)
+     argv = [python, "-m", "vllm.entrypoints.openai.api_server", "--model", tm["hf_id"],
+             "--revision", tm["revision"], "--tokenizer-revision", tm["revision"],
+             "--served-model-name", prof["endpoint"]["served_model_name"],
+@@ -45,17 +58,25 @@ def vllm_argv(name: str, python: str = VENV_PY, port: int = 8000) -> list[str]:
+     return argv + extra
+ 
+ 
+-def env() -> dict:
+-    return dict(lineup.lineup()["serving"]["determinism"]["env"])
++def env(mode: str = "strict") -> dict:
++    ly = lineup.lineup()["serving"]
++    out = dict(ly["determinism"]["env"])
++    out.update(((ly.get("modes") or {}).get(mode) or {}).get("env") or {})
++    return out
+ 
+ 
+ def main(argv=None):
+     argv = sys.argv[1:] if argv is None else argv
++    mode = "strict"
++    if "--mode" in argv:
++        i = argv.index("--mode")
++        mode = argv[i + 1]
++        argv = argv[:i] + argv[i + 2:]
+     if not argv or argv[0] not in lineup.models():
+-        print(f"usage: lineup-serve-cmd NAME   (NAME in {list(lineup.models())})", file=sys.stderr)
++        print(f"usage: lineup-serve-cmd NAME [--mode MODE]   (NAME in {list(lineup.models())})", file=sys.stderr)
+         return 2
+-    pre = " ".join(f"{k}={shlex.quote(v)}" for k, v in env().items())
+-    print(pre + " " + shlex.join(vllm_argv(argv[0], python=os.environ.get("LINEUP_VLLM_PYTHON", VENV_PY))))
++    pre = " ".join(f"{k}={shlex.quote(v)}" for k, v in env(mode).items())
++    print(pre + " " + shlex.join(vllm_argv(argv[0], python=os.environ.get("LINEUP_VLLM_PYTHON", VENV_PY), mode=mode)))
+     return 0
+ 
+ 
+diff --git a/pipeline/lineup/tests/test_lineup.py b/pipeline/lineup/tests/test_lineup.py
+index e92b48c..ccc9e45 100644
+--- a/pipeline/lineup/tests/test_lineup.py
++++ b/pipeline/lineup/tests/test_lineup.py
+@@ -20,7 +20,7 @@ SNAP = json.loads((Path(__file__).parent / "data" / "hf_identity_2026-10-31.json
+ 
+ def test_five_models():
+     assert list(lineup.models()) == ["llama-3.1-8b-it", "gemma-2-9b-it", "gemma-3-27b-it", "qwen3.5-9b", "qwen3.5-27b"]
+-    assert lineup.lineup()["locked"] is True and lineup.lineup()["lineup_version"] == lineup.version() == "1.2.0"
++    assert lineup.lineup()["locked"] is True and lineup.lineup()["lineup_version"] == lineup.version() == "1.3.0"
+ 
+ 
+ def test_local_check():
+@@ -89,9 +89,41 @@ def test_serve_command(name):
+ @pytest.mark.parametrize("name", list(lineup.models()))
+ def test_identity_block(name):
+     b = manifest.identity_block(name)
+-    assert b["pipeline"]["version"] == "1.2.0"
++    assert b["pipeline"]["version"] == "1.3.0"
+     assert b["model"]["weight_hash"] == lineup.models()[name]["weight_hash"]
+     assert b["serializer"]["family"] == lineup.models()[name]["family"]
+     assert len(b["lineup"]["sha256"]) == 64 and b["serving"]["batch_size"] == 1
+     with pytest.raises(RuntimeError):
+         manifest.check_pin(b, "v1.2.0", "0" * 40)
++
++
++
++# ---- 1.3.0 serving modes ----
++@pytest.mark.parametrize("name", list(lineup.models()))
++def test_strict_mode_is_the_1_2_0_command(name):
++    """The default mode must serve exactly as 1.2.0: the flag list equals serving.determinism.flags."""
++    import lineup
++    assert serve.mode_flags("strict") == lineup.lineup()["serving"]["determinism"]["flags"]
++    assert serve.vllm_argv(name, python="py") == serve.vllm_argv(name, python="py", mode="strict")
++    assert serve.env() == dict(lineup.lineup()["serving"]["determinism"]["env"])
++
++
++@pytest.mark.parametrize("mode", ["throughput", "throughput_invariant"])
++def test_throughput_modes_change_only_named_flags(mode):
++    strict, m = serve.mode_flags("strict"), serve.mode_flags(mode)
++    assert "--enable-prefix-caching" in m and "--no-enable-prefix-caching" not in m
++    assert "--max-num-seqs 32" in m and "--max-num-seqs 1" not in m
++    kept = [f for f in strict if f.split()[0] not in ("--max-num-seqs", "--no-enable-prefix-caching")]
++    assert all(f in m for f in kept)
++    argv = serve.vllm_argv("gemma-2-9b-it", python="py", mode=mode)
++    flags = [a for a in argv if a.startswith("--")]
++    assert len(flags) == len(set(flags)), flags
++    assert (serve.env(mode).get("VLLM_BATCH_INVARIANT") == "1") == (mode == "throughput_invariant")
++
++
++def test_identity_block_records_mode():
++    b = manifest.identity_block("qwen3.5-9b", mode="throughput")
++    assert b["serving"]["mode"] == "throughput" and b["serving"]["batch_size"] == 32
++    assert manifest.identity_block("qwen3.5-9b")["serving"]["mode"] == "strict"
++    with pytest.raises(KeyError):
++        serve.mode_flags("nope")
+diff --git a/pyproject.toml b/pyproject.toml
+index 5832213..ea65726 100644
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -10,7 +10,7 @@ build-backend = "setuptools.build_meta"
+ 
+ [project]
+ name = "sae-ethos-pipeline"
+-version = "1.2.0"
++version = "1.3.0"
+ description = "Transgression-calibration pipeline for open-weight chat models: T3 agent harness, labeler, gates, provenance, replay and text-effect analyses (Gemma-2-9B-IT, Gemma-3-27B-IT); Llama-3.1-8B base/Instruct probe subpackage llama8b_it_base_probe; the StPT / Missing Piece five-model lineup (Qwen3.5-9B/27B added)"
+ readme = "RELEASE_NOTES.md"
+ requires-python = ">=3.9"
+-- 
+2.43.0
+

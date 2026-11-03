@@ -63,7 +63,7 @@ All five come from the pinned lineup: bf16, batch size 1, exact logprobs.
 
 | gate | status | report |
 |---|---|---|
-| S0 pipeline / serialisation | **CPU part passes**: pin checked; 5/5 templates hash to their pins; 55/55 multi-turn contexts per model agree with the official templates. GPU part (token ids, option tokens, stop ids, repeat probe) pending | `gates/S0/S0_REPORT.md` |
+| S0 pipeline / serialisation | **CPU part passes**: pin checked; 5/5 templates hash to their pins; every multi-turn context agrees with the official template (55 per model; 56 for Llama, one extra vote retry). GPU part (token ids, option tokens, stop ids, repeat probe) pending | `gates/S0/S0_REPORT.md` |
 | S1 evidence specifications | **passes** with conventions **proposed**: 12 development stories (32 specs incl. 8 challenge variants) and 26 confirmatory stories (52 specs); schema v1.0; all verifier-present cells solvable (2.79 ≥ 2.2) | `gates/S1/S1_REPORT.md`, `gates/S1/CONVENTIONS.md` |
 | S2 scenario pipeline | **lint passes on both banks**; prior check and refusal screen built, pending GPU | `gates/S2/S2_REPORT.md` |
 | S3 comprehension (dev, branched) + held-out | built (1,280 items per model per set), pending GPU | `gates/S3/S3_PLAN.md` |
@@ -73,6 +73,16 @@ All five come from the pinned lineup: bf16, batch size 1, exact logprobs.
 | S7 freeze | not started | |
 
 Analysis validation on synthetic data: **12/12 checks pass** (`analysis/VALIDATION_REPORT.md`).
+
+**Cost reduction (owner, 2026-11-03; engineering only):**
+- **Probes:** receivers only, at a midpoint round and the final round.
+- **Batched lockstep runner:** the four cells of each quad share batches, and batch composition is recorded
+  (`mp/runner.py`).
+- **Serving modes:** `mp/serving.py` checks the mode. Prefix caching and batching need pipeline v1.3.0 (proposed,
+  `proposals/pipeline-v1.3.0/`) and S0-GPU validation (`gates/S0/S0_GPU_PLAN.md`).
+- **Grading:** a Sonnet-class grader, the Batch API, a cached rubric and a 50% quad subsample (`gates/S5/S5_PLAN.md`).
+- **Costs:** recomputed from measured token counts (`gates/S6/COST_RECOMPUTE.md`). The final recompute uses the S4
+  pilot's measured per-call costs, before any tier is chosen.
 Draft pre-registration: `prereg/PREREGISTRATION_DRAFT.md`.
 
 ## Layout

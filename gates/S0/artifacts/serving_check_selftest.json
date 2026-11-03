@@ -1,0 +1,24 @@
+{
+ "C1_mock": {
+  "n": 32,
+  "max_abs_nats": 0.0,
+  "share_logit_delta_gt_0.05": 0.0,
+  "all_zero": true
+ },
+ "C3_mock": {
+  "games": 32,
+  "quads": 8,
+  "support_diff_mean": 0.0,
+  "support_diff_ci95": [
+   0.0,
+   0.0
+  ],
+  "words_ks_p": 1.0,
+  "out_of_band_diff": 0.0,
+  "non_ab_mass_diff": 0.0,
+  "invalid_strict": 0,
+  "invalid_mode": 0,
+  "pass": true
+ },
+ "pass": true
+}

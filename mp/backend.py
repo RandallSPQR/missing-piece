@@ -12,6 +12,7 @@ from __future__ import annotations
 import hashlib
 import math
 import random
+import time
 
 
 def serializer_for(model: str):
@@ -49,11 +50,14 @@ class MockBackend(_Base):
     def generate(self, messages, seed, max_tokens, temperature, top_p) -> dict:
         self.n_calls += 1
         rng = self._rng(messages, seed)
+        ptok = len(self.serialize(messages)) // 4                # rough token count; real counts come from the server
         if max_tokens <= 8:                                   # a vote
             return {"text": rng.choice(["A", "B", "A", "B", "A.", "Maybe"] if rng.random() < 0.02 else ["A", "B"]),
-                    "finish_reason": "stop"}
+                    "finish_reason": "stop", "usage": {"prompt_tokens": ptok, "completion_tokens": 1}}
         n = rng.randint(*self.length) if max_tokens > 150 else rng.randint(10, 30)
-        return {"text": " ".join(rng.choice(self.WORDS) for _ in range(n)), "finish_reason": "stop"}
+        text = " ".join(rng.choice(self.WORDS) for _ in range(n))
+        return {"text": text, "finish_reason": "stop",
+                "usage": {"prompt_tokens": ptok, "completion_tokens": max(1, len(text) // 4)}}
 
     def readout(self, messages) -> dict:
         self.n_calls += 1
@@ -61,7 +65,8 @@ class MockBackend(_Base):
         x = rng.gauss(0, 1.5)
         non = rng.random() * 0.003
         pa = (1 - non) / (1 + math.exp(-x))
-        return {"p": {"A": pa, "B": 1 - non - pa}, "non_option_mass": non, "logit_AB": x}
+        return {"p": {"A": pa, "B": 1 - non - pa}, "non_option_mass": non, "logit_AB": x,
+                "usage": {"prompt_tokens": len(self.serialize(messages)) // 4, "completion_tokens": 1}}
 
 
 class VLLMBackend(_Base):
@@ -85,9 +90,21 @@ class VLLMBackend(_Base):
         payload = {"model": self.served, "prompt": list(self.ids(messages)), "max_tokens": int(max_tokens),
                    "temperature": float(temperature), "top_p": float(top_p), "seed": int(seed) % (2 ** 31),
                    "stop_token_ids": self.stop_ids, "skip_special_tokens": True}
+        t = time.time()
         r = self.transport(payload)
         ch = r["choices"][0]
-        return {"text": ch["text"], "finish_reason": ch.get("finish_reason")}
+        u = r.get("usage") or {}
+        usage = {"prompt_tokens": u.get("prompt_tokens", len(payload["prompt"])),
+                 "completion_tokens": u.get("completion_tokens"),
+                 # present when the server runs with --enable-prompt-tokens-details (prefix-cache hits)
+                 "cached_tokens": (u.get("prompt_tokens_details") or {}).get("cached_tokens")}
+        return {"text": ch["text"], "finish_reason": ch.get("finish_reason"), "usage": usage,
+                "latency_s": round(time.time() - t, 4)}
 
     def readout(self, messages) -> dict:
-        return self.R.readout(self.transport, self.served, self.ids(messages), self.option_ids)
+        t = time.time()
+        ids = self.ids(messages)
+        ro = dict(self.R.readout(self.transport, self.served, ids, self.option_ids))
+        ro["usage"] = {"prompt_tokens": len(ids), "completion_tokens": ro.get("calls", 1)}
+        ro["latency_s"] = round(time.time() - t, 4)
+        return ro

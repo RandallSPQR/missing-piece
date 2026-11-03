@@ -23,3 +23,7 @@ models:                        # D1, D8: all five from the pinned lineup; Qwen p
   - gemma-3-27b-it
   - qwen3.5-9b
   - qwen3.5-27b
+serving:                       # owner 2026-11-03 (cost reduction, engineering only); mp/serving.py
+  mode: strict                 # the only mode pipeline v1.2.0 supports
+  proposed: {pipeline: "v1.3.0 (proposed, not tagged; proposals/pipeline-v1.3.0/)", modes: [throughput, throughput_invariant]}
+  validated_modes: {}          # model -> modes that passed S0-GPU validation; empty until it runs

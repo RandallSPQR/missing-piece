@@ -59,6 +59,11 @@ receivers, 0.35 is close to the maximum possible.
 
 ### Cost assumptions (to be replaced by S4 per-call measurements)
 
+> **Superseded 2026-11-03 (owner's cost-reduction items): see `COST_RECOMPUTE.md`.** The costs below assumed
+> sequential calls (batch size 1), no prefix caching, probes on all agents every round, and Opus grading on every game.
+> Token counts now measured on real contexts change them. The power columns (MDE, power, TOST) are unaffected.
+> Final costs come from the S4 pilot's measured per-call costs before any tier is chosen.
+
 **GPU (one RTX PRO 6000 Blackwell, bf16, batch size 1, prefix cache off):**
 - **Per game:** about 3,400 decoded tokens (4 rounds × 5 messages of about 150 tokens, plus votes and exit polls),
   about 90,000 prefill tokens (every call re-reads its context, conviction probes included) and about 70 requests.

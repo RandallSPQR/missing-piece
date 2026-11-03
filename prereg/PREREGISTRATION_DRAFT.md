@@ -87,9 +87,17 @@ lying is interpretation, not measurement.
   - The exact P(A), P(B) and non-A/B mass are recorded.
   - An invalid vote gets up to 3 seeded retries and is then counted invalid.
 - **Exit poll.** One or two sentences on the main reason for the vote.
-- **Probes.** Private conviction (the probability of the report option) runs on forked branches after every round, and
-  answers never return. Before the run, a check shows live contexts are byte-identical with and without probes, on CPU
-  and on GPU within one start.
+- **Probes.** Private conviction (the probability of the report option) runs on forked branches for the four
+  receivers, after round ⌈R/2⌉ and after round R; answers never return. A round-3 probe is added only if the pilot
+  rule in S4 triggers.
+  - **[OWNER]** Whether to add one speaker probe at the final round, for the advocate's private conviction named in the
+    mechanism hypothesis.
+  - Before the run, a check shows live contexts are byte-identical with and without probes: on CPU, and on GPU within
+    one start (strict or batch-invariant serving), or distributionally equivalent under non-invariant batched serving.
+- **Serving.** **[S0-GPU/OWNER]**
+  - The mode is either `strict` (pipeline v1.2.0: batch size 1, prefix caching off) or a validated throughput mode
+    (pipeline v1.3.0: prefix caching, lockstep batches with the four cells of each quad interleaved).
+  - The same mode serves every cell, and it is recorded in every manifest with every call's batch cohort.
 - **Wording.**
   - The wording is fixed after S3's held-out check **[S3]**.
   - If no single wording passes for every model, each model uses its own valid wording set. The pooled test uses the
@@ -117,9 +125,12 @@ lying is interpretation, not measurement.
   - exit-poll reasons;
   - natural discussion minus standardised disclosure.
 - **Grading** (secondary measures only):
-  - Claude (out of family) as primary grader: direct route, frozen rubric, cell hidden;
-  - a second-family grader on a stratified subsample;
+  - a Sonnet-class Claude grader of Paper 1's frozen family as primary (direct route, Batch API, frozen rubric with
+    coded examples as a cached prefix, cell hidden) **[OWNER: model ID]**;
+  - a second-family grader on a stratified 10% subsample;
   - Paper 1's per-category agreement rule **[S5]**.
+  - Coverage: a seeded 50% quad-level subsample of the secondary measures, unless S5's too-noisy rule requires 100%
+    for a measure. **[OWNER]** Whether speaker compliance is coded on every message, as the brief says.
 
 ## 7. Analysis
 
